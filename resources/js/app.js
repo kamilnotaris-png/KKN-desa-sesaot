@@ -55,3 +55,11 @@ function initPeta() {
 }
 
 document.addEventListener('DOMContentLoaded', initPeta);
+
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch((err) => {
+            console.warn('Gagal mendaftarkan service worker:', err);
+        });
+    });
+}
