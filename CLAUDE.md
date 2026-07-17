@@ -112,8 +112,9 @@ ditambahkan tanpa upgrade resource.
   bukan hasil survei lapangan asli. WAJIB diganti sebelum cetak QR final.
 - **Ikon PWA** (`public/icons/`, `docs/icons/`) dibuat programatis via
   PHP GD (placeholder), bukan desain resmi — ganti sebelum rilis publik.
-- **Akun admin dev**: `kamil.notaris@gmail.com` / `sesaot2026kkn` — WAJIB
-  diganti/dihapus sebelum serah terima ke Pokdarwis/desa.
+- **Akun admin dev** (kredensial dicatat terpisah, tidak di file ini) —
+  WAJIB diganti/dihapus sebelum serah terima ke Pokdarwis/desa. Sudah
+  diganti passwordnya per sesi 2026-07-17 setelah deploy VPS pertama.
 - Font Google/Bunny CDN sengaja dihapus dari `vite.config.js` (tidak
   reachable di sandbox dev, juga selaras prinsip offline-first) — pakai
   system font stack biasa.

@@ -126,8 +126,8 @@ App\Models\User::create([
 "
 ```
 
-Ganti/hapus akun dev (`kamil.notaris@gmail.com` / `sesaot2026kkn`) sebelum
-serah terima ke desa.
+Ganti/hapus akun dev yang dipakai selama development sebelum serah
+terima ke desa (kredensial dev tidak dicatat di dokumen ini).
 
 ## 10. Bridge ke GitHub Pages (opsional, tapi disarankan)
 
