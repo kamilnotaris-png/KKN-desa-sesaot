@@ -116,6 +116,52 @@ class TitikWisataSeeder extends Seeder
                 'longitude' => 116.2655,
                 'urutan' => 5,
             ],
+            // Purekmas & Bukit Vetong: koordinat masih perkiraan kasar (belum
+            // hasil survei GPS lapangan) - sama seperti 5 titik di atas, lihat
+            // catatan "Belum Beres" di CLAUDE.md. Aman untuk tampil di peta,
+            // belum aman dipakai untuk navigasi presisi.
+            [
+                'nama' => [
+                    'id' => 'Purekmas',
+                    'en' => 'Purekmas',
+                    'ar' => 'بوريكماس',
+                    'zh' => '普雷克马斯',
+                    'ms' => 'Purekmas',
+                ],
+                'kategori' => 'pemandian',
+                'dusun' => 'Penangke',
+                'deskripsi' => [
+                    'id' => 'Pusat Rekreasi Masyarakat (Purekmas) - mata air alami dari Gunung Rinjani yang dikelola warga, sungai jernih toska dan kolam anak.',
+                    'en' => 'Purekmas (Community Recreation Center) - natural springs from Mount Rinjani managed by locals, with a turquoise river and children\'s pool.',
+                    'ar' => 'بوريكماس (مركز الترفيه المجتمعي) - ينابيع طبيعية من جبل رينجاني يديرها السكان المحليون، مع نهر فيروزي وبركة للأطفال.',
+                    'zh' => 'Purekmas（社区休闲中心）- 由当地居民管理的林贾尼火山天然泉水，配有碧绿的河流和儿童泳池。',
+                    'ms' => 'Purekmas (Pusat Rekreasi Masyarakat) - mata air semula jadi dari Gunung Rinjani yang diurus penduduk tempatan, sungai jernih dan kolam kanak-kanak.',
+                ],
+                'latitude' => -8.5235,
+                'longitude' => 116.2645,
+                'urutan' => 6,
+            ],
+            [
+                'nama' => [
+                    'id' => 'Bukit Vetong',
+                    'en' => 'Vetong Hill',
+                    'ar' => 'تلة فيتونغ',
+                    'zh' => '维通山',
+                    'ms' => 'Bukit Vetong',
+                ],
+                'kategori' => 'homestay',
+                'dusun' => 'Sesaot',
+                'deskripsi' => [
+                    'id' => 'Area camping ground dengan rumah Sasak tradisional, lumbung padi, dan Tree House untuk menikmati sunrise dengan latar Gunung Rinjani.',
+                    'en' => 'A camping ground with traditional Sasak houses, rice barns, and a Tree House for watching the sunrise with a Mount Rinjani backdrop.',
+                    'ar' => 'أرض تخييم فيها منازل ساساك التقليدية، ومخازن الأرز، وبيت على الشجرة لمشاهدة شروق الشمس مع إطلالة على جبل رينجاني.',
+                    'zh' => '露营地设有传统萨萨克族房屋、稻谷仓，以及可眺望林贾尼火山日出的树屋。',
+                    'ms' => 'Kawasan berkhemah dengan rumah tradisional Sasak, jelapang padi, dan Tree House untuk menikmati matahari terbit dengan latar Gunung Rinjani.',
+                ],
+                'latitude' => -8.5215,
+                'longitude' => 116.2675,
+                'urutan' => 7,
+            ],
         ];
 
         foreach ($titikWisata as $data) {

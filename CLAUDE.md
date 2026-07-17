@@ -194,6 +194,29 @@ php artisan export:github-pages --push   # + langsung push ke GitHub (butuh GITH
 
 ## Riwayat Perubahan
 
+### Sesi 2026-07-17 (lanjutan — deploy VPS, fix sinkronisasi, tambah titik wisata)
+- **Deploy VPS pertama untuk fitur multi-bahasa selesai** — `git pull`,
+  migrate, `npm run build`, optimize, GitHub Pages sync (`GITHUB_TOKEN`)
+  + queue worker (`kkn-sesaot-queue.service`) semua aktif.
+- **Fix bug `GithubPagesSync`**: push 5 file `docs/data*.json` dari VPS
+  cuma 1 (`data.json`, locale default) yang benar-benar ter-update, 4
+  lainnya (en/ar/zh/ms) diam-diam gagal - ditemukan lewat perbandingan
+  konten langsung di GitHub API, root cause diduga secondary rate limit
+  GitHub Contents API untuk write beruntun. Fix: `pushAll()` return status
+  per-locale (bukan satu boolean agregat) + jeda 700ms antar file push.
+- **Tambah 2 titik wisata baru** ke `TitikWisataSeeder`: **Purekmas**
+  (Dusun Penangke - mata air Rinjani dikelola warga) dan **Bukit Vetong**
+  (camping ground, rumah Sasak, Tree House). Hasil riset web search,
+  terverifikasi sumber resmi (Jadesta Kemenparekraf, media lokal).
+  **Sengaja TIDAK menambahkan** beberapa nama air terjun yang sempat
+  muncul di Google Maps dekat kawasan ini (Air Terjun Segenter, Titian
+  Batu Kawangan, Sesere, Bunut Ngengkang) karena setelah dicek,
+  semuanya secara administratif berada di desa/kecamatan/kabupaten LAIN
+  (Desa Pakuan, Desa Buwun Sejati, bahkan Lombok Tengah) - bukan Desa
+  Sesaot, meski berdekatan secara geografis di kawasan hutan yang sama.
+- **Koordinat 2 titik baru masih perkiraan kasar** (belum survei GPS
+  lapangan), sama seperti 5 titik sebelumnya - lihat "Belum Beres".
+
 ### Sesi 2026-07-17 (lanjutan — merge, GitHub Pages, multi-bahasa)
 - **Merge ke `main`** — PR #1 di-merge (merge commit `793fe4c1`).
 - **GitHub Pages diaktifkan** — repo dibuat public (syarat Pages gratis di
