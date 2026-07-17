@@ -1,0 +1,31 @@
+<?php
+
+return [
+    'judul_situs' => '赛索特村旅游',
+    'sub_judul' => '纳尔马达，西龙目',
+    'cara_ke_sini' => '交通指南',
+    'lihat_detail' => '查看详情',
+    'kembali_ke_peta' => '返回地图',
+    'dusun' => '村落',
+    'cerita_lokal' => '当地故事',
+    'titik_lainnya' => '其他景点',
+    'koordinat' => '坐标',
+    'buka_di_peta' => '在地图中打开',
+
+    'kategori' => [
+        'air_terjun' => '瀑布',
+        'pemandian' => '浴场',
+        'jalur_tracking' => '徒步路线',
+        'kuliner' => '美食',
+        'homestay' => '民宿',
+        'budaya' => '文化',
+    ],
+
+    'titik_asal' => [
+        'bandara' => '龙目国际机场 (LOP)',
+        'mataram' => '马塔兰市',
+        'lembar' => '伦巴港',
+        'senggigi' => '森吉吉',
+        'mandalika' => '曼达利卡区',
+    ],
+];

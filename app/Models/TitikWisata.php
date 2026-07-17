@@ -5,10 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Spatie\Translatable\HasTranslations;
 
 class TitikWisata extends Model
 {
     use HasFactory;
+    use HasTranslations;
+
+    public array $translatable = ['nama', 'deskripsi', 'cerita_lokal'];
 
     public const KATEGORI = [
         'air_terjun' => 'Air Terjun',
@@ -44,7 +48,8 @@ class TitikWisata extends Model
     {
         static::saving(function (TitikWisata $titikWisata) {
             if (empty($titikWisata->slug)) {
-                $titikWisata->slug = Str::slug($titikWisata->nama);
+                $namaIndonesia = $titikWisata->getTranslation('nama', 'id', false) ?: $titikWisata->nama;
+                $titikWisata->slug = Str::slug($namaIndonesia);
             }
         });
     }
@@ -56,7 +61,7 @@ class TitikWisata extends Model
 
     public function scopeOrdered($query)
     {
-        return $query->orderBy('urutan')->orderBy('nama');
+        return $query->orderBy('urutan')->orderBy('id');
     }
 
     public function getRouteKeyName(): string

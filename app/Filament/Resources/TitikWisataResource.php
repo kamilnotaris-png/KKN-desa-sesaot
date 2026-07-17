@@ -7,6 +7,7 @@ use App\Filament\Resources\TitikWisataResource\RelationManagers;
 use App\Models\TitikWisata;
 use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Resources\Concerns\Translatable;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -15,6 +16,8 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class TitikWisataResource extends Resource
 {
+    use Translatable;
+
     protected static ?string $model = TitikWisata::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-map-pin';
