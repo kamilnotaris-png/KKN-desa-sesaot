@@ -10,10 +10,10 @@ upgrade resource.
 
 ## 0. Prasyarat
 
-- Domain yang dipakai: **`kkn-sesaot.fhunizar.my.id`** (subdomain dari
-  `fhunizar.my.id` yang sudah dimiliki — tidak ada biaya tambahan).
-  Tambahkan A record `kkn-sesaot` di panel DNS DomaiNesia mengarah ke IP
-  VPS ini (`103.93.132.225`) sebelum lanjut ke langkah 7 (HTTPS).
+- **Domain belum ditentukan** — untuk sementara app ini diakses langsung
+  lewat IP VPS di port khusus: `http://103.93.132.225:8091` (lihat
+  komentar di `nginx-kkn-sesaot.conf`). Tidak perlu setup DNS dulu untuk
+  mulai deploy & testing.
 - Cek versi PHP aktif di VPS: `php -v` (dokumentasi website-FH mencatat
   8.3 per Juli 2026 — mungkin sudah berubah, cek ulang).
 
@@ -54,7 +54,7 @@ Edit `.env`:
 ```
 APP_ENV=production
 APP_DEBUG=false
-APP_URL=https://kkn-sesaot.fhunizar.my.id
+APP_URL=http://103.93.132.225:8091
 
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -84,13 +84,32 @@ systemctl restart php{VERSI}-fpm
 cp deploy/nginx-kkn-sesaot.conf /etc/nginx/sites-available/kkn-sesaot
 ln -s /etc/nginx/sites-available/kkn-sesaot /etc/nginx/sites-enabled/
 nginx -t && systemctl reload nginx
+
+# buka port 8091 kalau firewall ufw aktif
+ufw status   # cek dulu apa ufw aktif
+ufw allow 8091/tcp
 ```
 
-## 7. Aktifkan HTTPS
+Setelah ini, app sudah bisa diakses di `http://103.93.132.225:8091`.
 
-```bash
-certbot --nginx -d kkn-sesaot.fhunizar.my.id
-```
+## 7. Aktifkan HTTPS (belakangan, setelah domain dipilih)
+
+**Lewati langkah ini dulu.** Nanti setelah domain final dipilih & DNS-nya
+mengarah ke VPS ini:
+
+1. Edit `nginx-kkn-sesaot.conf`: ganti `listen 8091;` → `listen 80;`,
+   isi `server_name _;` dengan domain aslinya.
+2. `nginx -t && systemctl reload nginx`
+3. Jalankan:
+   ```bash
+   certbot --nginx -d domain-aslinya.tld
+   ```
+4. Update `APP_URL` di `.env` ke `https://domain-aslinya.tld`, lalu
+   `php artisan optimize:clear && php artisan optimize`.
+
+> Ingat: mode offline PWA (service worker) baru aktif setelah HTTPS
+> terpasang — di port 8091 tanpa HTTPS, semua fitur lain normal kecuali
+> caching offline-nya.
 
 ## 8. Permission
 
