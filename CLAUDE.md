@@ -27,10 +27,13 @@ self-hosted, backend sendiri) supaya source code-nya bisa didaftarkan HKI.
   admin Filament translatable + locale switcher) maupun sisi GitHub Pages
   (`docs/js/i18n.js` kamus mandiri + `docs/data.{locale}.json` per bahasa).
   Lihat bagian "Multi-Bahasa" di bawah untuk detail arsitektur.
-- **Belum di-deploy ke VPS** — `deploy/DEPLOY.md` belum dijalankan sama
-  sekali. VPS masih perlu: `git pull origin main`, migrate (kolom
-  `nama`/`deskripsi`/`cerita_lokal` sekarang JSON, ada migrasi baru),
-  `npm run build`, `php artisan optimize:clear && php artisan optimize`.
+- **Sudah di-deploy ke VPS di domain `wisatasesaot.my.id`** (`/var/www/kkn-sesaot`).
+  Sempat ada kesalahan cukup lama: repo di VPS ternyata checkout branch
+  fitur lama (`claude/hki-registration-alternatives-bzcmwd`), bukan
+  `main` - jadi berkali-kali `git pull` terlihat "berhasil" tapi tidak
+  pernah menarik commit baru apa pun. Sudah di-fix (`git checkout main`).
+  Kalau update kode lagi ke depannya, **selalu pastikan branch VPS
+  memang `main`** (`git branch` / `git status`) sebelum curiga hal lain.
 - **Domain final: `wisatasesaot.my.id`** (independen, bukan menumpang FH
   Unizar). Deploy config sudah dipindah dari port `8091` ke port standar
   80/443 + HTTPS via certbot (lihat `deploy/nginx-kkn-sesaot.conf` &
@@ -193,6 +196,33 @@ php artisan export:github-pages --push   # + langsung push ke GitHub (butuh GITH
 ```
 
 ## Riwayat Perubahan
+
+### Sesi 2026-07-17 (lanjutan lagi — root cause VPS salah branch, fix 409, tombol arah)
+- **Root cause sesi debugging deploy panjang sebelumnya ditemukan**: VPS
+  ternyata sejak awal masih checkout branch fitur lama
+  `claude/hki-registration-alternatives-bzcmwd` (sebelum merge PR #1),
+  BUKAN `main`. Semua `git pull` sebelumnya cuma nge-refresh branch lama
+  itu (yang memang tidak punya commit baru) - bukan gagal, tapi memang
+  tidak pernah menarik apa pun dari `main`. Fix: `git checkout main &&
+  git reset --hard origin/main` (buang beberapa file auto-generate yang
+  sempat berubah lokal - composer.lock/package-lock.json/docs/data.json).
+- **Fix 409 Conflict `GithubPagesSync`** (root cause sebenarnya, revisi
+  dari dugaan "rate limit" sebelumnya): `db:seed` yang updateOrCreate
+  banyak record sekaligus memicu banyak job sync terpisah lewat observer,
+  semuanya rebutan nulis `docs/data*.json` yang sama ke GitHub hampir
+  bersamaan → sha basi → 409. Fix: job `SyncTitikWisataToGithubPages`
+  jadi `ShouldBeUnique` (dedup beberapa save beruntun jadi 1 job), plus
+  retry otomatis di `pushFile()` kalau masih kena 409 (refetch sha, coba
+  lagi maks 2x).
+- **Tambah tombol "🧭 Petunjuk Arah ke Sini"** per titik wisata (halaman
+  detail + popup peta, VPS maupun GitHub Pages) - beda dari panel "Cara
+  ke Sini" yang cuma arahkan ke pusat desa dari kota asal, ini pakai
+  lokasi pengguna saat itu sebagai titik awal ke koordinat titik wisata
+  spesifik (Google Maps directions, destination-only, tanpa origin).
+- **Fix "Titik Wisata Lainnya" acak** — sebelumnya `->ordered()->limit(4)`
+  bikin Purekmas & Bukit Vetong (urutan 6-7) nyaris tidak pernah muncul
+  di rekomendasi; diganti `inRandomOrder()` (VPS) dan shuffle client-side
+  (GitHub Pages) supaya semua titik kebagian tampil.
 
 ### Sesi 2026-07-17 (lanjutan — deploy VPS, fix sinkronisasi, tambah titik wisata)
 - **Deploy VPS pertama untuk fitur multi-bahasa selesai** — `git pull`,
