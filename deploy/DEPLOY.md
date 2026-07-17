@@ -132,6 +132,46 @@ App\Models\User::create([
 Ganti/hapus akun dev (`kamil.notaris@gmail.com` / `sesaot2026kkn`) sebelum
 serah terima ke desa.
 
+## 10. Bridge ke GitHub Pages (opsional, tapi disarankan)
+
+Peta publik statis di GitHub Pages (folder `docs/`) tidak bergantung
+uptime VPS sama sekali — kalau VPS down, peta & data titik wisata tetap
+bisa diakses lewat GitHub Pages. Supaya datanya otomatis ikut ter-update
+tiap Pokdarwis edit lewat admin panel:
+
+**a. Aktifkan GitHub Pages** (satu kali saja, lewat browser):
+   `https://github.com/kamilnotaris-png/KKN-desa-sesaot/settings/pages`
+   → Source: **Deploy from a branch** → Branch: **main** / folder **`/docs`** → Save.
+   Setelah aktif, situsnya ada di `https://kamilnotaris-png.github.io/KKN-desa-sesaot/`.
+
+**b. Buat GitHub Personal Access Token (fine-grained)**, khusus repo ini saja:
+   `https://github.com/settings/personal-access-tokens/new`
+   → Repository access: **Only select repositories** → pilih `KKN-desa-sesaot`
+   → Permissions: **Contents: Read and write** (yang lain biarkan No access)
+   → Generate, simpan tokennya.
+
+**c. Isi `.env` di VPS:**
+```
+GITHUB_PAGES_SYNC_ENABLED=true
+GITHUB_TOKEN=<token dari langkah b>
+```
+
+**d. Pasang queue worker** (wajib — tanpa ini job sync cuma numpuk di
+tabel `jobs`, tidak pernah benar-benar jalan):
+```bash
+cp deploy/kkn-sesaot-queue.service /etc/systemd/system/
+systemctl daemon-reload
+systemctl enable --now kkn-sesaot-queue
+systemctl status kkn-sesaot-queue   # pastikan "active (running)"
+```
+
+**e. Tes sekali secara manual:**
+```bash
+php artisan export:github-pages --push
+```
+Kalau berhasil akan muncul "Berhasil push ke GitHub." dan ada commit baru
+otomatis di repo (author: token yang dipakai) mengubah `docs/data.json`.
+
 ## Update kode di kemudian hari
 
 ```bash

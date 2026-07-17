@@ -1,0 +1,23 @@
+; Systemd service untuk queue worker Laravel - wajib jalan supaya job
+; SyncTitikWisataToGithubPages (bridge admin panel -> GitHub Pages)
+; benar-benar terpicu, bukan cuma numpuk di tabel `jobs`.
+;
+; Pasang:
+;   cp deploy/kkn-sesaot-queue.service /etc/systemd/system/
+;   systemctl daemon-reload
+;   systemctl enable --now kkn-sesaot-queue
+
+[Unit]
+Description=Queue worker - Peta Wisata Digital Desa Sesaot
+After=network.target mysql.service
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/kkn-sesaot
+ExecStart=/usr/bin/php /var/www/kkn-sesaot/artisan queue:work --sleep=3 --tries=3 --max-time=3600
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
