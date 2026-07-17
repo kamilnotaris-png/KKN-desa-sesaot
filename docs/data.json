@@ -1,6 +1,6 @@
 {
     "type": "FeatureCollection",
-    "generated_at": "2026-07-17T17:08:12+00:00",
+    "generated_at": "2026-07-17T17:10:51+00:00",
     "features": [
         {
             "type": "Feature",
@@ -120,6 +120,54 @@
                 "latitude": -8.5241,
                 "longitude": 116.2655,
                 "detail_url": "https://wisatasesaot.my.id/peta/sate-bulayak"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.2645,
+                    -8.5235
+                ]
+            },
+            "properties": {
+                "nama": "Purekmas",
+                "slug": "purekmas",
+                "kategori": "pemandian",
+                "kategori_label": "Pemandian",
+                "dusun": "Penangke",
+                "deskripsi": "Pusat Rekreasi Masyarakat (Purekmas) - mata air alami dari Gunung Rinjani yang dikelola warga, sungai jernih toska dan kolam anak.",
+                "cerita_lokal": null,
+                "foto": null,
+                "video_embed_url": null,
+                "latitude": -8.5235,
+                "longitude": 116.2645,
+                "detail_url": "https://wisatasesaot.my.id/peta/purekmas"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.2675,
+                    -8.5215
+                ]
+            },
+            "properties": {
+                "nama": "Bukit Vetong",
+                "slug": "bukit-vetong",
+                "kategori": "homestay",
+                "kategori_label": "Homestay",
+                "dusun": "Sesaot",
+                "deskripsi": "Area camping ground dengan rumah Sasak tradisional, lumbung padi, dan Tree House untuk menikmati sunrise dengan latar Gunung Rinjani.",
+                "cerita_lokal": null,
+                "foto": null,
+                "video_embed_url": null,
+                "latitude": -8.5215,
+                "longitude": 116.2675,
+                "detail_url": "https://wisatasesaot.my.id/peta/bukit-vetong"
             }
         }
     ]
