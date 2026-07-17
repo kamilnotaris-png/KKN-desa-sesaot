@@ -162,6 +162,29 @@ class TitikWisataSeeder extends Seeder
                 'longitude' => 116.2675,
                 'urutan' => 7,
             ],
+            // Bukit Mangga: koordinat juga masih perkiraan kasar, belum survei
+            // GPS lapangan - lihat catatan di atas.
+            [
+                'nama' => [
+                    'id' => 'Bukit Mangga',
+                    'en' => 'Bukit Mangga Hill',
+                    'ar' => 'تلة بوكيت مانغا',
+                    'zh' => '芒果山',
+                    'ms' => 'Bukit Mangga',
+                ],
+                'kategori' => 'jalur_tracking',
+                'dusun' => 'Sesaot Timuk',
+                'deskripsi' => [
+                    'id' => 'Bukit dengan jalur trekking ringan cocok pemula, pemandangan hijau perbukitan dan Gunung Rinjani, spot foto bintang besar, dan kopi khas Sesaot. Favorit untuk menikmati sunset.',
+                    'en' => 'A hill with an easy, beginner-friendly trekking trail, green hillside and Mount Rinjani views, a large star-shaped photo spot, and local Sesaot coffee. A favourite for watching the sunset.',
+                    'ar' => 'تلة بمسار مشي سهل يناسب المبتدئين، بإطلالات خضراء على التلال وجبل رينجاني، ومكان تصوير على شكل نجمة كبيرة، وقهوة سيساوت المحلية. مكان مفضل لمشاهدة غروب الشمس.',
+                    'zh' => '一座适合初学者的轻松徒步山丘，可眺望绿意盎然的山丘与林贾尼火山，设有大型星形拍照点，并供应赛索特当地咖啡，是欣赏日落的热门去处。',
+                    'ms' => 'Bukit dengan laluan trekking mudah sesuai pemula, pemandangan hijau perbukitan dan Gunung Rinjani, tempat foto berbentuk bintang besar, dan kopi khas Sesaot. Kegemaran untuk menikmati matahari terbenam.',
+                ],
+                'latitude' => -8.5198,
+                'longitude' => 116.2690,
+                'urutan' => 8,
+            ],
         ];
 
         foreach ($titikWisata as $data) {

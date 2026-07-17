@@ -197,6 +197,26 @@ php artisan export:github-pages --push   # + langsung push ke GitHub (butuh GITH
 
 ## Riwayat Perubahan
 
+### Sesi 2026-07-17 (lanjutan lagi lagi — modul mahasiswa, riset kompetitor, Bukit Mangga)
+- **Modul panduan mahasiswa KKN** (dokumen Word, dikirim ke dosen pembimbing) —
+  mencakup cara pakai admin panel Filament (field, kategori, isi 5 bahasa
+  pakai hint Google Translate) dan cara survei GPS + update jalur ke
+  OpenStreetMap (rekam GPX pakai OsmAnd, gambar & tag jalur di editor iD,
+  bedakan Road/Track vs Foot Path), plus checklist sebelum serah terima.
+- **Riset kompetitor**: ditemukan app "Desa Wisata Sesaot" (dev "Lombok
+  Silicon Island", kemungkinan hasil PKM kampus lain) di Play Store, 10+
+  download, tapi pendaftaran akun gagal saat dicoba dosen pembimbing.
+  Website terkait (`pesonasesaot.com`, `wisatasesaot.com`) juga terkonfirmasi
+  down (DNS tidak resolve, domain kemungkinan expired) - dicek langsung,
+  bukan cuma laporan user. Jadi poin urgensi kuat untuk proposal KKN:
+  solusi digital sebelumnya untuk Sesaot sudah tidak terawat/berfungsi.
+- **Tambah titik wisata ke-8: Bukit Mangga** (Dusun Sesaot Timuk, kategori
+  jalur_tracking) - ditemukan dari screenshot fitur app kompetitor lalu
+  diverifikasi via web search ke sumber independen (SUARANTB.com):
+  trekking ringan cocok pemula, pemandangan Gunung Rinjani, spot foto
+  bintang, kopi khas Sesaot, favorit sunset. Koordinat masih perkiraan
+  kasar, sama seperti titik-titik lain, wajib disurvei sebelum QR final.
+
 ### Sesi 2026-07-17 (lanjutan lagi — root cause VPS salah branch, fix 409, tombol arah)
 - **Root cause sesi debugging deploy panjang sebelumnya ditemukan**: VPS
   ternyata sejak awal masih checkout branch fitur lama
