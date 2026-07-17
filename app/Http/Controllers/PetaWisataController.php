@@ -17,7 +17,7 @@ class PetaWisataController extends Controller
 
         $lainnya = TitikWisata::active()
             ->where('id', '!=', $titikWisata->id)
-            ->ordered()
+            ->inRandomOrder()
             ->limit(4)
             ->get();
 

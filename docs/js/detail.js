@@ -46,6 +46,7 @@ async function renderDetail() {
 
     const lainnya = features
         .filter((f) => f.properties.slug !== slug)
+        .sort(() => Math.random() - 0.5)
         .slice(0, 4);
 
     const lainnyaHtml = lainnya.length > 0 ? `
