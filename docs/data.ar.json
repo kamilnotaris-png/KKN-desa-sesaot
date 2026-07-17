@@ -1,6 +1,6 @@
 {
     "type": "FeatureCollection",
-    "generated_at": "2026-07-17T18:12:57+00:00",
+    "generated_at": "2026-07-17T18:18:31+00:00",
     "features": [
         {
             "type": "Feature",
@@ -168,6 +168,30 @@
                 "latitude": -8.5215,
                 "longitude": 116.2675,
                 "detail_url": "https://wisatasesaot.my.id/peta/bukit-vetong"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.269,
+                    -8.5198
+                ]
+            },
+            "properties": {
+                "nama": "تلة بوكيت مانغا",
+                "slug": "bukit-mangga",
+                "kategori": "jalur_tracking",
+                "kategori_label": "مسار للمشي",
+                "dusun": "Sesaot Timuk",
+                "deskripsi": "تلة بمسار مشي سهل يناسب المبتدئين، بإطلالات خضراء على التلال وجبل رينجاني، ومكان تصوير على شكل نجمة كبيرة، وقهوة سيساوت المحلية. مكان مفضل لمشاهدة غروب الشمس.",
+                "cerita_lokal": null,
+                "foto": null,
+                "video_embed_url": null,
+                "latitude": -8.5198,
+                "longitude": 116.269,
+                "detail_url": "https://wisatasesaot.my.id/peta/bukit-mangga"
             }
         }
     ]
