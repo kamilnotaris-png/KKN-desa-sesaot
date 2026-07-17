@@ -16,7 +16,13 @@
         <span class="sub">Kec. Narmada, Lombok Barat</span>
     </header>
     <main>
-        <div id="peta-wisata"></div>
+        <div style="position: relative; height: 100%;">
+            <div id="peta-wisata"></div>
+            <div class="arah-panel">
+                <button type="button" id="arah-toggle" class="arah-toggle">🧭 Cara ke Sini</button>
+                <div id="arah-list" class="arah-list hidden"></div>
+            </div>
+        </div>
     </main>
     <script src="vendor/leaflet/leaflet.js"></script>
     <script src="js/app.js"></script>

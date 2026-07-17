@@ -58,6 +58,61 @@ main {
 .popup-meta { color: #6b7280; font-size: 0.8rem; }
 .popup-link { color: var(--green-600); font-weight: 600; text-decoration: none; }
 
+.hidden { display: none; }
+
+.arah-panel {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    z-index: 1000;
+    max-width: 16rem;
+}
+
+.arah-toggle {
+    background: white;
+    border: none;
+    border-radius: 999px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    color: var(--green-700);
+}
+
+.arah-list {
+    margin-top: 0.5rem;
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.arah-item {
+    display: flex;
+    flex-direction: column;
+    padding: 0.6rem 0.85rem;
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.arah-item:last-child {
+    border-bottom: none;
+}
+
+.arah-item-nama {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--green-700);
+}
+
+.arah-item-estimasi {
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
 .detail-wrap {
     max-width: 640px;
     margin: 0 auto;

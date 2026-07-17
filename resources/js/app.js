@@ -1,5 +1,40 @@
 import L from 'leaflet';
 
+const DESA_LATLNG = '-8.524,116.264';
+
+const TITIK_ASAL = [
+    { nama: 'Bandara Internasional Lombok (LOP)', estimasi: '± 1 jam 15 menit' },
+    { nama: 'Kota Mataram', estimasi: '± 45 menit' },
+    { nama: 'Pelabuhan Lembar', estimasi: '± 1 jam' },
+    { nama: 'Senggigi', estimasi: '± 50 menit' },
+    { nama: 'Kawasan Mandalika', estimasi: '± 1 jam 30 menit' },
+];
+
+function mapsDirectionUrl(namaAsal) {
+    const params = new URLSearchParams({
+        api: '1',
+        origin: namaAsal,
+        destination: DESA_LATLNG,
+        travelmode: 'driving',
+    });
+    return `https://www.google.com/maps/dir/?${params.toString()}`;
+}
+
+function initArahPanel() {
+    const toggle = document.getElementById('arah-toggle');
+    const list = document.getElementById('arah-list');
+    if (!toggle || !list) return;
+
+    list.innerHTML = TITIK_ASAL.map((titik) => `
+        <a href="${mapsDirectionUrl(titik.nama)}" target="_blank" rel="noopener" class="arah-item">
+            <span class="arah-item-nama">${titik.nama}</span>
+            <span class="arah-item-estimasi">${titik.estimasi}</span>
+        </a>
+    `).join('');
+
+    toggle.addEventListener('click', () => list.classList.toggle('hidden'));
+}
+
 const KATEGORI_ICON = {
     air_terjun: '💧',
     pemandian: '🏊',
@@ -55,6 +90,7 @@ function initPeta() {
 }
 
 document.addEventListener('DOMContentLoaded', initPeta);
+document.addEventListener('DOMContentLoaded', initArahPanel);
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
