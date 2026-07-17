@@ -20,8 +20,9 @@ class GithubPagesSync
 
     /**
      * Push semua file data per-locale, return hasil per locale supaya
-     * kegagalan sebagian (mis. kena secondary rate limit GitHub setelah
-     * beberapa write beruntun) tidak tersembunyi di balik satu boolean.
+     * kegagalan sebagian (mis. 409 Conflict dari penulis lain yang nyaris
+     * bersamaan - lihat retry di pushFile) tidak tersembunyi di balik satu
+     * boolean agregat.
      *
      * @return array<string, bool>
      */
@@ -49,9 +50,9 @@ class GithubPagesSync
 
             $results[$locale] = $this->pushFile($http, $config, $path, $locale);
 
-            // GitHub Contents API menerapkan secondary rate limit untuk write
-            // beruntun ke repo yang sama - jeda singkat di antara file supaya
-            // tidak semuanya gagal kecuali yang pertama.
+            // Jeda singkat di antara file - sopan santun ke GitHub API,
+            // walau penyebab utama kegagalan beruntun ternyata 409 Conflict
+            // (lihat retry di pushFile), bukan rate limit.
             if ($i < count($locales) - 1) {
                 usleep(700_000);
             }
@@ -60,7 +61,13 @@ class GithubPagesSync
         return $results;
     }
 
-    private function pushFile(\Illuminate\Http\Client\PendingRequest $http, array $config, string $path, string $locale): bool
+    /**
+     * Retry sekali kalau kena 409 Conflict - terjadi waktu sha yang dipakai
+     * sudah basi karena ada penulis lain ke file yang sama di antara fetch
+     * sha dan submit PUT (mis. beberapa job sync yang lolos dedup nyaris
+     * bersamaan, atau dua admin edit berbarengan).
+     */
+    private function pushFile(\Illuminate\Http\Client\PendingRequest $http, array $config, string $path, string $locale, int $attempt = 1): bool
     {
         $base = "https://api.github.com/repos/{$config['owner']}/{$config['repo']}/contents/{$path}";
         $sha = $this->currentFileSha($http, $base, $config['branch']);
@@ -75,8 +82,15 @@ class GithubPagesSync
         ]));
 
         if ($response->failed()) {
+            if ($response->status() === 409 && $attempt < 3) {
+                usleep(500_000 * $attempt);
+
+                return $this->pushFile($http, $config, $path, $locale, $attempt + 1);
+            }
+
             Log::error('GithubPagesSync: gagal push ke GitHub.', [
                 'path' => $path,
+                'attempt' => $attempt,
                 'status' => $response->status(),
                 'body' => $response->json(),
             ]);
