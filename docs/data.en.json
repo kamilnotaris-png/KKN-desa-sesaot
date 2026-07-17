@@ -1,6 +1,6 @@
 {
     "type": "FeatureCollection",
-    "generated_at": "2026-07-17T18:12:55+00:00",
+    "generated_at": "2026-07-17T18:18:29+00:00",
     "features": [
         {
             "type": "Feature",
@@ -168,6 +168,30 @@
                 "latitude": -8.5215,
                 "longitude": 116.2675,
                 "detail_url": "https://wisatasesaot.my.id/peta/bukit-vetong"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.269,
+                    -8.5198
+                ]
+            },
+            "properties": {
+                "nama": "Bukit Mangga Hill",
+                "slug": "bukit-mangga",
+                "kategori": "jalur_tracking",
+                "kategori_label": "Trekking Trail",
+                "dusun": "Sesaot Timuk",
+                "deskripsi": "A hill with an easy, beginner-friendly trekking trail, green hillside and Mount Rinjani views, a large star-shaped photo spot, and local Sesaot coffee. A favourite for watching the sunset.",
+                "cerita_lokal": null,
+                "foto": null,
+                "video_embed_url": null,
+                "latitude": -8.5198,
+                "longitude": 116.269,
+                "detail_url": "https://wisatasesaot.my.id/peta/bukit-mangga"
             }
         }
     ]
