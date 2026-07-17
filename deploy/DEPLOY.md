@@ -10,10 +10,12 @@ upgrade resource.
 
 ## 0. Prasyarat
 
-- **Domain belum ditentukan** — untuk sementara app ini diakses langsung
-  lewat IP VPS di port khusus: `http://103.93.132.225:8091` (lihat
-  komentar di `nginx-kkn-sesaot.conf`). Tidak perlu setup DNS dulu untuk
-  mulai deploy & testing.
+- **Domain: `wisatasesaot.my.id`** (dibeli terpisah, independen dari FH
+  Unizar). Sebelum lanjut ke langkah 7 (HTTPS), tambahkan **A record**
+  `@` dan `www` di panel DNS domain ini, mengarah ke IP VPS
+  (`103.93.132.225`). Propagasi DNS bisa makan waktu beberapa menit
+  sampai ~1 jam — cek sudah mengarah dengan benar via
+  `nslookup wisatasesaot.my.id` sebelum jalankan certbot.
 - Cek versi PHP aktif di VPS: `php -v` (dokumentasi website-FH mencatat
   8.3 per Juli 2026 — mungkin sudah berubah, cek ulang).
 
@@ -54,7 +56,7 @@ Edit `.env`:
 ```
 APP_ENV=production
 APP_DEBUG=false
-APP_URL=http://103.93.132.225:8091
+APP_URL=https://wisatasesaot.my.id
 
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -85,31 +87,26 @@ cp deploy/nginx-kkn-sesaot.conf /etc/nginx/sites-available/kkn-sesaot
 ln -s /etc/nginx/sites-available/kkn-sesaot /etc/nginx/sites-enabled/
 nginx -t && systemctl reload nginx
 
-# buka port 8091 kalau firewall ufw aktif
-ufw status   # cek dulu apa ufw aktif
-ufw allow 8091/tcp
+# pastikan port 80/443 terbuka kalau firewall ufw aktif (biasanya sudah,
+# karena LegalVerse/FH juga pakai port ini)
+ufw status
+ufw allow 80/tcp
+ufw allow 443/tcp
 ```
 
-Setelah ini, app sudah bisa diakses di `http://103.93.132.225:8091`.
+Setelah ini, app sudah bisa diakses di `http://wisatasesaot.my.id`
+(asal DNS sudah mengarah ke VPS ini — cek dengan `nslookup wisatasesaot.my.id`).
 
-## 7. Aktifkan HTTPS (belakangan, setelah domain dipilih)
+## 7. Aktifkan HTTPS
 
-**Lewati langkah ini dulu.** Nanti setelah domain final dipilih & DNS-nya
-mengarah ke VPS ini:
+```bash
+certbot --nginx -d wisatasesaot.my.id -d www.wisatasesaot.my.id
+```
 
-1. Edit `nginx-kkn-sesaot.conf`: ganti `listen 8091;` → `listen 80;`,
-   isi `server_name _;` dengan domain aslinya.
-2. `nginx -t && systemctl reload nginx`
-3. Jalankan:
-   ```bash
-   certbot --nginx -d domain-aslinya.tld
-   ```
-4. Update `APP_URL` di `.env` ke `https://domain-aslinya.tld`, lalu
-   `php artisan optimize:clear && php artisan optimize`.
-
-> Ingat: mode offline PWA (service worker) baru aktif setelah HTTPS
-> terpasang — di port 8091 tanpa HTTPS, semua fitur lain normal kecuali
-> caching offline-nya.
+certbot otomatis menambahkan blok `server` untuk port 443 + redirect
+dari port 80, tidak perlu edit `nginx-kkn-sesaot.conf` manual. Setelah
+ini, situs bisa diakses lewat `https://wisatasesaot.my.id` dan **mode
+offline PWA otomatis aktif** (service worker butuh HTTPS).
 
 ## 8. Permission
 
@@ -176,10 +173,17 @@ otomatis di repo (author: token yang dipakai) mengubah `docs/data.json`.
 
 ```bash
 cd /var/www/kkn-sesaot
-git pull origin main
-composer install --ignore-platform-reqs --no-dev --optimize-autoloader
+git pull   # ambil dari branch yang sedang di-checkout di VPS ini
+composer install --no-dev --optimize-autoloader
 php artisan migrate --force
 php artisan optimize:clear && php artisan optimize   # WAJIB dua-duanya,
                                                        # bukan cuma optimize
 npm run build
 ```
+
+> Catatan: per hari ini VPS masih checkout branch
+> `claude/hki-registration-alternatives-bzcmwd` (PR belum di-merge ke
+> `main`). Setelah PR di-merge, jalankan `git checkout main && git pull`
+> sekali saja untuk pindah, setelah itu `git pull` biasa cukup.
+> `--ignore-platform-reqs` tidak diperlukan lagi sejak composer.lock
+> di-regenerate untuk PHP 8.3 (lihat riwayat commit).
