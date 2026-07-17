@@ -63,4 +63,15 @@ class TitikWisata extends Model
     {
         return 'slug';
     }
+
+    public function getVideoEmbedUrlAttribute(): ?string
+    {
+        if (! $this->video_youtube_url) {
+            return null;
+        }
+
+        preg_match('/(?:v=|youtu\.be\/|embed\/)([A-Za-z0-9_-]{11})/', $this->video_youtube_url, $matches);
+
+        return isset($matches[1]) ? "https://www.youtube.com/embed/{$matches[1]}" : null;
+    }
 }
