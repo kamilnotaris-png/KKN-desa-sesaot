@@ -1,6 +1,6 @@
 {
     "type": "FeatureCollection",
-    "generated_at": "2026-07-17T14:52:02+00:00",
+    "generated_at": "2026-07-17T17:10:58+00:00",
     "features": [
         {
             "type": "Feature",
@@ -23,7 +23,7 @@
                 "video_embed_url": null,
                 "latitude": -8.523,
                 "longitude": 116.265,
-                "detail_url": "http://localhost/peta/air-terjun-tibu-sendalem"
+                "detail_url": "https://wisatasesaot.my.id/peta/air-terjun-tibu-sendalem"
             }
         },
         {
@@ -47,7 +47,7 @@
                 "video_embed_url": null,
                 "latitude": -8.5245,
                 "longitude": 116.2668,
-                "detail_url": "http://localhost/peta/air-terjun-tembiras"
+                "detail_url": "https://wisatasesaot.my.id/peta/air-terjun-tembiras"
             }
         },
         {
@@ -71,7 +71,7 @@
                 "video_embed_url": null,
                 "latitude": -8.5219,
                 "longitude": 116.2637,
-                "detail_url": "http://localhost/peta/tibu-goa"
+                "detail_url": "https://wisatasesaot.my.id/peta/tibu-goa"
             }
         },
         {
@@ -95,7 +95,7 @@
                 "video_embed_url": null,
                 "latitude": -8.5262,
                 "longitude": 116.2611,
-                "detail_url": "http://localhost/peta/aik-nyet"
+                "detail_url": "https://wisatasesaot.my.id/peta/aik-nyet"
             }
         },
         {
@@ -119,7 +119,55 @@
                 "video_embed_url": null,
                 "latitude": -8.5241,
                 "longitude": 116.2655,
-                "detail_url": "http://localhost/peta/sate-bulayak"
+                "detail_url": "https://wisatasesaot.my.id/peta/sate-bulayak"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.2645,
+                    -8.5235
+                ]
+            },
+            "properties": {
+                "nama": "普雷克马斯",
+                "slug": "purekmas",
+                "kategori": "pemandian",
+                "kategori_label": "浴场",
+                "dusun": "Penangke",
+                "deskripsi": "Purekmas（社区休闲中心）- 由当地居民管理的林贾尼火山天然泉水，配有碧绿的河流和儿童泳池。",
+                "cerita_lokal": null,
+                "foto": null,
+                "video_embed_url": null,
+                "latitude": -8.5235,
+                "longitude": 116.2645,
+                "detail_url": "https://wisatasesaot.my.id/peta/purekmas"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.2675,
+                    -8.5215
+                ]
+            },
+            "properties": {
+                "nama": "维通山",
+                "slug": "bukit-vetong",
+                "kategori": "homestay",
+                "kategori_label": "民宿",
+                "dusun": "Sesaot",
+                "deskripsi": "露营地设有传统萨萨克族房屋、稻谷仓，以及可眺望林贾尼火山日出的树屋。",
+                "cerita_lokal": null,
+                "foto": null,
+                "video_embed_url": null,
+                "latitude": -8.5215,
+                "longitude": 116.2675,
+                "detail_url": "https://wisatasesaot.my.id/peta/bukit-vetong"
             }
         }
     ]
