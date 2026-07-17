@@ -31,11 +31,13 @@ self-hosted, backend sendiri) supaya source code-nya bisa didaftarkan HKI.
   sekali. VPS masih perlu: `git pull origin main`, migrate (kolom
   `nama`/`deskripsi`/`cerita_lokal` sekarang JSON, ada migrasi baru),
   `npm run build`, `php artisan optimize:clear && php artisan optimize`.
-- **Domain belum diputuskan.** Sempat dipertimbangkan subdomain
-  `fhunizar.my.id` / `fh.unizar.ac.id`, tapi user memutuskan proyek ini
-  harus punya domain independen (bukan menumpang FH Unizar), keputusan
-  final ditunda. Config deploy untuk sementara pakai port `8091` via IP
-  VPS langsung (`http://103.93.132.225:8091`), tanpa domain.
+- **Domain final: `wisatasesaot.my.id`** (independen, bukan menumpang FH
+  Unizar). Deploy config sudah dipindah dari port `8091` ke port standar
+  80/443 + HTTPS via certbot (lihat `deploy/nginx-kkn-sesaot.conf` &
+  `deploy/DEPLOY.md`) — port non-standar sempat diduga jadi penyebab
+  masalah 405 berulang saat testing (request tidak pernah sampai ke
+  Laravel/PHP-FPM di log). Port 80/443+HTTPS juga syarat mode offline PWA
+  aktif di sisi VPS.
 
 ## Arsitektur
 
@@ -87,9 +89,10 @@ terbaru ke GitHub lewat Contents API.
 `public/manifest.json` + `public/sw.js` (sisi VPS) dan `docs/manifest.json`
 + `docs/sw.js` (sisi GitHub Pages) — dua service worker terpisah karena
 dua origin berbeda. **Service worker cuma aktif di HTTPS atau localhost**
-— versi VPS di port 8091 tanpa domain TIDAK akan punya mode offline
-sampai domain asli + `certbot` terpasang. Versi GitHub Pages otomatis
-HTTPS jadi offline-nya langsung aktif begitu Pages di-enable.
+— begitu domain `wisatasesaot.my.id` + `certbot` terpasang (langkah 7 di
+`deploy/DEPLOY.md`), mode offline di sisi VPS otomatis aktif. Versi
+GitHub Pages otomatis HTTPS jadi offline-nya langsung aktif begitu Pages
+di-enable.
 
 Sudah diverifikasi via Playwright (bukan cuma ditulis) bahwa mode offline
 beneran jalan di kedua sisi: peta, halaman detail, dan data API tetap
