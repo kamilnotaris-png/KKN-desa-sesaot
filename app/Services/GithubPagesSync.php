@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Support\TitikWisataGeoJsonExporter;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
@@ -24,6 +25,12 @@ class GithubPagesSync
      * bersamaan - lihat retry di pushFile) tidak tersembunyi di balik satu
      * boolean agregat.
      *
+     * Dibungkus Cache::lock supaya panggilan manapun - job antrian
+     * (SyncTitikWisataToGithubPages, sudah ShouldBeUnique untuk dedup
+     * dispatch beruntun) MAUPUN command CLI `export:github-pages --push`
+     * (yang manggil method ini langsung, di luar jalur queue/dedup itu) -
+     * tidak pernah jalan bersamaan saling rebutan sha file yang sama.
+     *
      * @return array<string, bool>
      */
     public function pushAll(): array
@@ -36,6 +43,26 @@ class GithubPagesSync
             return [];
         }
 
+        $lock = Cache::lock('github-pages-sync-push', 120);
+
+        if (! $lock->block(30)) {
+            Log::warning('GithubPagesSync: dilewati, proses push lain masih berjalan (gagal dapat lock dalam 30 detik).');
+
+            return [];
+        }
+
+        try {
+            return $this->pushAllLocked($config);
+        } finally {
+            $lock->release();
+        }
+    }
+
+    /**
+     * @return array<string, bool>
+     */
+    private function pushAllLocked(array $config): array
+    {
         $http = Http::withToken($config['token'])
             ->withHeaders(['Accept' => 'application/vnd.github+json']);
 
@@ -50,9 +77,7 @@ class GithubPagesSync
 
             $results[$locale] = $this->pushFile($http, $config, $path, $locale);
 
-            // Jeda singkat di antara file - sopan santun ke GitHub API,
-            // walau penyebab utama kegagalan beruntun ternyata 409 Conflict
-            // (lihat retry di pushFile), bukan rate limit.
+            // Jeda singkat di antara file - sopan santun ke GitHub API.
             if ($i < count($locales) - 1) {
                 usleep(700_000);
             }
