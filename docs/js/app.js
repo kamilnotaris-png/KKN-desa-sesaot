@@ -1,12 +1,13 @@
 const DESA_LATLNG = '-8.524,116.264';
 
-const TITIK_ASAL = [
-    { nama: 'Bandara Internasional Lombok (LOP)', estimasi: '± 1 jam 15 menit' },
-    { nama: 'Kota Mataram', estimasi: '± 45 menit' },
-    { nama: 'Pelabuhan Lembar', estimasi: '± 1 jam' },
-    { nama: 'Senggigi', estimasi: '± 50 menit' },
-    { nama: 'Kawasan Mandalika', estimasi: '± 1 jam 30 menit' },
-];
+function applyStaticTexts() {
+    applyDocumentLocale();
+    document.getElementById('page-title').textContent = t('judul_situs');
+    document.getElementById('header-judul').textContent = `🗺️ ${t('judul_situs')}`;
+    document.getElementById('header-sub').textContent = t('sub_judul');
+    document.getElementById('arah-toggle-label').textContent = t('cara_ke_sini');
+    renderLanguageSwitcher('lang-switcher-root');
+}
 
 function mapsDirectionUrl(namaAsal) {
     const params = new URLSearchParams({
@@ -23,7 +24,7 @@ function initArahPanel() {
     const list = document.getElementById('arah-list');
     if (!toggle || !list) return;
 
-    list.innerHTML = TITIK_ASAL.map((titik) => `
+    list.innerHTML = t('titik_asal').map((titik) => `
         <a href="${mapsDirectionUrl(titik.nama)}" target="_blank" rel="noopener" class="arah-item">
             <span class="arah-item-nama">${titik.nama}</span>
             <span class="arah-item-estimasi">${titik.estimasi}</span>
@@ -63,7 +64,9 @@ function initPeta() {
         attribution: '&copy; OpenStreetMap contributors',
     }).addTo(map);
 
-    fetch('data.json')
+    const locale = getCurrentLocale();
+
+    fetch(dataFileForLocale(locale))
         .then((res) => res.json())
         .then((geojson) => {
             const layer = L.geoJSON(geojson, {
@@ -72,9 +75,9 @@ function initPeta() {
                     const p = feature.properties;
                     marker.bindPopup(`
                         <div class="popup-nama">${p.nama}</div>
-                        <div class="popup-meta">${p.kategori_label} &middot; Dusun ${p.dusun}</div>
+                        <div class="popup-meta">${p.kategori_label} &middot; ${t('dusun')} ${p.dusun}</div>
                         <p>${p.deskripsi ?? ''}</p>
-                        <a class="popup-link" href="detail.html?slug=${encodeURIComponent(p.slug)}">Lihat detail &rarr;</a>
+                        <a class="popup-link" href="detail.html?slug=${encodeURIComponent(p.slug)}&lang=${locale}">${t('lihat_detail')} &rarr;</a>
                     `);
                 },
             }).addTo(map);
@@ -85,6 +88,7 @@ function initPeta() {
         });
 }
 
+document.addEventListener('DOMContentLoaded', applyStaticTexts);
 document.addEventListener('DOMContentLoaded', initPeta);
 document.addEventListener('DOMContentLoaded', initArahPanel);
 

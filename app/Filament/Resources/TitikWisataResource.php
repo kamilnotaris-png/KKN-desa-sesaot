@@ -28,12 +28,27 @@ class TitikWisataResource extends Resource
 
     public static function form(Form $form): Form
     {
+        $googleTranslateAction = fn (string $field) => Forms\Components\Actions\Action::make('translate_'.$field)
+            ->label('Buka Google Translate')
+            ->icon('heroicon-o-language')
+            ->link()
+            ->openUrlInNewTab()
+            ->url(function (?TitikWisata $record) use ($field): string {
+                $teksSumber = $record?->getTranslation($field, 'id', false) ?? '';
+
+                return 'https://translate.google.com/?sl=id&op=translate&text='.urlencode($teksSumber);
+            })
+            ->visible(fn ($livewire) => method_exists($livewire, 'getActiveFormsLocale')
+                && $livewire->getActiveFormsLocale()
+                && $livewire->getActiveFormsLocale() !== 'id');
+
         return $form
             ->schema([
                 Forms\Components\TextInput::make('nama')
                     ->required()
                     ->live(onBlur: true)
                     ->afterStateUpdated(fn (string $state, Forms\Set $set) => $set('slug', \Illuminate\Support\Str::slug($state)))
+                    ->hintAction($googleTranslateAction('nama'))
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('slug')
                     ->required()
@@ -45,10 +60,12 @@ class TitikWisataResource extends Resource
                 Forms\Components\TextInput::make('dusun')
                     ->required(),
                 Forms\Components\Textarea::make('deskripsi')
-                    ->helperText('Deskripsi singkat untuk daftar/kartu titik wisata.')
+                    ->helperText('Deskripsi singkat untuk daftar/kartu titik wisata. Untuk bahasa selain Indonesia, klik "Buka Google Translate" lalu salin hasilnya ke sini.')
+                    ->hintAction($googleTranslateAction('deskripsi'))
                     ->columnSpanFull(),
                 Forms\Components\Textarea::make('cerita_lokal')
                     ->helperText('Cerita/narasi lokal yang ditampilkan di halaman detail & dibacakan di video.')
+                    ->hintAction($googleTranslateAction('cerita_lokal'))
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('latitude')
                     ->required()

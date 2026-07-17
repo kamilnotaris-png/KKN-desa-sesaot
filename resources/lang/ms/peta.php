@@ -22,10 +22,10 @@ return [
     ],
 
     'titik_asal' => [
-        'bandara' => 'Lapangan Terbang Antarabangsa Lombok (LOP)',
-        'mataram' => 'Bandar Mataram',
-        'lembar' => 'Pelabuhan Lembar',
-        'senggigi' => 'Senggigi',
-        'mandalika' => 'Kawasan Mandalika',
+        ['nama' => 'Lapangan Terbang Antarabangsa Lombok (LOP)', 'estimasi' => '± 1 jam 15 minit'],
+        ['nama' => 'Bandar Mataram', 'estimasi' => '± 45 minit'],
+        ['nama' => 'Pelabuhan Lembar', 'estimasi' => '± 1 jam'],
+        ['nama' => 'Senggigi', 'estimasi' => '± 50 minit'],
+        ['nama' => 'Kawasan Mandalika', 'estimasi' => '± 1 jam 30 minit'],
     ],
 ];

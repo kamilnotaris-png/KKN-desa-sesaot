@@ -1,14 +1,23 @@
 @extends('layouts.app')
 
-@section('title', 'Peta Wisata Digital Desa Sesaot')
+@section('title', __('peta.judul_situs'))
 @section('main-class', 'overflow-hidden')
 
 @section('content')
+    <script>
+        window.PETA_I18N = {
+            caraKeSini: @json(__('peta.cara_ke_sini')),
+            lihatDetail: @json(__('peta.lihat_detail')),
+            dusun: @json(__('peta.dusun')),
+            titikAsal: @json(collect(__('peta.titik_asal'))->values()),
+        };
+    </script>
+
     <div class="relative h-full">
         <div id="peta-wisata"></div>
 
         <div class="arah-panel">
-            <button type="button" id="arah-toggle" class="arah-toggle">🧭 Cara ke Sini</button>
+            <button type="button" id="arah-toggle" class="arah-toggle">🧭 {{ __('peta.cara_ke_sini') }}</button>
             <div id="arah-list" class="arah-list hidden"></div>
         </div>
     </div>

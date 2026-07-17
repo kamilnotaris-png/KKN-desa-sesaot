@@ -23,13 +23,29 @@ class GithubPagesSync
             return false;
         }
 
-        $base = "https://api.github.com/repos/{$config['owner']}/{$config['repo']}/contents/{$config['path']}";
         $http = Http::withToken($config['token'])
             ->withHeaders(['Accept' => 'application/vnd.github+json']);
 
+        $default = config('languages.default');
+        $ok = true;
+
+        foreach (array_keys(config('languages.supported')) as $locale) {
+            $path = $locale === $default
+                ? $config['path']
+                : preg_replace('/\.json$/', ".{$locale}.json", $config['path']);
+
+            $ok = $this->pushFile($http, $config, $path, $locale) && $ok;
+        }
+
+        return $ok;
+    }
+
+    private function pushFile(\Illuminate\Http\Client\PendingRequest $http, array $config, string $path, string $locale): bool
+    {
+        $base = "https://api.github.com/repos/{$config['owner']}/{$config['repo']}/contents/{$path}";
         $sha = $this->currentFileSha($http, $base, $config['branch']);
 
-        $content = TitikWisataGeoJsonExporter::toJson(withGeneratedAt: true);
+        $content = TitikWisataGeoJsonExporter::toJson(withGeneratedAt: true, locale: $locale);
 
         $response = $http->put($base, array_filter([
             'message' => 'Update data titik wisata via admin panel ('.now()->toDateTimeString().')',
@@ -40,6 +56,7 @@ class GithubPagesSync
 
         if ($response->failed()) {
             Log::error('GithubPagesSync: gagal push ke GitHub.', [
+                'path' => $path,
                 'status' => $response->status(),
                 'body' => $response->json(),
             ]);

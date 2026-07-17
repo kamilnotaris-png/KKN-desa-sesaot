@@ -1,4 +1,4 @@
-const CACHE_NAME = 'wisata-sesaot-pages-v1';
+const CACHE_NAME = 'wisata-sesaot-pages-v2';
 const RUNTIME_CACHEABLE_HOSTS = [self.location.host, 'tile.openstreetmap.org'];
 
 self.addEventListener('install', (event) => {
@@ -48,9 +48,9 @@ self.addEventListener('fetch', (event) => {
     if (!isCacheableRequest(request)) return;
 
     const url = new URL(request.url);
-    // data.json (POI) network-first supaya update Pokdarwis cepat kelihatan;
+    // data*.json (POI, per-bahasa) network-first supaya update Pokdarwis cepat kelihatan;
     // sisanya (shell, tile) cache-first karena jarang berubah.
-    const isFreshData = request.mode === 'navigate' || url.pathname.endsWith('data.json');
+    const isFreshData = request.mode === 'navigate' || /\/data(\.[a-z]{2})?\.json$/.test(url.pathname);
 
     event.respondWith(isFreshData ? networkFirst(request) : cacheFirst(request));
 });

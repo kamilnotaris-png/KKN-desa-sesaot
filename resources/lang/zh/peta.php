@@ -22,10 +22,10 @@ return [
     ],
 
     'titik_asal' => [
-        'bandara' => '龙目国际机场 (LOP)',
-        'mataram' => '马塔兰市',
-        'lembar' => '伦巴港',
-        'senggigi' => '森吉吉',
-        'mandalika' => '曼达利卡区',
+        ['nama' => '龙目国际机场 (LOP)', 'estimasi' => '约1小时15分钟'],
+        ['nama' => '马塔兰市', 'estimasi' => '约45分钟'],
+        ['nama' => '伦巴港', 'estimasi' => '约1小时'],
+        ['nama' => '森吉吉', 'estimasi' => '约50分钟'],
+        ['nama' => '曼达利卡区', 'estimasi' => '约1小时30分钟'],
     ],
 ];

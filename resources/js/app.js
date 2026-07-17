@@ -2,13 +2,8 @@ import L from 'leaflet';
 
 const DESA_LATLNG = '-8.524,116.264';
 
-const TITIK_ASAL = [
-    { nama: 'Bandara Internasional Lombok (LOP)', estimasi: '± 1 jam 15 menit' },
-    { nama: 'Kota Mataram', estimasi: '± 45 menit' },
-    { nama: 'Pelabuhan Lembar', estimasi: '± 1 jam' },
-    { nama: 'Senggigi', estimasi: '± 50 menit' },
-    { nama: 'Kawasan Mandalika', estimasi: '± 1 jam 30 menit' },
-];
+const I18N = window.PETA_I18N ?? {};
+const TITIK_ASAL = I18N.titikAsal ?? [];
 
 function mapsDirectionUrl(namaAsal) {
     const params = new URLSearchParams({
@@ -75,9 +70,9 @@ function initPeta() {
                     marker.bindPopup(`
                         <div class="text-sm">
                             <strong>${p.nama}</strong><br>
-                            <span class="text-gray-500">${p.kategori_label} &middot; Dusun ${p.dusun}</span>
+                            <span class="text-gray-500">${p.kategori_label} &middot; ${I18N.dusun ?? 'Dusun'} ${p.dusun}</span>
                             <p class="mt-1">${p.deskripsi ?? ''}</p>
-                            <a href="${p.detail_url}" class="text-wisata-green-600 font-semibold">Lihat detail &rarr;</a>
+                            <a href="${p.detail_url}" class="text-wisata-green-600 font-semibold">${I18N.lihatDetail ?? 'Lihat detail'} &rarr;</a>
                         </div>
                     `);
                 },

@@ -13,11 +13,18 @@ class ExportGithubPagesData extends Command
 
     public function handle(): int
     {
-        $json = TitikWisataGeoJsonExporter::toJson(withGeneratedAt: true);
-        file_put_contents(base_path('docs/data.json'), $json);
+        $default = config('languages.default');
+        $locales = array_keys(config('languages.supported'));
 
-        $count = count(json_decode($json, true)['features']);
-        $this->info("docs/data.json diperbarui ({$count} titik wisata aktif).");
+        foreach ($locales as $locale) {
+            $json = TitikWisataGeoJsonExporter::toJson(withGeneratedAt: true, locale: $locale);
+
+            $filename = $locale === $default ? 'docs/data.json' : "docs/data.{$locale}.json";
+            file_put_contents(base_path($filename), $json);
+
+            $count = count(json_decode($json, true)['features']);
+            $this->info("{$filename} diperbarui ({$count} titik wisata aktif).");
+        }
 
         if ($this->option('push')) {
             $pushed = app(\App\Services\GithubPagesSync::class)->push();
