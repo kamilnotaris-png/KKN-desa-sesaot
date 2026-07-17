@@ -15,29 +15,49 @@ class GithubPagesSync
      */
     public function push(): bool
     {
+        return ! in_array(false, $this->pushAll(), true);
+    }
+
+    /**
+     * Push semua file data per-locale, return hasil per locale supaya
+     * kegagalan sebagian (mis. kena secondary rate limit GitHub setelah
+     * beberapa write beruntun) tidak tersembunyi di balik satu boolean.
+     *
+     * @return array<string, bool>
+     */
+    public function pushAll(): array
+    {
         $config = config('github.pages_sync');
 
         if (! $config['enabled'] || empty($config['token'])) {
             Log::info('GithubPagesSync: dilewati, GITHUB_PAGES_SYNC_ENABLED/GITHUB_TOKEN belum diisi.');
 
-            return false;
+            return [];
         }
 
         $http = Http::withToken($config['token'])
             ->withHeaders(['Accept' => 'application/vnd.github+json']);
 
         $default = config('languages.default');
-        $ok = true;
+        $locales = array_keys(config('languages.supported'));
+        $results = [];
 
-        foreach (array_keys(config('languages.supported')) as $locale) {
+        foreach ($locales as $i => $locale) {
             $path = $locale === $default
                 ? $config['path']
                 : preg_replace('/\.json$/', ".{$locale}.json", $config['path']);
 
-            $ok = $this->pushFile($http, $config, $path, $locale) && $ok;
+            $results[$locale] = $this->pushFile($http, $config, $path, $locale);
+
+            // GitHub Contents API menerapkan secondary rate limit untuk write
+            // beruntun ke repo yang sama - jeda singkat di antara file supaya
+            // tidak semuanya gagal kecuali yang pertama.
+            if ($i < count($locales) - 1) {
+                usleep(700_000);
+            }
         }
 
-        return $ok;
+        return $results;
     }
 
     private function pushFile(\Illuminate\Http\Client\PendingRequest $http, array $config, string $path, string $locale): bool

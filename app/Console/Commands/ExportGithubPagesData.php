@@ -27,8 +27,21 @@ class ExportGithubPagesData extends Command
         }
 
         if ($this->option('push')) {
-            $pushed = app(\App\Services\GithubPagesSync::class)->push();
-            $this->info($pushed ? 'Berhasil push ke GitHub.' : 'Push dilewati (sync belum dikonfigurasi - cek .env).');
+            $results = app(\App\Services\GithubPagesSync::class)->pushAll();
+
+            if ($results === []) {
+                $this->warn('Push dilewati (sync belum dikonfigurasi - cek GITHUB_PAGES_SYNC_ENABLED/GITHUB_TOKEN di .env).');
+            } else {
+                foreach ($results as $locale => $ok) {
+                    $ok
+                        ? $this->info("Push {$locale}: berhasil.")
+                        : $this->error("Push {$locale}: GAGAL - cek storage/logs/laravel.log untuk detail.");
+                }
+
+                if (in_array(false, $results, true)) {
+                    return self::FAILURE;
+                }
+            }
         }
 
         return self::SUCCESS;
