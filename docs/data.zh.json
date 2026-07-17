@@ -1,6 +1,6 @@
 {
     "type": "FeatureCollection",
-    "generated_at": "2026-07-17T18:13:00+00:00",
+    "generated_at": "2026-07-17T18:18:33+00:00",
     "features": [
         {
             "type": "Feature",
@@ -168,6 +168,30 @@
                 "latitude": -8.5215,
                 "longitude": 116.2675,
                 "detail_url": "https://wisatasesaot.my.id/peta/bukit-vetong"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.269,
+                    -8.5198
+                ]
+            },
+            "properties": {
+                "nama": "芒果山",
+                "slug": "bukit-mangga",
+                "kategori": "jalur_tracking",
+                "kategori_label": "徒步路线",
+                "dusun": "Sesaot Timuk",
+                "deskripsi": "一座适合初学者的轻松徒步山丘，可眺望绿意盎然的山丘与林贾尼火山，设有大型星形拍照点，并供应赛索特当地咖啡，是欣赏日落的热门去处。",
+                "cerita_lokal": null,
+                "foto": null,
+                "video_embed_url": null,
+                "latitude": -8.5198,
+                "longitude": 116.269,
+                "detail_url": "https://wisatasesaot.my.id/peta/bukit-mangga"
             }
         }
     ]
