@@ -10,9 +10,10 @@ upgrade resource.
 
 ## 0. Prasyarat
 
-- Domain/subdomain sudah diarahkan ke IP VPS (A record). Contoh dipakai
-  di bawah: `kkn-sesaot.fhunizar.my.id` — ganti sesuai subdomain yang
-  benar-benar kamu daftarkan di DomaiNesia.
+- Domain yang dipakai: **`kkn-sesaot.fhunizar.my.id`** (subdomain dari
+  `fhunizar.my.id` yang sudah dimiliki — tidak ada biaya tambahan).
+  Tambahkan A record `kkn-sesaot` di panel DNS DomaiNesia mengarah ke IP
+  VPS ini (`103.93.132.225`) sebelum lanjut ke langkah 7 (HTTPS).
 - Cek versi PHP aktif di VPS: `php -v` (dokumentasi website-FH mencatat
   8.3 per Juli 2026 — mungkin sudah berubah, cek ulang).
 
