@@ -11,6 +11,7 @@ return [
     'titik_lainnya' => '其他景点',
     'koordinat' => '坐标',
     'buka_di_peta' => '在地图中打开',
+    'petunjuk_arah' => '获取到这里的路线',
 
     'kategori' => [
         'air_terjun' => '瀑布',

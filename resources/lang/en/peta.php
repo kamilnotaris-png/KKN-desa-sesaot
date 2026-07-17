@@ -11,6 +11,7 @@ return [
     'titik_lainnya' => 'Other Attractions',
     'koordinat' => 'Coordinates',
     'buka_di_peta' => 'open in map',
+    'petunjuk_arah' => 'Get Directions Here',
 
     'kategori' => [
         'air_terjun' => 'Waterfall',

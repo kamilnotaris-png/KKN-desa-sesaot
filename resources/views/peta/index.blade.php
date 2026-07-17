@@ -8,6 +8,7 @@
         window.PETA_I18N = {
             caraKeSini: @json(__('peta.cara_ke_sini')),
             lihatDetail: @json(__('peta.lihat_detail')),
+            petunjukArah: @json(__('peta.petunjuk_arah')),
             dusun: @json(__('peta.dusun')),
             titikAsal: @json(collect(__('peta.titik_asal'))->values()),
         };

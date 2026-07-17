@@ -20,6 +20,12 @@
 
         <h1 class="text-2xl font-bold mt-2">{{ $titikWisata->nama }}</h1>
 
+        <a href="https://www.google.com/maps/dir/?api=1&destination={{ $titikWisata->latitude }},{{ $titikWisata->longitude }}"
+           target="_blank" rel="noopener"
+           class="mt-4 inline-flex items-center gap-2 bg-wisata-green-600 text-white text-sm font-semibold px-4 py-2 rounded-full">
+            🧭 {{ __('peta.petunjuk_arah') }}
+        </a>
+
         @if ($titikWisata->deskripsi)
             <p class="mt-3 text-gray-700">{{ $titikWisata->deskripsi }}</p>
         @endif

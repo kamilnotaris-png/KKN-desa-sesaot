@@ -15,6 +15,11 @@ function mapsDirectionUrl(namaAsal) {
     return `https://www.google.com/maps/dir/?${params.toString()}`;
 }
 
+function mapsDirectionToPointUrl(lat, lng) {
+    const params = new URLSearchParams({ api: '1', destination: `${lat},${lng}` });
+    return `https://www.google.com/maps/dir/?${params.toString()}`;
+}
+
 function initArahPanel() {
     const toggle = document.getElementById('arah-toggle');
     const list = document.getElementById('arah-list');
@@ -73,6 +78,8 @@ function initPeta() {
                             <span class="text-gray-500">${p.kategori_label} &middot; ${I18N.dusun ?? 'Dusun'} ${p.dusun}</span>
                             <p class="mt-1">${p.deskripsi ?? ''}</p>
                             <a href="${p.detail_url}" class="text-wisata-green-600 font-semibold">${I18N.lihatDetail ?? 'Lihat detail'} &rarr;</a>
+                            <br>
+                            <a href="${mapsDirectionToPointUrl(p.latitude, p.longitude)}" target="_blank" rel="noopener" class="text-wisata-green-600 font-semibold">🧭 ${I18N.petunjukArah ?? 'Petunjuk Arah'}</a>
                         </div>
                     `);
                 },

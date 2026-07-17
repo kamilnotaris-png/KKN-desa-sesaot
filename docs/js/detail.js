@@ -65,6 +65,11 @@ async function renderDetail() {
     document.title = `${p.nama} — ${t('judul_situs')}`;
     document.getElementById('page-title').textContent = document.title;
 
+    const directionsUrl = `https://www.google.com/maps/dir/?${new URLSearchParams({
+        api: '1',
+        destination: `${p.latitude},${p.longitude}`,
+    }).toString()}`;
+
     root.innerHTML = `
         <a class="back-link" href="index.html?lang=${locale}">&larr; ${t('kembali_ke_peta')}</a>
         ${fotoHtml}
@@ -73,6 +78,7 @@ async function renderDetail() {
             <span class="dusun-label">${t('dusun')} ${escapeHtml(p.dusun)}</span>
         </div>
         <h1 class="detail-title">${escapeHtml(p.nama)}</h1>
+        <a class="directions-btn" href="${directionsUrl}" target="_blank" rel="noopener">🧭 ${t('petunjuk_arah')}</a>
         ${p.deskripsi ? `<p>${escapeHtml(p.deskripsi)}</p>` : ''}
         ${videoHtml}
         ${ceritaHtml}

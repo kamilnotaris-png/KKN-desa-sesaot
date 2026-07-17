@@ -11,6 +11,7 @@ return [
     'titik_lainnya' => 'Tempat Menarik Lain',
     'koordinat' => 'Koordinat',
     'buka_di_peta' => 'buka dalam peta',
+    'petunjuk_arah' => 'Dapatkan Arah ke Sini',
 
     'kategori' => [
         'air_terjun' => 'Air Terjun',

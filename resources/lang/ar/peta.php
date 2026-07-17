@@ -11,6 +11,7 @@ return [
     'titik_lainnya' => 'معالم أخرى',
     'koordinat' => 'الإحداثيات',
     'buka_di_peta' => 'فتح في الخريطة',
+    'petunjuk_arah' => 'احصل على الاتجاهات إلى هنا',
 
     'kategori' => [
         'air_terjun' => 'شلال',

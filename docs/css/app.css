@@ -173,6 +173,20 @@ main {
     margin: 0.5rem 0;
 }
 
+.directions-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--green-600);
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    margin: 0.75rem 0;
+}
+
 .video-wrap {
     position: relative;
     padding-top: 56.25%;
