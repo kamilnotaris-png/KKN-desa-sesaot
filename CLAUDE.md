@@ -16,14 +16,21 @@ self-hosted, backend sendiri) supaya source code-nya bisa didaftarkan HKI.
 
 ## Status Saat Ini (per 2026-07-17)
 
-- Semua pengembangan ada di branch **`claude/hki-registration-alternatives-bzcmwd`**
-  (8 commit di depan `main`, 0 di belakang — merge dijamin bersih, sudah
-  diverifikasi via `git merge-tree`, tidak ada konflik).
-- **Belum di-merge ke `main`** — user sedang proses bikin PR lewat GitHub UI.
-- **GitHub Pages belum diaktifkan** (terverifikasi via API: 0 workflow run).
-  Begitu diaktifkan, source branch-nya harus `claude/hki-registration-alternatives-bzcmwd`
-  (bukan `main`, karena folder `docs/` belum ada di `main`) sampai PR di-merge.
-- **Belum di-deploy ke VPS** — `deploy/DEPLOY.md` belum dijalankan sama sekali.
+- **Sudah di-merge ke `main`** (PR #1, merge commit `793fe4c1`). Branch
+  fitur `claude/hki-registration-alternatives-bzcmwd` sudah selesai
+  tugasnya; pekerjaan lanjutan (termasuk fitur multi-bahasa) langsung
+  dikerjakan & di-push ke `main`.
+- **GitHub Pages sudah aktif** — repo dibuat public (perlu untuk Pages
+  gratis), source `main` folder `docs/`, sudah dites merender peta.
+- **Fitur multi-bahasa (5 bahasa: id/en/ar/zh/ms) sudah selesai** baik di
+  sisi VPS (Laravel, model `TitikWisata` pakai `spatie/laravel-translatable`,
+  admin Filament translatable + locale switcher) maupun sisi GitHub Pages
+  (`docs/js/i18n.js` kamus mandiri + `docs/data.{locale}.json` per bahasa).
+  Lihat bagian "Multi-Bahasa" di bawah untuk detail arsitektur.
+- **Belum di-deploy ke VPS** — `deploy/DEPLOY.md` belum dijalankan sama
+  sekali. VPS masih perlu: `git pull origin main`, migrate (kolom
+  `nama`/`deskripsi`/`cerita_lokal` sekarang JSON, ada migrasi baru),
+  `npm run build`, `php artisan optimize:clear && php artisan optimize`.
 - **Domain belum diputuskan.** Sempat dipertimbangkan subdomain
   `fhunizar.my.id` / `fh.unizar.ac.id`, tapi user memutuskan proyek ini
   harus punya domain independen (bukan menumpang FH Unizar), keputusan
@@ -88,6 +95,52 @@ Sudah diverifikasi via Playwright (bukan cuma ditulis) bahwa mode offline
 beneran jalan di kedua sisi: peta, halaman detail, dan data API tetap
 bisa diakses setelah kunjungan online pertama.
 
+### Multi-Bahasa
+
+5 bahasa: **Indonesia (default), English, Arab, Mandarin, Melayu** —
+daftar & label/flag ada di `config/languages.php`. Hanya halaman publik
+yang diterjemahkan; **admin panel Filament tetap Bahasa Indonesia**
+(dipakai staf Pokdarwis lokal, tidak perlu multi-bahasa).
+
+**Sisi VPS (Laravel):**
+- Kolom `nama`, `deskripsi`, `cerita_lokal` di `TitikWisata` adalah JSON
+  (per-locale) lewat `spatie/laravel-translatable` (`HasTranslations` +
+  `$translatable`). Migrasi konversi ada di
+  `database/migrations/2026_07_17_094238_add_translatable_columns_to_titik_wisatas_table.php`.
+- Locale halaman publik ditentukan `App\Http\Middleware\SetPublicLocale`
+  (alias `public-locale`, hanya dipasang di route publik di `routes/web.php`
+  — **sengaja tidak** didaftarkan global di grup `web` supaya tidak bocor
+  ke `/admin`). Switch bahasa lewat query `?lang=xx`, disimpan di session.
+- String UI (bukan data) ada di `resources/lang/{id,en,ar,zh,ms}/peta.php`,
+  dipanggil via `__('peta.xxx')`.
+- Admin panel: `SpatieLaravelTranslatablePlugin` terpasang di
+  `AdminPanelProvider`, `TitikWisataResource` implement `Translatable`
+  concern → ada locale switcher di form admin. **Tidak ada auto-translate
+  API** (sempat dibangun pakai Google Cloud Translation API lalu dibatalkan
+  karena butuh API key + billing) — sebagai gantinya tiap field
+  nama/deskripsi/cerita_lokal punya hint-action "Buka Google Translate"
+  yang buka `translate.google.com` di tab baru dengan teks Indonesia
+  sudah ter-prefill, staf tinggal salin-tempel hasil terjemahan manual.
+  Zero-cost, tidak butuh API key.
+
+**Sisi GitHub Pages (`docs/`, static, tanpa Laravel):**
+- `docs/js/i18n.js` — kamus JS mandiri (duplikat isi dari
+  `resources/lang/*/peta.php`, harus disinkronkan manual kalau ada
+  perubahan string) + fungsi `getCurrentLocale()`/`t()`/`renderLanguageSwitcher()`.
+  Locale disimpan di `localStorage`, override lewat `?lang=xx`.
+- Data titik wisata: `docs/data.json` (id, default) + `docs/data.en.json`,
+  `docs/data.ar.json`, `docs/data.zh.json`, `docs/data.ms.json` — semua
+  di-generate `php artisan export:github-pages` (loop semua locale di
+  `config('languages.supported')`) dan di-push otomatis oleh
+  `GithubPagesSync::push()` lewat GitHub Contents API (juga di-loop per
+  locale, path lain dari `docs/data.json` diturunkan otomatis).
+- Service worker (`docs/sw.js`) network-first regex-nya diperluas jadi
+  `/\/data(\.[a-z]{2})?\.json$/` supaya cocok ke semua file data per-bahasa,
+  bukan cuma `data.json` — versi cache dinaikkan ke `v2`.
+- **Kalau nambah string UI baru:** WAJIB update dua tempat —
+  `resources/lang/*/peta.php` (Laravel) DAN `docs/js/i18n.js` (statis) —
+  tidak ada mekanisme sync otomatis antara keduanya.
+
 ## Deploy
 
 Runbook lengkap: `deploy/DEPLOY.md`. Ringkasan urutan:
@@ -137,6 +190,19 @@ php artisan export:github-pages --push   # + langsung push ke GitHub (butuh GITH
 ```
 
 ## Riwayat Perubahan
+
+### Sesi 2026-07-17 (lanjutan — merge, GitHub Pages, multi-bahasa)
+- **Merge ke `main`** — PR #1 di-merge (merge commit `793fe4c1`).
+- **GitHub Pages diaktifkan** — repo dibuat public (syarat Pages gratis di
+  akun non-Pro), source `main`/`docs`, dicek "GitHub Pages source saved."
+- **Fitur multi-bahasa (5 bahasa) selesai**, sisi VPS maupun GitHub Pages
+  — lihat bagian "Multi-Bahasa" di atas untuk arsitektur lengkap.
+  Keputusan penting yang diambil bareng user: tanpa API berbayar/API key
+  untuk auto-translate — dicoba dulu pakai Google Cloud Translation API
+  lalu dibatalkan (user: "tidak usah pake api"), diganti hint-action
+  "Buka Google Translate" manual di admin panel (zero-cost).
+- Fix bug `APP_LOCALE=en` di `.env` (harusnya `id`) — sisa stub default
+  Laravel yang bikin semua konten publik render Bahasa Inggris.
 
 ### Sesi 2026-07-17
 - Scaffold project Laravel 12 dari nol, model/migration/seeder `TitikWisata`.
