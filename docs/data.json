@@ -1,0 +1,126 @@
+{
+    "type": "FeatureCollection",
+    "generated_at": "2026-07-17T04:21:56+00:00",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.265,
+                    -8.523
+                ]
+            },
+            "properties": {
+                "nama": "Air Terjun Tibu Sendalem",
+                "slug": "air-terjun-tibu-sendalem",
+                "kategori": "air_terjun",
+                "kategori_label": "Air Terjun",
+                "dusun": "Sesaot Lauk",
+                "deskripsi": "Air terjun dengan kolam alami di tepi Hutan Lindung Sesaot.",
+                "cerita_lokal": null,
+                "foto": null,
+                "video_embed_url": null,
+                "latitude": -8.523,
+                "longitude": 116.265,
+                "detail_url": "http://localhost/peta/air-terjun-tibu-sendalem"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.2668,
+                    -8.5245
+                ]
+            },
+            "properties": {
+                "nama": "Air Terjun Tembiras",
+                "slug": "air-terjun-tembiras",
+                "kategori": "air_terjun",
+                "kategori_label": "Air Terjun",
+                "dusun": "Sesaot Timur",
+                "deskripsi": "Salah satu air terjun favorit wisatawan di jalur trekking Sesaot.",
+                "cerita_lokal": null,
+                "foto": null,
+                "video_embed_url": null,
+                "latitude": -8.5245,
+                "longitude": 116.2668,
+                "detail_url": "http://localhost/peta/air-terjun-tembiras"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.2637,
+                    -8.5219
+                ]
+            },
+            "properties": {
+                "nama": "Tibu Goa",
+                "slug": "tibu-goa",
+                "kategori": "air_terjun",
+                "kategori_label": "Air Terjun",
+                "dusun": "Sesaot Lauk",
+                "deskripsi": "Pemandian alami di sekitar area goa.",
+                "cerita_lokal": null,
+                "foto": null,
+                "video_embed_url": null,
+                "latitude": -8.5219,
+                "longitude": 116.2637,
+                "detail_url": "http://localhost/peta/tibu-goa"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.2611,
+                    -8.5262
+                ]
+            },
+            "properties": {
+                "nama": "Aik Nyet",
+                "slug": "aik-nyet",
+                "kategori": "pemandian",
+                "kategori_label": "Pemandian",
+                "dusun": "Gontoran",
+                "deskripsi": "Pemandian air dingin alami, salah satu titik favorit keluarga.",
+                "cerita_lokal": null,
+                "foto": null,
+                "video_embed_url": null,
+                "latitude": -8.5262,
+                "longitude": 116.2611,
+                "detail_url": "http://localhost/peta/aik-nyet"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.2655,
+                    -8.5241
+                ]
+            },
+            "properties": {
+                "nama": "Sate Bulayak",
+                "slug": "sate-bulayak",
+                "kategori": "kuliner",
+                "kategori_label": "Kuliner",
+                "dusun": "Sesaot Timur",
+                "deskripsi": "Kuliner khas Sesaot, sate dengan lontong bulayak.",
+                "cerita_lokal": null,
+                "foto": null,
+                "video_embed_url": null,
+                "latitude": -8.5241,
+                "longitude": 116.2655,
+                "detail_url": "http://localhost/peta/sate-bulayak"
+            }
+        }
+    ]
+}

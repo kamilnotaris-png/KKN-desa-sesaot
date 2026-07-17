@@ -1,0 +1,219 @@
+:root {
+    --green-600: #1a6b3c;
+    --green-700: #14512d;
+    color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    color: #1f2937;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: var(--green-700);
+    color: #fff;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+header .sub {
+    font-size: 0.75rem;
+    opacity: 0.8;
+}
+
+main {
+    flex: 1;
+    min-height: 0;
+}
+
+#peta-wisata {
+    height: 100%;
+    width: 100%;
+}
+
+.titik-wisata-marker span {
+    font-size: 1.5rem;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,.4));
+}
+
+.popup-nama { font-weight: 700; }
+.popup-meta { color: #6b7280; font-size: 0.8rem; }
+.popup-link { color: var(--green-600); font-weight: 600; text-decoration: none; }
+
+.hidden { display: none; }
+
+.arah-panel {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    z-index: 1000;
+    max-width: 16rem;
+}
+
+.arah-toggle {
+    background: white;
+    border: none;
+    border-radius: 999px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    color: var(--green-700);
+}
+
+.arah-list {
+    margin-top: 0.5rem;
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.arah-item {
+    display: flex;
+    flex-direction: column;
+    padding: 0.6rem 0.85rem;
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.arah-item:last-child {
+    border-bottom: none;
+}
+
+.arah-item-nama {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--green-700);
+}
+
+.arah-item-estimasi {
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
+.detail-wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 1.25rem 1rem;
+}
+
+.back-link {
+    color: var(--green-600);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.detail-photo {
+    width: 100%;
+    height: 14rem;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    margin-top: 0.75rem;
+}
+
+.badge {
+    display: inline-block;
+    background: rgba(26,107,60,.1);
+    color: var(--green-700);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+}
+
+.dusun-label {
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin-left: 0.5rem;
+}
+
+.detail-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+}
+
+.video-wrap {
+    position: relative;
+    padding-top: 56.25%;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    margin-top: 1.25rem;
+}
+
+.video-wrap iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.cerita-box {
+    background: #f9fafb;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    margin-top: 1.25rem;
+    white-space: pre-line;
+}
+
+.cerita-box h2, .lainnya h2 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: #6b7280;
+    margin: 0 0 0.5rem;
+}
+
+.lainnya {
+    margin-top: 2rem;
+}
+
+.lainnya-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+
+.lainnya-card {
+    display: block;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    padding: 0.75rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+.lainnya-card strong { display: block; font-size: 0.875rem; }
+.lainnya-card span { display: block; font-size: 0.75rem; color: #6b7280; margin-top: 0.25rem; }
+
+.coords {
+    margin-top: 1.25rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.coords a { color: var(--green-600); font-weight: 600; }

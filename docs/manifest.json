@@ -1,0 +1,24 @@
+{
+    "name": "Peta Wisata Digital Desa Sesaot",
+    "short_name": "Wisata Sesaot",
+    "description": "Peta interaktif titik wisata Desa Sesaot, Kecamatan Narmada, Lombok Barat.",
+    "start_url": "index.html",
+    "scope": "./",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#1a6b3c",
+    "icons": [
+        {
+            "src": "icons/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "icons/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}

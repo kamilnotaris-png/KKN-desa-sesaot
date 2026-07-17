@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="theme-color" content="#1a6b3c">
+    <title>Peta Wisata Digital Desa Sesaot</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icons/icon-192.png">
+    <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <header>
+        <a href="index.html">🗺️ Wisata Desa Sesaot</a>
+        <span class="sub">Kec. Narmada, Lombok Barat</span>
+    </header>
+    <main>
+        <div style="position: relative; height: 100%;">
+            <div id="peta-wisata"></div>
+            <div class="arah-panel">
+                <button type="button" id="arah-toggle" class="arah-toggle">🧭 Cara ke Sini</button>
+                <div id="arah-list" class="arah-list hidden"></div>
+            </div>
+        </div>
+    </main>
+    <script src="vendor/leaflet/leaflet.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

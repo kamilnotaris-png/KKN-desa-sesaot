@@ -1,0 +1,68 @@
+@import 'tailwindcss';
+@import 'leaflet/dist/leaflet.css';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --font-sans: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    --color-wisata-green-600: #1a6b3c;
+    --color-wisata-green-700: #14512d;
+    --color-wisata-gold-500: #e0a940;
+}
+
+#peta-wisata {
+    height: 100%;
+    width: 100%;
+}
+
+.arah-panel {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    z-index: 1000;
+    max-width: 16rem;
+}
+
+.arah-toggle {
+    background: white;
+    border-radius: 999px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    color: #14512d;
+}
+
+.arah-list {
+    margin-top: 0.5rem;
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.arah-item {
+    display: flex;
+    flex-direction: column;
+    padding: 0.6rem 0.85rem;
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.arah-item:last-child {
+    border-bottom: none;
+}
+
+.arah-item-nama {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #14512d;
+}
+
+.arah-item-estimasi {
+    font-size: 0.75rem;
+    color: #6b7280;
+}
