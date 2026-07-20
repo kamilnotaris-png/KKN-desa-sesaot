@@ -1,6 +1,6 @@
 {
     "type": "FeatureCollection",
-    "generated_at": "2026-07-17T18:18:44+00:00",
+    "generated_at": "2026-07-20T06:46:06+00:00",
     "features": [
         {
             "type": "Feature",
@@ -24,6 +24,30 @@
                 "latitude": -8.523,
                 "longitude": 116.265,
                 "detail_url": "https://wisatasesaot.my.id/peta/air-terjun-tibu-sendalem"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.2442656,
+                    -8.5415375
+                ]
+            },
+            "properties": {
+                "nama": "",
+                "slug": "kantor-desa",
+                "kategori": "budaya",
+                "kategori_label": "文化",
+                "dusun": "Kantor Desa Sesaot",
+                "deskripsi": "",
+                "cerita_lokal": "",
+                "foto": null,
+                "video_embed_url": null,
+                "latitude": -8.5415375,
+                "longitude": 116.2442656,
+                "detail_url": "https://wisatasesaot.my.id/peta/kantor-desa"
             }
         },
         {
