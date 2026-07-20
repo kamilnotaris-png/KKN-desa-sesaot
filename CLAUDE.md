@@ -167,8 +167,22 @@ ditambahkan tanpa upgrade resource.
 
 ## Catatan Penting / Belum Beres
 
-- **Koordinat GPS di `TitikWisataSeeder` masih perkiraan/placeholder**,
-  bukan hasil survei lapangan asli. WAJIB diganti sebelum cetak QR final.
+- **Koordinat GPS di `TitikWisataSeeder`** (per 2026-07-20) berasal dari
+  decode Plus Code alamat Google Maps (presisi ~3-14m), BUKAN hasil survei
+  GPS lapangan langsung — jadi jauh lebih akurat dari placeholder lama,
+  tapi tetap WAJIB divalidasi/diganti dengan survei lapangan asli sebelum
+  cetak QR final. Taman Miring, Bukit Khesari, dan Bawak Goak Rivercamp
+  untuk sementara berbagi satu koordinat yang sama (dikonfirmasi user
+  satu kawasan) — wajib dipisah begitu ada survei GPS per titik.
+- **Air Terjun Tibu Sendalem dan Air Terjun Tembiras sengaja TIDAK
+  dimasukkan** ke `TitikWisataSeeder` — dikonfirmasi user (alamat Google
+  Maps + cross-check artikel) keduanya secara administratif berada di
+  **Desa Buwun Sejati**, bukan Desa Sesaot, meski sering disebut "Sesaot"
+  di artikel wisata karena berada di kawasan Hutan Sesaot yang sama.
+  Konsisten dengan pola sebelumnya (Air Terjun Segenter, Titian Batu
+  Kawangan, dll juga dikeluarkan karena alasan sama). Tibu Sendalem juga
+  belum resmi dibuka untuk umum (riwayat kecelakaan, lokasi sangat
+  terpencil) — jangan ditambahkan lagi tanpa konfirmasi ulang batas desa.
 - **Ikon PWA** (`public/icons/`, `docs/icons/`) dibuat programatis via
   PHP GD (placeholder), bukan desain resmi — ganti sebelum rilis publik.
 - **Akun admin dev** (kredensial dicatat terpisah, tidak di file ini) —
@@ -196,6 +210,29 @@ php artisan export:github-pages --push   # + langsung push ke GitHub (butuh GITH
 ```
 
 ## Riwayat Perubahan
+
+### Sesi 2026-07-20 (layer satelit, rombak data titik wisata pakai Plus Code)
+- **Layer citra satelit** — toggle peta OSM/Satelit via `L.control.layers()`
+  (pojok kiri bawah), pakai Esri World Imagery (gratis, tanpa API key,
+  konsisten dengan prinsip proyek menghindari dependensi API berbayar).
+  Diterapkan di VPS & GitHub Pages, string UI 5 bahasa.
+- **Rombak total `TitikWisataSeeder`** — 7 titik lama yang koordinatnya
+  cuma perkiraan kasar (Air Terjun Tibu Sendalem, Tembiras, Tibu Goa,
+  Aik Nyet, Sate Bulayak, Bukit Vetong, Bukit Mangga) dihapus dari seeder
+  (permintaan user: "agar tidak salah"). Diganti/ditambah 6 titik yang
+  koordinatnya didapat dari decode Plus Code alamat Google Maps user
+  (pakai library resmi `open-location-code`, referensi Kantor Desa yang
+  sudah presisi): Purekmas, Berugak Elen Sesaot, Wisata Bawak Are Sesaot,
+  Bawak Goak Rivercamp, Taman Miring Sesaot, Bukit Khesari — semua juga
+  diverifikasi via web search ke sumber independen (bukan cuma decode
+  koordinat mentah). Taman Miring, Bukit Khesari, dan Bawak Goak
+  Rivercamp untuk sementara berbagi satu koordinat (user konfirmasi satu
+  kawasan rekreasi yang sama di pintu masuk desa).
+- **Air Terjun Tibu Sendalem & Tembiras dikonfirmasi berada di Desa Buwun
+  Sejati** (hasil pemekaran Desa Sesaot), bukan Desa Sesaot — dicek lewat
+  alamat Google Maps + artikel independen, dikonfirmasi langsung oleh
+  user. Sengaja tidak dimasukkan ke seeder, lihat "Catatan Penting/Belum
+  Beres" untuk detail lengkap.
 
 ### Sesi 2026-07-17 (lanjutan lagi lagi — modul mahasiswa, riset kompetitor, Bukit Mangga)
 - **Modul panduan mahasiswa KKN** (dokumen Word, dikirim ke dosen pembimbing) —
