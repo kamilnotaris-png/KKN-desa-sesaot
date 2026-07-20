@@ -26,4 +26,13 @@ class PetaWisataController extends Controller
             'lainnya' => $lainnya,
         ]);
     }
+
+    public function sitemap()
+    {
+        $titikWisata = TitikWisata::active()->ordered()->get();
+
+        return response()
+            ->view('sitemap', ['titikWisata' => $titikWisata])
+            ->header('Content-Type', 'application/xml');
+    }
 }

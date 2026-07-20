@@ -3,6 +3,7 @@
 return [
     'judul_situs' => '赛索特村旅游',
     'sub_judul' => '纳尔马达，西龙目',
+    'meta_deskripsi_default' => '赛索特村互动数字旅游地图，位于西龙目纳尔马达 —— 探索瀑布、天然浴场、徒步路线及萨萨克传统美食。',
     'cara_ke_sini' => '交通指南',
     'lihat_detail' => '查看详情',
     'kembali_ke_peta' => '返回地图',

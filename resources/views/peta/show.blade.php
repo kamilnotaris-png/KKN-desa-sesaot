@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('title', $titikWisata->nama.' — '.__('peta.judul_situs'))
+@section('meta_description', $titikWisata->deskripsi ?: __('peta.meta_deskripsi_default'))
+@if ($titikWisata->foto)
+    @section('meta_image', asset('storage/'.$titikWisata->foto))
+@endif
 
 @section('content')
     <div class="max-w-2xl mx-auto px-4 py-5">

@@ -3,6 +3,7 @@
 return [
     'judul_situs' => 'Wisata Desa Sesaot',
     'sub_judul' => 'Kec. Narmada, Lombok Barat',
+    'meta_deskripsi_default' => 'Peta wisata digital interaktif Desa Sesaot, Kecamatan Narmada, Lombok Barat — jelajahi air terjun, pemandian alami, jalur trekking, dan kuliner khas Sasak.',
     'cara_ke_sini' => 'Cara ke Sini',
     'lihat_detail' => 'Lihat detail',
     'kembali_ke_peta' => 'Kembali ke peta',

@@ -3,6 +3,7 @@
 return [
     'judul_situs' => 'Sesaot Village Tourism',
     'sub_judul' => 'Narmada, West Lombok',
+    'meta_deskripsi_default' => 'Interactive digital tourism map of Sesaot Village, Narmada, West Lombok — explore waterfalls, natural bathing spots, trekking trails, and traditional Sasak cuisine.',
     'cara_ke_sini' => 'Getting Here',
     'lihat_detail' => 'View details',
     'kembali_ke_peta' => 'Back to map',

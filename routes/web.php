@@ -10,3 +10,5 @@ Route::middleware('public-locale')->group(function () {
 
     Route::get('/api/titik-wisata', [TitikWisataController::class, 'index'])->name('api.titik-wisata');
 });
+
+Route::get('/sitemap.xml', [PetaWisataController::class, 'sitemap'])->name('sitemap');
