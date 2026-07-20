@@ -1,6 +1,8 @@
 import L from 'leaflet';
 
-const DESA_LATLNG = '-8.524,116.264';
+// Koordinat Kantor Desa Sesaot, hasil decode Plus Code F65V+9PJ (presisi,
+// bukan perkiraan) - dipakai sebagai titik tujuan tetap panel "Cara ke Sini".
+const DESA_LATLNG = '-8.5415375,116.2442656';
 
 const I18N = window.PETA_I18N ?? {};
 const TITIK_ASAL = I18N.titikAsal ?? [];
