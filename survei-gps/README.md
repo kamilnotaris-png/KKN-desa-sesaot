@@ -5,14 +5,44 @@ agar tidak hilang dan dapat dipakai ulang atau diverifikasi. Data dapat dipakai
 untuk memperbarui OpenStreetMap, memeriksa jalur lapangan, dan mengoreksi
 koordinat titik wisata di `database/seeders/TitikWisataSeeder.php`.
 
-Folder ini belum dibaca langsung oleh aplikasi. File GPX berfungsi sebagai
-arsip sumber dan bukti survei lapangan.
+Folder ini sendiri bukan bagian dari aplikasi yang jalan (tidak dibaca kode
+apa pun) — murni arsip data mentah survei asli (raw GPX). Untuk versi yang
+benar-benar dibaca aplikasi (lapisan jalur di peta), lihat bagian "Lapisan
+Jalur di Peta Aplikasi (GeoJSON overlay)" di bawah.
 
 ## Daftar Rekaman
 
 | File | Tanggal | Keterangan | Status |
 |---|---|---|---|
-| `2026-07-20_jalan-aspal-desa-pintu-masuk-keluar.gpx` | 2026-07-20 | Jalan aspal utama Desa Sesaot dari pintu masuk desa `(-8.5575661, 116.2385974)` sampai pintu keluar desa `(-8.5394807, 116.2558324)`, melewati Kantor Desa Sesaot di tengah jalur. Rekaman terdiri dari dua segmen karena terdapat jeda di Kantor Desa. | Sudah dipakai sebagai acuan untuk menggambar atau memperbarui jaringan jalan di OpenStreetMap pada 20 Juli 2026. |
+| `2026-07-20_jalan-aspal-desa-pintu-masuk-keluar.gpx` | 2026-07-20 | Jalan aspal utama Desa Sesaot dari pintu masuk desa `(-8.5575661, 116.2385974)` sampai pintu keluar desa `(-8.5394807, 116.2558324)`, melewati Kantor Desa Sesaot di tengah jalur (~-8.5416, 116.2442 — cocok dengan koordinat Kantor Desa hasil decode Plus Code F65V+9PJ, selisih ±15m). Rekaman terdiri dari 2 segmen karena ada jeda ±26 menit di Kantor Desa. | Sudah digambar & diupload ke OpenStreetMap (jalur + titik "Pintu Masuk Desa Sesaot", 20 Juli 2026) — tag masih perlu dirapikan (ada garis duplikat, tipe titik gerbang belum lengkap). Sudah dikonversi ke GeoJSON dan tampil di peta aplikasi (lihat di bawah). |
+
+## Lapisan Jalur di Peta Aplikasi (GeoJSON overlay)
+
+Supaya jalur hasil survei langsung tampil di peta aplikasi **tanpa perlu
+menunggu OpenStreetMap selesai me-render ulang tile-nya** (proses render
+tile OSM bisa lambat untuk area jarang diakses seperti Sesaot), tiap GPX
+di folder ini juga dikonversi jadi GeoJSON dan disimpan sebagai file
+statis yang dibaca langsung oleh `resources/js/app.js` (VPS) dan
+`docs/js/app.js` (GitHub Pages) — lihat array `JALUR_FILES` di kedua file
+itu.
+
+- **Lokasi file GeoJSON:** `public/jalur/*.geojson` (VPS, di-copy manual,
+  bukan lewat Vite) dan `docs/jalur/*.geojson` (GitHub Pages, path sama).
+- **Cara generate ulang dari GPX:** parse tiap `<trkseg>` di file `.gpx`
+  jadi array koordinat `[lon, lat]` (urutan GeoJSON, kebalik dari atribut
+  `lat`/`lon` di GPX), gabungkan semua segmen jadi satu Feature bertipe
+  `MultiLineString`. Lihat riwayat commit "Tambah lapisan jalur GeoJSON
+  overlay" untuk contoh skrip konversinya.
+- **Kalau nambah hasil survei jalur baru:** generate GeoJSON-nya, taruh di
+  `public/jalur/` DAN `docs/jalur/` (nama file sama), lalu tambahkan path-nya
+  ke array `JALUR_FILES` di `resources/js/app.js` DAN `docs/js/app.js` —
+  tidak ada mekanisme sync otomatis antara keduanya (pola yang sama seperti
+  sinkronisasi manual `docs/js/i18n.js`).
+- Ini melengkapi (bukan menggantikan) fix service worker network-first di
+  bagian "Pembaruan OpenStreetMap 20 Juli 2026" di bawah — service worker
+  memastikan browser tidak nge-cache tile OSM basi, sementara lapisan GeoJSON
+  ini memastikan jalur tetap tampil walau tile OSM asli belum ter-render sama
+  sekali.
 
 ## Pembaruan OpenStreetMap 20 Juli 2026
 
@@ -65,8 +95,9 @@ Commit terkait:
 - Deploy VPS: perlu memastikan VPS sudah menarik commit terbaru dan menjalankan
   build/clear cache.
 - Render tile OpenStreetMap: **masih menunggu pembaruan dari server tile OSM**.
-- Solusi agar jalur langsung terlihat tanpa menunggu render OSM: ekspor GPX
-  menjadi GeoJSON dan tampilkan sebagai overlay jalur mandiri di Leaflet.
+- Solusi agar jalur langsung terlihat tanpa menunggu render OSM: **sudah
+  diimplementasikan** — lihat "Lapisan Jalur di Peta Aplikasi (GeoJSON overlay)"
+  di atas.
 
 ## Prosedur penyuntingan OpenStreetMap
 

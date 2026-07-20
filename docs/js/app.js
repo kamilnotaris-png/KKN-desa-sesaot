@@ -60,6 +60,33 @@ function markerIcon(kategori) {
     });
 }
 
+// Jalur hasil survei GPS lapangan (GeoJSON), ditampilkan sebagai lapisan
+// sendiri di atas tile OSM - supaya tidak perlu menunggu tile OSM di-render
+// ulang tiap kali ada jalur baru disurvei. Tambahkan file baru ke daftar ini
+// begitu ada hasil survei jalur berikutnya (lihat survei-gps/README.md).
+const JALUR_FILES = [
+    'jalur/jalan-aspal-desa.geojson',
+];
+
+function initJalurLayer(map) {
+    JALUR_FILES.forEach((url) => {
+        fetch(url)
+            .then((res) => res.json())
+            .then((geojson) => {
+                L.geoJSON(geojson, {
+                    style: { color: '#c0392b', weight: 4, opacity: 0.8 },
+                    onEachFeature: (feature, layer) => {
+                        const p = feature.properties;
+                        if (p?.nama) {
+                            layer.bindPopup(`<strong>${p.nama}</strong>${p.deskripsi ? `<p>${p.deskripsi}</p>` : ''}`);
+                        }
+                    },
+                }).addTo(map);
+            })
+            .catch((err) => console.warn('Gagal muat jalur:', url, err));
+    });
+}
+
 function initPeta() {
     const el = document.getElementById('peta-wisata');
     if (!el) return;
@@ -70,6 +97,8 @@ function initPeta() {
         maxZoom: 19,
         attribution: '&copy; OpenStreetMap contributors',
     }).addTo(map);
+
+    initJalurLayer(map);
 
     const locale = getCurrentLocale();
 
