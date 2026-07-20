@@ -20,6 +20,7 @@ return [
         'kuliner' => '美食',
         'homestay' => '民宿',
         'budaya' => '文化',
+        'fasilitas_umum' => '公共设施',
     ],
 
     'titik_asal' => [

@@ -20,6 +20,7 @@ return [
         'kuliner' => 'مأكولات',
         'homestay' => 'إقامة محلية',
         'budaya' => 'ثقافة',
+        'fasilitas_umum' => 'مرفق عام',
     ],
 
     'titik_asal' => [

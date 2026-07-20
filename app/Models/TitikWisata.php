@@ -21,6 +21,7 @@ class TitikWisata extends Model
         'kuliner' => 'Kuliner',
         'homestay' => 'Homestay',
         'budaya' => 'Budaya',
+        'fasilitas_umum' => 'Fasilitas Umum',
     ];
 
     protected $fillable = [

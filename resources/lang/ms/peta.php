@@ -20,6 +20,7 @@ return [
         'kuliner' => 'Kuliner',
         'homestay' => 'Homestay',
         'budaya' => 'Budaya',
+        'fasilitas_umum' => 'Kemudahan Awam',
     ],
 
     'titik_asal' => [

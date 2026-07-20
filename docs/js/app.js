@@ -48,6 +48,7 @@ const KATEGORI_ICON = {
     kuliner: '🍢',
     homestay: '🏠',
     budaya: '🎭',
+    fasilitas_umum: '🏛️',
 };
 
 function markerIcon(kategori) {
