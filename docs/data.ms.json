@@ -1,29 +1,29 @@
 {
     "type": "FeatureCollection",
-    "generated_at": "2026-07-20T14:42:45+00:00",
+    "generated_at": "2026-07-20T14:54:26+00:00",
     "features": [
         {
             "type": "Feature",
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    116.265,
-                    -8.523
+                    116.2442344,
+                    -8.5402625
                 ]
             },
             "properties": {
-                "nama": "Air Terjun Tibu Sendalem",
-                "slug": "air-terjun-tibu-sendalem",
-                "kategori": "air_terjun",
-                "kategori_label": "Air Terjun",
-                "dusun": "Sesaot Lauk",
-                "deskripsi": "Air terjun dengan kolam semula jadi di tepi Hutan Lindung Sesaot.",
+                "nama": "Purekmas",
+                "slug": "purekmas",
+                "kategori": "pemandian",
+                "kategori_label": "Tempat Mandi",
+                "dusun": "Penangke",
+                "deskripsi": "Purekmas (Pusat Rekreasi Masyarakat) - mata air semula jadi dari Gunung Rinjani yang diurus penduduk tempatan, sungai jernih dan kolam kanak-kanak.",
                 "cerita_lokal": null,
                 "foto": null,
                 "video_embed_url": null,
-                "latitude": -8.523,
-                "longitude": 116.265,
-                "detail_url": "https://wisatasesaot.my.id/peta/air-terjun-tibu-sendalem"
+                "latitude": -8.5402625,
+                "longitude": 116.2442344,
+                "detail_url": "https://wisatasesaot.my.id/peta/purekmas"
             }
         },
         {
@@ -55,71 +55,23 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    116.2668,
-                    -8.5245
+                    116.2429375,
+                    -8.5425625
                 ]
             },
             "properties": {
-                "nama": "Air Terjun Tembiras",
-                "slug": "air-terjun-tembiras",
-                "kategori": "air_terjun",
-                "kategori_label": "Air Terjun",
-                "dusun": "Sesaot Timur",
-                "deskripsi": "Salah satu air terjun kegemaran pelancong di laluan trekking Sesaot.",
-                "cerita_lokal": null,
-                "foto": null,
-                "video_embed_url": null,
-                "latitude": -8.5245,
-                "longitude": 116.2668,
-                "detail_url": "https://wisatasesaot.my.id/peta/air-terjun-tembiras"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    116.2637,
-                    -8.5219
-                ]
-            },
-            "properties": {
-                "nama": "Tibu Goa",
-                "slug": "tibu-goa",
-                "kategori": "air_terjun",
-                "kategori_label": "Air Terjun",
-                "dusun": "Sesaot Lauk",
-                "deskripsi": "Tempat mandi semula jadi berhampiran kawasan gua.",
-                "cerita_lokal": null,
-                "foto": null,
-                "video_embed_url": null,
-                "latitude": -8.5219,
-                "longitude": 116.2637,
-                "detail_url": "https://wisatasesaot.my.id/peta/tibu-goa"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    116.2611,
-                    -8.5262
-                ]
-            },
-            "properties": {
-                "nama": "Aik Nyet",
-                "slug": "aik-nyet",
+                "nama": "Berugak Elen Sesaot",
+                "slug": "berugak-elen-sesaot",
                 "kategori": "pemandian",
                 "kategori_label": "Tempat Mandi",
-                "dusun": "Gontoran",
-                "deskripsi": "Tempat mandi air sejuk semula jadi, kegemaran keluarga.",
+                "dusun": "Sesaot",
+                "deskripsi": "Tempat mandi sungai dengan berugaq (pondok tradisional Sasak) tersusun kemas di tepi sungai, kolam kanak-kanak, dan akses jalan yang mudah.",
                 "cerita_lokal": null,
                 "foto": null,
                 "video_embed_url": null,
-                "latitude": -8.5262,
-                "longitude": 116.2611,
-                "detail_url": "https://wisatasesaot.my.id/peta/aik-nyet"
+                "latitude": -8.5425625,
+                "longitude": 116.2429375,
+                "detail_url": "https://wisatasesaot.my.id/peta/berugak-elen-sesaot"
             }
         },
         {
@@ -127,47 +79,23 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    116.2655,
-                    -8.5241
+                    116.2424375,
+                    -8.5423125
                 ]
             },
             "properties": {
-                "nama": "Sate Bulayak",
-                "slug": "sate-bulayak",
-                "kategori": "kuliner",
-                "kategori_label": "Kuliner",
-                "dusun": "Sesaot Timur",
-                "deskripsi": "Kuliner khas Sesaot, sate bersama lontong bulayak.",
-                "cerita_lokal": null,
-                "foto": null,
-                "video_embed_url": null,
-                "latitude": -8.5241,
-                "longitude": 116.2655,
-                "detail_url": "https://wisatasesaot.my.id/peta/sate-bulayak"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    116.2442344,
-                    -8.5402625
-                ]
-            },
-            "properties": {
-                "nama": "Purekmas",
-                "slug": "purekmas",
+                "nama": "Wisata Bawak Are Sesaot",
+                "slug": "wisata-bawak-are-sesaot",
                 "kategori": "pemandian",
                 "kategori_label": "Tempat Mandi",
-                "dusun": "Penangke",
-                "deskripsi": "Purekmas (Pusat Rekreasi Masyarakat) - mata air semula jadi dari Gunung Rinjani yang diurus penduduk tempatan, sungai jernih dan kolam kanak-kanak.",
+                "dusun": "Sesaot",
+                "deskripsi": "Sungai dengan air jernih biru kehijauan mengalir di atas batu bertekstur unik, digelar \"Sungai Aare Lombok\". Terdapat berugaq, gerai makanan, tempat letak kereta, aktiviti tubing, dan kolam renang. Akses melalui jalan di sebelah Masjid Nurul Ikhlas, tiket masuk Rp 2.000.",
                 "cerita_lokal": null,
                 "foto": null,
                 "video_embed_url": null,
-                "latitude": -8.5402625,
-                "longitude": 116.2442344,
-                "detail_url": "https://wisatasesaot.my.id/peta/purekmas"
+                "latitude": -8.5423125,
+                "longitude": 116.2424375,
+                "detail_url": "https://wisatasesaot.my.id/peta/wisata-bawak-are-sesaot"
             }
         },
         {
@@ -175,47 +103,71 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    116.2675,
-                    -8.5215
+                    116.2433125,
+                    -8.5415625
                 ]
             },
             "properties": {
-                "nama": "Bukit Vetong",
-                "slug": "bukit-vetong",
+                "nama": "Bawak Goak Rivercamp",
+                "slug": "bawak-goak-rivercamp",
+                "kategori": "pemandian",
+                "kategori_label": "Tempat Mandi",
+                "dusun": "Sesaot",
+                "deskripsi": "Sungai jernih dan sejuk dari mata air gunung, mengalir berperingkat di atas batu semula jadi. Aktiviti utama river tubing (menyusur sungai guna tiub) diuruskan pemuda kampung, ditambah kolam renang semula jadi. Tiket masuk sekitar Rp 2.000-3.000, sewa tiub Rp 10.000-20.000.",
+                "cerita_lokal": null,
+                "foto": null,
+                "video_embed_url": null,
+                "latitude": -8.5415625,
+                "longitude": 116.2433125,
+                "detail_url": "https://wisatasesaot.my.id/peta/bawak-goak-rivercamp"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.2433125,
+                    -8.5415625
+                ]
+            },
+            "properties": {
+                "nama": "Taman Miring Sesaot",
+                "slug": "taman-miring-sesaot",
+                "kategori": "jalur_tracking",
+                "kategori_label": "Laluan Trekking",
+                "dusun": "Sesaot",
+                "deskripsi": "Taman yang dibina penduduk di pintu masuk Desa Sesaot, terkenal dengan kecondongan khas sekitar 45 darjah, dilengkapi berugaq untuk bersantai. Dari bahagian atas taman, kelihatan pemandangan sawah dan bukit-bukau sekitar. Dirasmikan Bupati Lombok Barat pada 9 Februari 2018, percuma untuk dilawati.",
+                "cerita_lokal": null,
+                "foto": null,
+                "video_embed_url": null,
+                "latitude": -8.5415625,
+                "longitude": 116.2433125,
+                "detail_url": "https://wisatasesaot.my.id/peta/taman-miring-sesaot"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.2433125,
+                    -8.5415625
+                ]
+            },
+            "properties": {
+                "nama": "Bukit Khesari",
+                "slug": "bukit-khesari",
                 "kategori": "homestay",
                 "kategori_label": "Homestay",
                 "dusun": "Sesaot",
-                "deskripsi": "Kawasan berkhemah dengan rumah tradisional Sasak, jelapang padi, dan Tree House untuk menikmati matahari terbit dengan latar Gunung Rinjani.",
+                "deskripsi": "Kawasan berkhemah dan tempat foto perbukitan (menurut label Google Maps), sekawasan dengan Taman Miring dan Bawak Goak Rivercamp di pintu masuk Desa Sesaot. Sesuai untuk bersantai menikmati suasana tenang alam semula jadi.",
                 "cerita_lokal": null,
                 "foto": null,
                 "video_embed_url": null,
-                "latitude": -8.5215,
-                "longitude": 116.2675,
-                "detail_url": "https://wisatasesaot.my.id/peta/bukit-vetong"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    116.269,
-                    -8.5198
-                ]
-            },
-            "properties": {
-                "nama": "Bukit Mangga",
-                "slug": "bukit-mangga",
-                "kategori": "jalur_tracking",
-                "kategori_label": "Laluan Trekking",
-                "dusun": "Sesaot Timuk",
-                "deskripsi": "Bukit dengan laluan trekking mudah sesuai pemula, pemandangan hijau perbukitan dan Gunung Rinjani, tempat foto berbentuk bintang besar, dan kopi khas Sesaot. Kegemaran untuk menikmati matahari terbenam.",
-                "cerita_lokal": null,
-                "foto": null,
-                "video_embed_url": null,
-                "latitude": -8.5198,
-                "longitude": 116.269,
-                "detail_url": "https://wisatasesaot.my.id/peta/bukit-mangga"
+                "latitude": -8.5415625,
+                "longitude": 116.2433125,
+                "detail_url": "https://wisatasesaot.my.id/peta/bukit-khesari"
             }
         }
     ]
