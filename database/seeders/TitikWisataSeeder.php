@@ -116,10 +116,9 @@ class TitikWisataSeeder extends Seeder
                 'longitude' => 116.2655,
                 'urutan' => 5,
             ],
-            // Purekmas & Bukit Vetong: koordinat masih perkiraan kasar (belum
-            // hasil survei GPS lapangan) - sama seperti 5 titik di atas, lihat
-            // catatan "Belum Beres" di CLAUDE.md. Aman untuk tampil di peta,
-            // belum aman dipakai untuk navigasi presisi.
+            // Bukit Vetong: koordinat masih perkiraan kasar (belum hasil
+            // survei GPS lapangan) - lihat catatan "Belum Beres" di CLAUDE.md.
+            // Aman untuk tampil di peta, belum aman dipakai untuk navigasi presisi.
             [
                 'nama' => [
                     'id' => 'Purekmas',
@@ -137,8 +136,12 @@ class TitikWisataSeeder extends Seeder
                     'zh' => 'Purekmas（社区休闲中心）- 由当地居民管理的林贾尼火山天然泉水，配有碧绿的河流和儿童泳池。',
                     'ms' => 'Purekmas (Pusat Rekreasi Masyarakat) - mata air semula jadi dari Gunung Rinjani yang diurus penduduk tempatan, sungai jernih dan kolam kanak-kanak.',
                 ],
-                'latitude' => -8.5235,
-                'longitude' => 116.2645,
+                // Koordinat dari decode Plus Code F65V+VMX (alamat Google Maps
+                // "Jl. Sesaot, Sesaot, Kec. Narmada" - dikonfirmasi user), ~142m
+                // dari Kantor Desa. Lebih akurat dari placeholder lama, tapi
+                // tetap bukan hasil survei GPS lapangan langsung di lokasi.
+                'latitude' => -8.5402625,
+                'longitude' => 116.2442344,
                 'urutan' => 6,
             ],
             [
