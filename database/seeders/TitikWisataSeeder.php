@@ -10,115 +10,14 @@ class TitikWisataSeeder extends Seeder
 {
     public function run(): void
     {
+        // Sengaja hanya berisi titik wisata yang koordinatnya sudah
+        // diverifikasi presisi (decode Plus Code dari alamat Google Maps
+        // yang dikonfirmasi user), bukan tebakan kasar - lihat riwayat
+        // perubahan di CLAUDE.md. Titik lain (air terjun, kuliner, dst)
+        // yang koordinatnya masih perkiraan sengaja dihapus dari sini
+        // supaya tidak menampilkan lokasi yang salah di peta publik;
+        // tambahkan kembali lewat admin panel setelah ada data GPS pasti.
         $titikWisata = [
-            [
-                'nama' => [
-                    'id' => 'Air Terjun Tibu Sendalem',
-                    'en' => 'Tibu Sendalem Waterfall',
-                    'ar' => 'شلال تيبو سيندالم',
-                    'zh' => '蒂布森达伦瀑布',
-                    'ms' => 'Air Terjun Tibu Sendalem',
-                ],
-                'kategori' => 'air_terjun',
-                'dusun' => 'Sesaot Lauk',
-                'deskripsi' => [
-                    'id' => 'Air terjun dengan kolam alami di tepi Hutan Lindung Sesaot.',
-                    'en' => 'A waterfall with a natural pool on the edge of Sesaot Protected Forest.',
-                    'ar' => 'شلال به بركة طبيعية على حافة غابة سيساوت المحمية.',
-                    'zh' => '瀑布伴有天然水池，位于赛索特保护林边缘。',
-                    'ms' => 'Air terjun dengan kolam semula jadi di tepi Hutan Lindung Sesaot.',
-                ],
-                'latitude' => -8.5230,
-                'longitude' => 116.2650,
-                'urutan' => 1,
-            ],
-            [
-                'nama' => [
-                    'id' => 'Air Terjun Tembiras',
-                    'en' => 'Tembiras Waterfall',
-                    'ar' => 'شلال تيمبيراس',
-                    'zh' => '腾比拉斯瀑布',
-                    'ms' => 'Air Terjun Tembiras',
-                ],
-                'kategori' => 'air_terjun',
-                'dusun' => 'Sesaot Timur',
-                'deskripsi' => [
-                    'id' => 'Salah satu air terjun favorit wisatawan di jalur trekking Sesaot.',
-                    'en' => 'One of the most popular waterfalls along the Sesaot trekking trail.',
-                    'ar' => 'أحد أكثر الشلالات شعبية بين الزوار على مسار سيساوت للمشي.',
-                    'zh' => '赛索特徒步路线上最受游客欢迎的瀑布之一。',
-                    'ms' => 'Salah satu air terjun kegemaran pelancong di laluan trekking Sesaot.',
-                ],
-                'latitude' => -8.5245,
-                'longitude' => 116.2668,
-                'urutan' => 2,
-            ],
-            [
-                'nama' => [
-                    'id' => 'Tibu Goa',
-                    'en' => 'Tibu Goa',
-                    'ar' => 'تيبو غوا',
-                    'zh' => '蒂布戈瓦',
-                    'ms' => 'Tibu Goa',
-                ],
-                'kategori' => 'air_terjun',
-                'dusun' => 'Sesaot Lauk',
-                'deskripsi' => [
-                    'id' => 'Pemandian alami di sekitar area goa.',
-                    'en' => 'A natural bathing spot near a cave area.',
-                    'ar' => 'مكان استحمام طبيعي بالقرب من منطقة الكهف.',
-                    'zh' => '洞穴附近的天然浴场。',
-                    'ms' => 'Tempat mandi semula jadi berhampiran kawasan gua.',
-                ],
-                'latitude' => -8.5219,
-                'longitude' => 116.2637,
-                'urutan' => 3,
-            ],
-            [
-                'nama' => [
-                    'id' => 'Aik Nyet',
-                    'en' => 'Aik Nyet',
-                    'ar' => 'آيك نيت',
-                    'zh' => '艾克涅特',
-                    'ms' => 'Aik Nyet',
-                ],
-                'kategori' => 'pemandian',
-                'dusun' => 'Gontoran',
-                'deskripsi' => [
-                    'id' => 'Pemandian air dingin alami, salah satu titik favorit keluarga.',
-                    'en' => 'A natural cold-water bathing spot, a family favourite.',
-                    'ar' => 'مكان استحمام طبيعي بمياه باردة، من الأماكن المفضلة للعائلات.',
-                    'zh' => '天然冷泉浴场，是家庭出游的热门地点。',
-                    'ms' => 'Tempat mandi air sejuk semula jadi, kegemaran keluarga.',
-                ],
-                'latitude' => -8.5262,
-                'longitude' => 116.2611,
-                'urutan' => 4,
-            ],
-            [
-                'nama' => [
-                    'id' => 'Sate Bulayak',
-                    'en' => 'Sate Bulayak',
-                    'ar' => 'ساتيه بولاياك',
-                    'zh' => '布拉亚克沙爹',
-                    'ms' => 'Sate Bulayak',
-                ],
-                'kategori' => 'kuliner',
-                'dusun' => 'Sesaot Timur',
-                'deskripsi' => [
-                    'id' => 'Kuliner khas Sesaot, sate dengan lontong bulayak.',
-                    'en' => 'A Sesaot speciality: satay served with bulayak rice cake.',
-                    'ar' => 'طبق مميز من سيساوت: ساتيه يُقدَّم مع كعكة الأرز بولاياك.',
-                    'zh' => '赛索特特色美食：沙爹配布拉亚克糯米卷。',
-                    'ms' => 'Kuliner khas Sesaot, sate bersama lontong bulayak.',
-                ],
-                'latitude' => -8.5241,
-                'longitude' => 116.2655,
-                'urutan' => 5,
-            ],
-            // Bukit Vetong: koordinat masih perkiraan kasar (belum hasil
-            // survei GPS lapangan) - lihat catatan "Belum Beres" di CLAUDE.md.
-            // Aman untuk tampil di peta, belum aman dipakai untuk navigasi presisi.
             [
                 'nama' => [
                     'id' => 'Purekmas',
@@ -138,55 +37,60 @@ class TitikWisataSeeder extends Seeder
                 ],
                 // Koordinat dari decode Plus Code F65V+VMX (alamat Google Maps
                 // "Jl. Sesaot, Sesaot, Kec. Narmada" - dikonfirmasi user), ~142m
-                // dari Kantor Desa. Lebih akurat dari placeholder lama, tapi
-                // tetap bukan hasil survei GPS lapangan langsung di lokasi.
+                // dari Kantor Desa. Bukan hasil survei GPS lapangan langsung.
                 'latitude' => -8.5402625,
                 'longitude' => 116.2442344,
-                'urutan' => 6,
+                'urutan' => 1,
             ],
             [
                 'nama' => [
-                    'id' => 'Bukit Vetong',
-                    'en' => 'Vetong Hill',
-                    'ar' => 'تلة فيتونغ',
-                    'zh' => '维通山',
-                    'ms' => 'Bukit Vetong',
+                    'id' => 'Berugak Elen Sesaot',
+                    'en' => 'Berugak Elen Sesaot',
+                    'ar' => 'بيروغاك إيلين سيساوت',
+                    'zh' => '贝鲁加克埃伦赛索特',
+                    'ms' => 'Berugak Elen Sesaot',
                 ],
-                'kategori' => 'homestay',
+                'kategori' => 'pemandian',
                 'dusun' => 'Sesaot',
                 'deskripsi' => [
-                    'id' => 'Area camping ground dengan rumah Sasak tradisional, lumbung padi, dan Tree House untuk menikmati sunrise dengan latar Gunung Rinjani.',
-                    'en' => 'A camping ground with traditional Sasak houses, rice barns, and a Tree House for watching the sunrise with a Mount Rinjani backdrop.',
-                    'ar' => 'أرض تخييم فيها منازل ساساك التقليدية، ومخازن الأرز، وبيت على الشجرة لمشاهدة شروق الشمس مع إطلالة على جبل رينجاني.',
-                    'zh' => '露营地设有传统萨萨克族房屋、稻谷仓，以及可眺望林贾尼火山日出的树屋。',
-                    'ms' => 'Kawasan berkhemah dengan rumah tradisional Sasak, jelapang padi, dan Tree House untuk menikmati matahari terbit dengan latar Gunung Rinjani.',
+                    'id' => 'Wisata pemandian sungai dengan berugaq (gazebo tradisional Sasak) tertata rapi di tepi sungai, kolam anak, dan akses jalan yang mudah.',
+                    'en' => 'A river bathing spot with neatly arranged traditional Sasak berugaq (gazebos) along the riverbank, a children\'s pool, and easy road access.',
+                    'ar' => 'موقع استحمام على النهر مع أكواخ ساساك التقليدية (بيروغاك) مرتبة بعناية على ضفة النهر، وبركة للأطفال، وطريق وصول سهل.',
+                    'zh' => '河边浴场，河岸整齐排列着传统萨萨克族凉亭（berugaq），设有儿童泳池，交通便利。',
+                    'ms' => 'Tempat mandi sungai dengan berugaq (pondok tradisional Sasak) tersusun kemas di tepi sungai, kolam kanak-kanak, dan akses jalan yang mudah.',
                 ],
-                'latitude' => -8.5215,
-                'longitude' => 116.2675,
-                'urutan' => 7,
+                // Koordinat dari decode Plus Code F64V+X5 (alamat Google Maps
+                // "Sesaot, Kabupaten Lombok Barat" - dikonfirmasi user), ~185m
+                // dari Kantor Desa. Bukan hasil survei GPS lapangan langsung.
+                'latitude' => -8.542562500000003,
+                'longitude' => 116.24293750000004,
+                'urutan' => 2,
             ],
-            // Bukit Mangga: koordinat juga masih perkiraan kasar, belum survei
-            // GPS lapangan - lihat catatan di atas.
             [
                 'nama' => [
-                    'id' => 'Bukit Mangga',
-                    'en' => 'Bukit Mangga Hill',
-                    'ar' => 'تلة بوكيت مانغا',
-                    'zh' => '芒果山',
-                    'ms' => 'Bukit Mangga',
+                    'id' => 'Wisata Bawak Are Sesaot',
+                    'en' => 'Bawak Are Sesaot',
+                    'ar' => 'باواك آري سيساوت',
+                    'zh' => '巴瓦克阿雷赛索特',
+                    'ms' => 'Wisata Bawak Are Sesaot',
                 ],
-                'kategori' => 'jalur_tracking',
-                'dusun' => 'Sesaot Timuk',
+                'kategori' => 'pemandian',
+                'dusun' => 'Sesaot',
                 'deskripsi' => [
-                    'id' => 'Bukit dengan jalur trekking ringan cocok pemula, pemandangan hijau perbukitan dan Gunung Rinjani, spot foto bintang besar, dan kopi khas Sesaot. Favorit untuk menikmati sunset.',
-                    'en' => 'A hill with an easy, beginner-friendly trekking trail, green hillside and Mount Rinjani views, a large star-shaped photo spot, and local Sesaot coffee. A favourite for watching the sunset.',
-                    'ar' => 'تلة بمسار مشي سهل يناسب المبتدئين، بإطلالات خضراء على التلال وجبل رينجاني، ومكان تصوير على شكل نجمة كبيرة، وقهوة سيساوت المحلية. مكان مفضل لمشاهدة غروب الشمس.',
-                    'zh' => '一座适合初学者的轻松徒步山丘，可眺望绿意盎然的山丘与林贾尼火山，设有大型星形拍照点，并供应赛索特当地咖啡，是欣赏日落的热门去处。',
-                    'ms' => 'Bukit dengan laluan trekking mudah sesuai pemula, pemandangan hijau perbukitan dan Gunung Rinjani, tempat foto berbentuk bintang besar, dan kopi khas Sesaot. Kegemaran untuk menikmati matahari terbenam.',
+                    'id' => 'Sungai dengan air jernih biru kehijauan mengalir di atas bebatuan unik, dijuluki "Sungai Aare-nya Lombok". Ada gazebo, warung, area parkir, wahana tubing, dan kolam renang. Akses lewat jalan di samping Masjid Nurul Ikhlas, tiket masuk Rp 2.000.',
+                    'en' => 'A river with clear turquoise-blue water flowing over uniquely textured rocks, nicknamed "Lombok\'s Aare River". Facilities include gazebos, food stalls, parking, tubing, and a swimming pool. Access via the road beside Masjid Nurul Ikhlas, entrance fee Rp 2,000.',
+                    'ar' => 'نهر بمياه فيروزية صافية يتدفق فوق صخور ذات ملمس فريد، يُلقَّب بـ "نهر آري لومبوك". تتوفر أكواخ استراحة وأكشاك طعام ومواقف سيارات وأنبوب تعويم وحمام سباحة. الوصول عبر الطريق بجانب مسجد نور الإخلاص، رسوم الدخول 2000 روبية.',
+                    'zh' => '河水清澈碧绿，流经纹理独特的岩石，被誉为"龙目岛的阿勒河"。设有凉亭、小吃摊、停车场、漂流圈项目及游泳池。经努鲁伊赫拉斯清真寺旁的小路进入，门票2000印尼盾。',
+                    'ms' => 'Sungai dengan air jernih biru kehijauan mengalir di atas batu bertekstur unik, digelar "Sungai Aare Lombok". Terdapat berugaq, gerai makanan, tempat letak kereta, aktiviti tubing, dan kolam renang. Akses melalui jalan di sebelah Masjid Nurul Ikhlas, tiket masuk Rp 2.000.',
                 ],
-                'latitude' => -8.5198,
-                'longitude' => 116.2690,
-                'urutan' => 8,
+                // Koordinat dari decode Plus Code F65R+3X (alamat Google Maps
+                // "Sesaot, Kabupaten Lombok Barat" - dikonfirmasi user), ~219m
+                // dari Kantor Desa. Bukan hasil survei GPS lapangan langsung.
+                // Diverifikasi via web search (RRI, detik.com, Lombok Post,
+                // Kompasiana) sebagai objek wisata nyata di Desa Sesaot.
+                'latitude' => -8.5423125,
+                'longitude' => 116.2424375,
+                'urutan' => 3,
             ],
         ];
 
