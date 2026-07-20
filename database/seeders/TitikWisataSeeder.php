@@ -119,6 +119,57 @@ class TitikWisataSeeder extends Seeder
                 'longitude' => 116.2433125,
                 'urutan' => 4,
             ],
+            [
+                'nama' => [
+                    'id' => 'Taman Miring Sesaot',
+                    'en' => 'Taman Miring Sesaot',
+                    'ar' => 'تامان ميرينغ سيساوت',
+                    'zh' => '塔曼米林赛索特',
+                    'ms' => 'Taman Miring Sesaot',
+                ],
+                'kategori' => 'jalur_tracking',
+                'dusun' => 'Sesaot',
+                'deskripsi' => [
+                    'id' => 'Taman buatan warga di pintu masuk Desa Sesaot dengan kemiringan khas sekitar 45 derajat, dilengkapi gazebo untuk bersantai. Dari bagian atas taman terlihat pemandangan sawah dan perbukitan sekitar. Diresmikan Bupati Lombok Barat pada 9 Februari 2018, gratis dikunjungi.',
+                    'en' => 'A community-built park at the entrance to Desa Sesaot, known for its distinctive ~45-degree slope, with gazebos for relaxing. From the upper part, visitors can see views of rice fields and the surrounding hills. Officially inaugurated by the Regent of West Lombok on 9 February 2018, free to visit.',
+                    'ar' => 'حديقة بناها السكان عند مدخل قرية سيساوت، تتميز بميل حاد يبلغ حوالي 45 درجة، مع أكواخ للاسترخاء. من الجزء العلوي، يمكن للزوار رؤية حقول الأرز والتلال المحيطة. افتُتحت رسميًا من قبل حاكم لومبوك الغربية في 9 فبراير 2018، والزيارة مجانية.',
+                    'zh' => '由村民建造的公园，位于赛索特村入口处，以约45度的独特坡度著称，设有供休憩的凉亭。从公园高处可俯瞰稻田和周围山丘的美景。于2018年2月9日由西龙目摄政官正式启用，免费参观。',
+                    'ms' => 'Taman yang dibina penduduk di pintu masuk Desa Sesaot, terkenal dengan kecondongan khas sekitar 45 darjah, dilengkapi berugaq untuk bersantai. Dari bahagian atas taman, kelihatan pemandangan sawah dan bukit-bukau sekitar. Dirasmikan Bupati Lombok Barat pada 9 Februari 2018, percuma untuk dilawati.',
+                ],
+                // Koordinat dari decode Plus Code F65V+98 (dikirim user untuk area
+                // Bawak Goak Rivercamp/Taman Miring/Bukit Khesari) - user
+                // mengonfirmasi ketiganya berdekatan dalam satu kawasan rekreasi
+                // di pintu masuk desa, jadi dipakai bersama sebagai referensi
+                // sementara. Bukan hasil survei GPS lapangan per titik - wajib
+                // dibedakan lewat survei GPS individual sebelum QR final.
+                'latitude' => -8.541562500000012,
+                'longitude' => 116.2433125,
+                'urutan' => 5,
+            ],
+            [
+                'nama' => [
+                    'id' => 'Bukit Khesari',
+                    'en' => 'Bukit Khesari',
+                    'ar' => 'بوكيت خيساري',
+                    'zh' => '克萨里山',
+                    'ms' => 'Bukit Khesari',
+                ],
+                'kategori' => 'homestay',
+                'dusun' => 'Sesaot',
+                'deskripsi' => [
+                    'id' => 'Camping ground dan spot foto perbukitan (per label Google Maps), satu kawasan dengan Taman Miring dan Bawak Goak Rivercamp di pintu masuk Desa Sesaot. Cocok untuk healing dan menikmati suasana tenang di alam terbuka.',
+                    'en' => 'A camping ground and hillside photo spot (per Google Maps label), in the same area as Taman Miring and Bawak Goak Rivercamp at the entrance to Desa Sesaot. Ideal for a peaceful nature getaway.',
+                    'ar' => 'أرض تخييم ومكان تصوير على التل (حسب تصنيف خرائط جوجل)، في نفس منطقة تامان ميرينغ وباواك غواك ريفركامب عند مدخل قرية سيساوت. مثالي للاسترخاء والاستمتاع بالطبيعة الهادئة.',
+                    'zh' => '露营地及山丘拍照点（根据谷歌地图标注），与塔曼米林及巴瓦克戈亚河营同处赛索特村入口区域。适合放松身心、享受宁静的自然氛围。',
+                    'ms' => 'Kawasan berkhemah dan tempat foto perbukitan (menurut label Google Maps), sekawasan dengan Taman Miring dan Bawak Goak Rivercamp di pintu masuk Desa Sesaot. Sesuai untuk bersantai menikmati suasana tenang alam semula jadi.',
+                ],
+                // Sama seperti Taman Miring: berbagi referensi Plus Code F65V+98
+                // (user konfirmasi ketiganya berdekatan), belum survei GPS
+                // individual - wajib dibedakan sebelum QR final.
+                'latitude' => -8.541562500000012,
+                'longitude' => 116.2433125,
+                'urutan' => 6,
+            ],
         ];
 
         foreach ($titikWisata as $data) {
