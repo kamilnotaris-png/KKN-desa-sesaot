@@ -28,6 +28,7 @@
     <meta name="twitter:card" content="summary_large_image">
 
     <link rel="manifest" href="{{ asset('manifest.json') }}">
+    @stack('structured-data')
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="h-full flex flex-col bg-white text-gray-900 antialiased">

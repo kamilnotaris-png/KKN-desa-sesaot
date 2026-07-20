@@ -6,6 +6,10 @@
     @section('meta_image', asset('storage/'.$titikWisata->foto))
 @endif
 
+@push('structured-data')
+    <script type="application/ld+json">{!! $structuredData !!}</script>
+@endpush
+
 @section('content')
     <div class="max-w-2xl mx-auto px-4 py-5">
         <a href="{{ route('peta.index') }}" class="text-wisata-green-600 text-sm font-medium">&larr; {{ __('peta.kembali_ke_peta') }}</a>

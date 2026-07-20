@@ -3,6 +3,10 @@
 @section('title', __('peta.judul_situs'))
 @section('main-class', 'overflow-hidden')
 
+@push('structured-data')
+    <script type="application/ld+json">{!! $structuredData !!}</script>
+@endpush
+
 @section('content')
     <script>
         window.PETA_I18N = {
