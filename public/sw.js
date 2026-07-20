@@ -1,5 +1,6 @@
-const CACHE_NAME = 'wisata-sesaot-v1';
-const RUNTIME_CACHEABLE_HOSTS = [self.location.host, 'tile.openstreetmap.org'];
+const CACHE_NAME = 'wisata-sesaot-v2';
+const OSM_TILE_HOST = 'tile.openstreetmap.org';
+const RUNTIME_CACHEABLE_HOSTS = [self.location.host, OSM_TILE_HOST];
 
 self.addEventListener('install', (event) => {
     self.skipWaiting();
@@ -48,7 +49,10 @@ self.addEventListener('fetch', (event) => {
     if (!isCacheableRequest(request)) return;
 
     const url = new URL(request.url);
+    const isOsmTile = url.host === OSM_TILE_HOST || url.host.endsWith('.' + OSM_TILE_HOST);
     const isNavigationOrData = request.mode === 'navigate' || url.pathname.startsWith('/api/');
 
-    event.respondWith(isNavigationOrData ? networkFirst(request) : cacheFirst(request));
+    // Tile OSM harus network-first agar perubahan pemetaan terbaru segera terlihat.
+    // Cache tetap menjadi fallback ketika perangkat sedang offline.
+    event.respondWith(isOsmTile || isNavigationOrData ? networkFirst(request) : cacheFirst(request));
 });
