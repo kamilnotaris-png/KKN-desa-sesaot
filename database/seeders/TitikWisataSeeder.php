@@ -170,6 +170,30 @@ class TitikWisataSeeder extends Seeder
                 'longitude' => 116.2433125,
                 'urutan' => 6,
             ],
+            [
+                'nama' => [
+                    'id' => 'Lapak Kuliner Purekmas',
+                    'en' => 'Purekmas Food Stalls',
+                    'ar' => 'أكشاك طعام بوريكماس',
+                    'zh' => '普雷克马斯美食摊',
+                    'ms' => 'Gerai Kuliner Purekmas',
+                ],
+                'kategori' => 'kuliner',
+                'dusun' => 'Penangke',
+                'deskripsi' => [
+                    'id' => 'Area jajanan dan kuliner di kawasan Purekmas, tempat pengunjung bisa istirahat dan makan setelah bermain air.',
+                    'en' => 'A food stall area in the Purekmas grounds, where visitors can rest and eat after playing in the water.',
+                    'ar' => 'منطقة أكشاك طعام في مجمع بوريكماس، حيث يمكن للزوار الاستراحة وتناول الطعام بعد اللعب في الماء.',
+                    'zh' => '位于普雷克马斯园区内的小吃摊区，游客戏水后可在此休息用餐。',
+                    'ms' => 'Kawasan gerai makanan di kawasan Purekmas, tempat pengunjung berehat dan makan selepas bermain air.',
+                ],
+                // Koordinat mentah (bukan Plus Code) dari user, ~1km dari
+                // Purekmas - dikonfirmasi user sebagai area jajanan terkait
+                // kawasan Purekmas. Bukan hasil survei GPS lapangan langsung.
+                'latitude' => -8.5492,
+                'longitude' => 116.2415,
+                'urutan' => 7,
+            ],
         ];
 
         foreach ($titikWisata as $data) {
