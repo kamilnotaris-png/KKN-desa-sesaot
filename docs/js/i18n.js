@@ -21,6 +21,8 @@ const I18N_STRINGS = {
         koordinat: 'Koordinat',
         buka_di_peta: 'buka di peta',
         petunjuk_arah: 'Petunjuk Arah ke Sini',
+        layer_peta: 'Peta',
+        layer_satelit: 'Satelit',
         tidak_ditemukan: 'Titik wisata tidak ditemukan.',
         titik_asal: [
             { nama: 'Bandara Internasional Lombok (LOP)', estimasi: '± 1 jam 15 menit' },
@@ -42,6 +44,8 @@ const I18N_STRINGS = {
         koordinat: 'Coordinates',
         buka_di_peta: 'open in map',
         petunjuk_arah: 'Get Directions Here',
+        layer_peta: 'Map',
+        layer_satelit: 'Satellite',
         tidak_ditemukan: 'Tourist spot not found.',
         titik_asal: [
             { nama: 'Lombok International Airport (LOP)', estimasi: '± 1h 15m' },
@@ -63,6 +67,8 @@ const I18N_STRINGS = {
         koordinat: 'الإحداثيات',
         buka_di_peta: 'فتح في الخريطة',
         petunjuk_arah: 'احصل على الاتجاهات إلى هنا',
+        layer_peta: 'خريطة',
+        layer_satelit: 'قمر صناعي',
         tidak_ditemukan: 'الموقع السياحي غير موجود.',
         titik_asal: [
             { nama: 'مطار لومبوك الدولي (LOP)', estimasi: '± ساعة و15 دقيقة' },
@@ -84,6 +90,8 @@ const I18N_STRINGS = {
         koordinat: '坐标',
         buka_di_peta: '在地图中打开',
         petunjuk_arah: '获取到这里的路线',
+        layer_peta: '地图',
+        layer_satelit: '卫星',
         tidak_ditemukan: '未找到该景点。',
         titik_asal: [
             { nama: '龙目国际机场 (LOP)', estimasi: '约1小时15分钟' },
@@ -105,6 +113,8 @@ const I18N_STRINGS = {
         koordinat: 'Koordinat',
         buka_di_peta: 'buka dalam peta',
         petunjuk_arah: 'Dapatkan Arah ke Sini',
+        layer_peta: 'Peta',
+        layer_satelit: 'Satelit',
         tidak_ditemukan: 'Tempat pelancongan tidak dijumpai.',
         titik_asal: [
             { nama: 'Lapangan Terbang Antarabangsa Lombok (LOP)', estimasi: '± 1 jam 15 minit' },

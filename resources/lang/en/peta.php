@@ -13,6 +13,8 @@ return [
     'koordinat' => 'Coordinates',
     'buka_di_peta' => 'open in map',
     'petunjuk_arah' => 'Get Directions Here',
+    'layer_peta' => 'Map',
+    'layer_satelit' => 'Satellite',
 
     'kategori' => [
         'air_terjun' => 'Waterfall',

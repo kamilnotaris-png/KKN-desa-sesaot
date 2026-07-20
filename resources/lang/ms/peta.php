@@ -13,6 +13,8 @@ return [
     'koordinat' => 'Koordinat',
     'buka_di_peta' => 'buka dalam peta',
     'petunjuk_arah' => 'Dapatkan Arah ke Sini',
+    'layer_peta' => 'Peta',
+    'layer_satelit' => 'Satelit',
 
     'kategori' => [
         'air_terjun' => 'Air Terjun',

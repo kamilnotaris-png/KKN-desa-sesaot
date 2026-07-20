@@ -13,6 +13,8 @@ return [
     'koordinat' => 'الإحداثيات',
     'buka_di_peta' => 'فتح في الخريطة',
     'petunjuk_arah' => 'احصل على الاتجاهات إلى هنا',
+    'layer_peta' => 'خريطة',
+    'layer_satelit' => 'قمر صناعي',
 
     'kategori' => [
         'air_terjun' => 'شلال',

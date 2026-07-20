@@ -13,6 +13,8 @@ return [
     'koordinat' => '坐标',
     'buka_di_peta' => '在地图中打开',
     'petunjuk_arah' => '获取到这里的路线',
+    'layer_peta' => '地图',
+    'layer_satelit' => '卫星',
 
     'kategori' => [
         'air_terjun' => '瀑布',

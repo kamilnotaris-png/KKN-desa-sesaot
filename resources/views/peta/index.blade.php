@@ -9,6 +9,8 @@
             caraKeSini: @json(__('peta.cara_ke_sini')),
             lihatDetail: @json(__('peta.lihat_detail')),
             petunjukArah: @json(__('peta.petunjuk_arah')),
+            layerPeta: @json(__('peta.layer_peta')),
+            layerSatelit: @json(__('peta.layer_satelit')),
             dusun: @json(__('peta.dusun')),
             titikAsal: @json(collect(__('peta.titik_asal'))->values()),
         };

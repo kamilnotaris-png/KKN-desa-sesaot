@@ -136,16 +136,33 @@ function fitMapToLayers(map, layers) {
     }
 }
 
+// Peta garis (OSM) jadi default; Satelit (Esri World Imagery) opsional lewat
+// layer switcher - gratis, tanpa API key, jadi tidak melanggar prinsip proyek
+// ini yang menghindari ketergantungan API berbayar/proprietary.
+function addBaseLayers(map) {
+    const peta = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap contributors',
+    }).addTo(map);
+
+    const satelit = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+        maxZoom: 19,
+        attribution: 'Tiles &copy; Esri',
+    });
+
+    L.control.layers({
+        [I18N.layerPeta ?? 'Peta']: peta,
+        [I18N.layerSatelit ?? 'Satelit']: satelit,
+    }, null, { position: 'bottomleft' }).addTo(map);
+}
+
 async function initPeta() {
     const el = document.getElementById('peta-wisata');
     if (!el) return;
 
     const map = L.map(el).setView([-8.524, 116.264], 14);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; OpenStreetMap contributors',
-    }).addTo(map);
+    addBaseLayers(map);
 
     const [jalurLayers, titikLayer] = await Promise.all([
         loadJalurLayers(map),
