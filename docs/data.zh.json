@@ -1,29 +1,29 @@
 {
     "type": "FeatureCollection",
-    "generated_at": "2026-07-20T14:42:43+00:00",
+    "generated_at": "2026-07-20T14:54:23+00:00",
     "features": [
         {
             "type": "Feature",
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    116.265,
-                    -8.523
+                    116.2442344,
+                    -8.5402625
                 ]
             },
             "properties": {
-                "nama": "蒂布森达伦瀑布",
-                "slug": "air-terjun-tibu-sendalem",
-                "kategori": "air_terjun",
-                "kategori_label": "瀑布",
-                "dusun": "Sesaot Lauk",
-                "deskripsi": "瀑布伴有天然水池，位于赛索特保护林边缘。",
+                "nama": "普雷克马斯",
+                "slug": "purekmas",
+                "kategori": "pemandian",
+                "kategori_label": "浴场",
+                "dusun": "Penangke",
+                "deskripsi": "Purekmas（社区休闲中心）- 由当地居民管理的林贾尼火山天然泉水，配有碧绿的河流和儿童泳池。",
                 "cerita_lokal": null,
                 "foto": null,
                 "video_embed_url": null,
-                "latitude": -8.523,
-                "longitude": 116.265,
-                "detail_url": "https://wisatasesaot.my.id/peta/air-terjun-tibu-sendalem"
+                "latitude": -8.5402625,
+                "longitude": 116.2442344,
+                "detail_url": "https://wisatasesaot.my.id/peta/purekmas"
             }
         },
         {
@@ -55,71 +55,23 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    116.2668,
-                    -8.5245
+                    116.2429375,
+                    -8.5425625
                 ]
             },
             "properties": {
-                "nama": "腾比拉斯瀑布",
-                "slug": "air-terjun-tembiras",
-                "kategori": "air_terjun",
-                "kategori_label": "瀑布",
-                "dusun": "Sesaot Timur",
-                "deskripsi": "赛索特徒步路线上最受游客欢迎的瀑布之一。",
-                "cerita_lokal": null,
-                "foto": null,
-                "video_embed_url": null,
-                "latitude": -8.5245,
-                "longitude": 116.2668,
-                "detail_url": "https://wisatasesaot.my.id/peta/air-terjun-tembiras"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    116.2637,
-                    -8.5219
-                ]
-            },
-            "properties": {
-                "nama": "蒂布戈瓦",
-                "slug": "tibu-goa",
-                "kategori": "air_terjun",
-                "kategori_label": "瀑布",
-                "dusun": "Sesaot Lauk",
-                "deskripsi": "洞穴附近的天然浴场。",
-                "cerita_lokal": null,
-                "foto": null,
-                "video_embed_url": null,
-                "latitude": -8.5219,
-                "longitude": 116.2637,
-                "detail_url": "https://wisatasesaot.my.id/peta/tibu-goa"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    116.2611,
-                    -8.5262
-                ]
-            },
-            "properties": {
-                "nama": "艾克涅特",
-                "slug": "aik-nyet",
+                "nama": "贝鲁加克埃伦赛索特",
+                "slug": "berugak-elen-sesaot",
                 "kategori": "pemandian",
                 "kategori_label": "浴场",
-                "dusun": "Gontoran",
-                "deskripsi": "天然冷泉浴场，是家庭出游的热门地点。",
+                "dusun": "Sesaot",
+                "deskripsi": "河边浴场，河岸整齐排列着传统萨萨克族凉亭（berugaq），设有儿童泳池，交通便利。",
                 "cerita_lokal": null,
                 "foto": null,
                 "video_embed_url": null,
-                "latitude": -8.5262,
-                "longitude": 116.2611,
-                "detail_url": "https://wisatasesaot.my.id/peta/aik-nyet"
+                "latitude": -8.5425625,
+                "longitude": 116.2429375,
+                "detail_url": "https://wisatasesaot.my.id/peta/berugak-elen-sesaot"
             }
         },
         {
@@ -127,47 +79,23 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    116.2655,
-                    -8.5241
+                    116.2424375,
+                    -8.5423125
                 ]
             },
             "properties": {
-                "nama": "布拉亚克沙爹",
-                "slug": "sate-bulayak",
-                "kategori": "kuliner",
-                "kategori_label": "美食",
-                "dusun": "Sesaot Timur",
-                "deskripsi": "赛索特特色美食：沙爹配布拉亚克糯米卷。",
-                "cerita_lokal": null,
-                "foto": null,
-                "video_embed_url": null,
-                "latitude": -8.5241,
-                "longitude": 116.2655,
-                "detail_url": "https://wisatasesaot.my.id/peta/sate-bulayak"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    116.2442344,
-                    -8.5402625
-                ]
-            },
-            "properties": {
-                "nama": "普雷克马斯",
-                "slug": "purekmas",
+                "nama": "巴瓦克阿雷赛索特",
+                "slug": "wisata-bawak-are-sesaot",
                 "kategori": "pemandian",
                 "kategori_label": "浴场",
-                "dusun": "Penangke",
-                "deskripsi": "Purekmas（社区休闲中心）- 由当地居民管理的林贾尼火山天然泉水，配有碧绿的河流和儿童泳池。",
+                "dusun": "Sesaot",
+                "deskripsi": "河水清澈碧绿，流经纹理独特的岩石，被誉为\"龙目岛的阿勒河\"。设有凉亭、小吃摊、停车场、漂流圈项目及游泳池。经努鲁伊赫拉斯清真寺旁的小路进入，门票2000印尼盾。",
                 "cerita_lokal": null,
                 "foto": null,
                 "video_embed_url": null,
-                "latitude": -8.5402625,
-                "longitude": 116.2442344,
-                "detail_url": "https://wisatasesaot.my.id/peta/purekmas"
+                "latitude": -8.5423125,
+                "longitude": 116.2424375,
+                "detail_url": "https://wisatasesaot.my.id/peta/wisata-bawak-are-sesaot"
             }
         },
         {
@@ -175,47 +103,71 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    116.2675,
-                    -8.5215
+                    116.2433125,
+                    -8.5415625
                 ]
             },
             "properties": {
-                "nama": "维通山",
-                "slug": "bukit-vetong",
+                "nama": "巴瓦克戈亚河营",
+                "slug": "bawak-goak-rivercamp",
+                "kategori": "pemandian",
+                "kategori_label": "浴场",
+                "dusun": "Sesaot",
+                "deskripsi": "清澈凉爽的山泉河流，层层叠叠流经天然岩石。主要活动是由村里青年管理的漂流圈项目，另有天然游泳区。门票约2000-3000印尼盾，漂流圈租金10000-20000印尼盾。",
+                "cerita_lokal": null,
+                "foto": null,
+                "video_embed_url": null,
+                "latitude": -8.5415625,
+                "longitude": 116.2433125,
+                "detail_url": "https://wisatasesaot.my.id/peta/bawak-goak-rivercamp"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.2433125,
+                    -8.5415625
+                ]
+            },
+            "properties": {
+                "nama": "塔曼米林赛索特",
+                "slug": "taman-miring-sesaot",
+                "kategori": "jalur_tracking",
+                "kategori_label": "徒步路线",
+                "dusun": "Sesaot",
+                "deskripsi": "由村民建造的公园，位于赛索特村入口处，以约45度的独特坡度著称，设有供休憩的凉亭。从公园高处可俯瞰稻田和周围山丘的美景。于2018年2月9日由西龙目摄政官正式启用，免费参观。",
+                "cerita_lokal": null,
+                "foto": null,
+                "video_embed_url": null,
+                "latitude": -8.5415625,
+                "longitude": 116.2433125,
+                "detail_url": "https://wisatasesaot.my.id/peta/taman-miring-sesaot"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.2433125,
+                    -8.5415625
+                ]
+            },
+            "properties": {
+                "nama": "克萨里山",
+                "slug": "bukit-khesari",
                 "kategori": "homestay",
                 "kategori_label": "民宿",
                 "dusun": "Sesaot",
-                "deskripsi": "露营地设有传统萨萨克族房屋、稻谷仓，以及可眺望林贾尼火山日出的树屋。",
+                "deskripsi": "露营地及山丘拍照点（根据谷歌地图标注），与塔曼米林及巴瓦克戈亚河营同处赛索特村入口区域。适合放松身心、享受宁静的自然氛围。",
                 "cerita_lokal": null,
                 "foto": null,
                 "video_embed_url": null,
-                "latitude": -8.5215,
-                "longitude": 116.2675,
-                "detail_url": "https://wisatasesaot.my.id/peta/bukit-vetong"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    116.269,
-                    -8.5198
-                ]
-            },
-            "properties": {
-                "nama": "芒果山",
-                "slug": "bukit-mangga",
-                "kategori": "jalur_tracking",
-                "kategori_label": "徒步路线",
-                "dusun": "Sesaot Timuk",
-                "deskripsi": "一座适合初学者的轻松徒步山丘，可眺望绿意盎然的山丘与林贾尼火山，设有大型星形拍照点，并供应赛索特当地咖啡，是欣赏日落的热门去处。",
-                "cerita_lokal": null,
-                "foto": null,
-                "video_embed_url": null,
-                "latitude": -8.5198,
-                "longitude": 116.269,
-                "detail_url": "https://wisatasesaot.my.id/peta/bukit-mangga"
+                "latitude": -8.5415625,
+                "longitude": 116.2433125,
+                "detail_url": "https://wisatasesaot.my.id/peta/bukit-khesari"
             }
         }
     ]
