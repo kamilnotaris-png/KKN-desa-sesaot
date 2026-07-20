@@ -1,5 +1,6 @@
-const CACHE_NAME = 'wisata-sesaot-pages-v2';
-const RUNTIME_CACHEABLE_HOSTS = [self.location.host, 'tile.openstreetmap.org'];
+const CACHE_NAME = 'wisata-sesaot-pages-v3';
+const OSM_TILE_HOST = 'tile.openstreetmap.org';
+const RUNTIME_CACHEABLE_HOSTS = [self.location.host, OSM_TILE_HOST];
 
 self.addEventListener('install', (event) => {
     self.skipWaiting();
@@ -48,9 +49,10 @@ self.addEventListener('fetch', (event) => {
     if (!isCacheableRequest(request)) return;
 
     const url = new URL(request.url);
-    // data*.json (POI, per-bahasa) network-first supaya update Pokdarwis cepat kelihatan;
-    // sisanya (shell, tile) cache-first karena jarang berubah.
+    const isOsmTile = url.host === OSM_TILE_HOST || url.host.endsWith('.' + OSM_TILE_HOST);
     const isFreshData = request.mode === 'navigate' || /\/data(\.[a-z]{2})?\.json$/.test(url.pathname);
 
-    event.respondWith(isFreshData ? networkFirst(request) : cacheFirst(request));
+    // Data dan tile OSM memakai network-first agar pembaruan cepat terlihat.
+    // Cache tetap dipakai sebagai fallback ketika perangkat offline.
+    event.respondWith(isOsmTile || isFreshData ? networkFirst(request) : cacheFirst(request));
 });
