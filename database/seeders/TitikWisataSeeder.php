@@ -29,11 +29,11 @@ class TitikWisataSeeder extends Seeder
                 'kategori' => 'pemandian',
                 'dusun' => 'Penangke',
                 'deskripsi' => [
-                    'id' => 'Pusat Rekreasi Masyarakat (Purekmas) - mata air alami dari Gunung Rinjani yang dikelola warga, sungai jernih toska dan kolam anak.',
-                    'en' => 'Purekmas (Community Recreation Center) - natural springs from Mount Rinjani managed by locals, with a turquoise river and children\'s pool.',
-                    'ar' => 'بوريكماس (مركز الترفيه المجتمعي) - ينابيع طبيعية من جبل رينجاني يديرها السكان المحليون، مع نهر فيروزي وبركة للأطفال.',
-                    'zh' => 'Purekmas（社区休闲中心）- 由当地居民管理的林贾尼火山天然泉水，配有碧绿的河流和儿童泳池。',
-                    'ms' => 'Purekmas (Pusat Rekreasi Masyarakat) - mata air semula jadi dari Gunung Rinjani yang diurus penduduk tempatan, sungai jernih dan kolam kanak-kanak.',
+                    'id' => 'Pusat Rekreasi Masyarakat (Purekmas) - mata air alami dari Gunung Rinjani yang dikelola warga, sungai jernih toska dan kolam anak. Begitu tiba di gerbang masuk, deretan lapak kuliner (sate bulayak, gorengan, kopi lokal) berjejer rapi di area parkir hingga jalan setapak menuju sungai.',
+                    'en' => 'Purekmas (Community Recreation Center) - natural springs from Mount Rinjani managed by locals, with a turquoise river and children\'s pool. Right at the entrance gate, a row of food stalls (bulayak satay, fried snacks, local coffee) lines the parking area up to the footpath leading to the river.',
+                    'ar' => 'بوريكماس (مركز الترفيه المجتمعي) - ينابيع طبيعية من جبل رينجاني يديرها السكان المحليون، مع نهر فيروزي وبركة للأطفال. عند بوابة الدخول مباشرة، تصطف أكشاك الطعام (ساتيه بولاياك، المقليات، القهوة المحلية) على طول منطقة وقوف السيارات وحتى الممر المؤدي إلى النهر.',
+                    'zh' => 'Purekmas（社区休闲中心）- 由当地居民管理的林贾尼火山天然泉水，配有碧绿的河流和儿童泳池。一进大门，沿停车场到通往河边的小径上整齐排列着小吃摊（布拉亚克沙爹、炸物、本地咖啡）。',
+                    'ms' => 'Purekmas (Pusat Rekreasi Masyarakat) - mata air semula jadi dari Gunung Rinjani yang diurus penduduk tempatan, sungai jernih dan kolam kanak-kanak. Sebaik tiba di pintu gerbang, deretan gerai kuliner (sate bulayak, gorengan, kopi tempatan) tersusun kemas di kawasan parkir hingga laluan kaki menuju sungai.',
                 ],
                 // Koordinat dari decode Plus Code F65V+VMX (alamat Google Maps
                 // "Jl. Sesaot, Sesaot, Kec. Narmada" - dikonfirmasi user), ~142m
