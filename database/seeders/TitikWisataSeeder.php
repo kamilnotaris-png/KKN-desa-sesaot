@@ -92,6 +92,33 @@ class TitikWisataSeeder extends Seeder
                 'longitude' => 116.2424375,
                 'urutan' => 3,
             ],
+            [
+                'nama' => [
+                    'id' => 'Bawak Goak Rivercamp',
+                    'en' => 'Bawak Goak Rivercamp',
+                    'ar' => 'باواك غواك ريفركامب',
+                    'zh' => '巴瓦克戈亚河营',
+                    'ms' => 'Bawak Goak Rivercamp',
+                ],
+                'kategori' => 'pemandian',
+                'dusun' => 'Sesaot',
+                'deskripsi' => [
+                    'id' => 'Sungai jernih dan sejuk dari mata air pegunungan, mengalir bertingkat-tingkat di atas bebatuan alami. Aktivitas utama river tubing (susur sungai pakai ban) dikelola pemuda desa, ditambah kolam renang alami. Tiket masuk sekitar Rp 2.000-3.000, sewa ban tubing Rp 10.000-20.000.',
+                    'en' => 'Clear, cool river fed by mountain springs, cascading over natural tiered rock formations. Main activity is river tubing managed by local youth, plus a natural swimming spot. Entrance fee around Rp 2,000-3,000, tube rental Rp 10,000-20,000.',
+                    'ar' => 'نهر صافٍ وبارد من ينابيع جبلية، يتدفق على شكل مدرجات فوق صخور طبيعية. النشاط الرئيسي هو أنبوب النهر الذي يديره شباب القرية، بالإضافة إلى مكان سباحة طبيعي. رسوم الدخول حوالي 2000-3000 روبية، وإيجار الأنبوب 10000-20000 روبية.',
+                    'zh' => '清澈凉爽的山泉河流，层层叠叠流经天然岩石。主要活动是由村里青年管理的漂流圈项目，另有天然游泳区。门票约2000-3000印尼盾，漂流圈租金10000-20000印尼盾。',
+                    'ms' => 'Sungai jernih dan sejuk dari mata air gunung, mengalir berperingkat di atas batu semula jadi. Aktiviti utama river tubing (menyusur sungai guna tiub) diuruskan pemuda kampung, ditambah kolam renang semula jadi. Tiket masuk sekitar Rp 2.000-3.000, sewa tiub Rp 10.000-20.000.',
+                ],
+                // Koordinat dari decode Plus Code F65V+98 (alamat Google Maps
+                // "Sesaot, Kabupaten Lombok Barat" - dikonfirmasi user), ~105m
+                // dari Kantor Desa. Bukan hasil survei GPS lapangan langsung.
+                // Diverifikasi via web search (Tribunlombok, kumparan, Timenews,
+                // Lombok Post) sebagai objek wisata nyata di Desa Sesaot, terpisah
+                // dari Bawak Are (beberapa sumber menyebut keduanya berdampingan).
+                'latitude' => -8.541562500000012,
+                'longitude' => 116.2433125,
+                'urutan' => 4,
+            ],
         ];
 
         foreach ($titikWisata as $data) {
