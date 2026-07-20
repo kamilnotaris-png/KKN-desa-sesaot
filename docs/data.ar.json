@@ -1,6 +1,6 @@
 {
     "type": "FeatureCollection",
-    "generated_at": "2026-07-20T15:09:03+00:00",
+    "generated_at": "2026-07-20T15:14:14+00:00",
     "features": [
         {
             "type": "Feature",
@@ -17,7 +17,7 @@
                 "kategori": "pemandian",
                 "kategori_label": "مكان استحمام",
                 "dusun": "Penangke",
-                "deskripsi": "بوريكماس (مركز الترفيه المجتمعي) - ينابيع طبيعية من جبل رينجاني يديرها السكان المحليون، مع نهر فيروزي وبركة للأطفال.",
+                "deskripsi": "بوريكماس (مركز الترفيه المجتمعي) - ينابيع طبيعية من جبل رينجاني يديرها السكان المحليون، مع نهر فيروزي وبركة للأطفال. عند بوابة الدخول مباشرة، تصطف أكشاك الطعام (ساتيه بولاياك، المقليات، القهوة المحلية) على طول منطقة وقوف السيارات وحتى الممر المؤدي إلى النهر.",
                 "cerita_lokal": null,
                 "foto": null,
                 "video_embed_url": null,
@@ -168,30 +168,6 @@
                 "latitude": -8.5415625,
                 "longitude": 116.2433125,
                 "detail_url": "https://wisatasesaot.my.id/peta/bukit-khesari"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    116.2415,
-                    -8.5492
-                ]
-            },
-            "properties": {
-                "nama": "أكشاك طعام بوريكماس",
-                "slug": "lapak-kuliner-purekmas",
-                "kategori": "kuliner",
-                "kategori_label": "مأكولات",
-                "dusun": "Penangke",
-                "deskripsi": "منطقة أكشاك طعام في مجمع بوريكماس، حيث يمكن للزوار الاستراحة وتناول الطعام بعد اللعب في الماء.",
-                "cerita_lokal": null,
-                "foto": null,
-                "video_embed_url": null,
-                "latitude": -8.5492,
-                "longitude": 116.2415,
-                "detail_url": "https://wisatasesaot.my.id/peta/lapak-kuliner-purekmas"
             }
         }
     ]
