@@ -1,6 +1,6 @@
 {
     "type": "FeatureCollection",
-    "generated_at": "2026-07-20T06:46:04+00:00",
+    "generated_at": "2026-07-20T09:37:01+00:00",
     "features": [
         {
             "type": "Feature",
@@ -38,8 +38,8 @@
             "properties": {
                 "nama": "",
                 "slug": "kantor-desa",
-                "kategori": "budaya",
-                "kategori_label": "ثقافة",
+                "kategori": "fasilitas_umum",
+                "kategori_label": "مرفق عام",
                 "dusun": "Kantor Desa Sesaot",
                 "deskripsi": "",
                 "cerita_lokal": "",
