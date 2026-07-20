@@ -68,26 +68,76 @@ const JALUR_FILES = [
     'jalur/jalan-aspal-desa.geojson',
 ];
 
-function initJalurLayer(map) {
-    JALUR_FILES.forEach((url) => {
-        fetch(url)
-            .then((res) => res.json())
-            .then((geojson) => {
-                L.geoJSON(geojson, {
-                    style: { color: '#c0392b', weight: 4, opacity: 0.8 },
-                    onEachFeature: (feature, layer) => {
-                        const p = feature.properties;
-                        if (p?.nama) {
-                            layer.bindPopup(`<strong>${p.nama}</strong>${p.deskripsi ? `<p>${p.deskripsi}</p>` : ''}`);
-                        }
-                    },
-                }).addTo(map);
-            })
-            .catch((err) => console.warn('Gagal muat jalur:', url, err));
-    });
+async function loadJalurLayers(map) {
+    const layers = await Promise.all(JALUR_FILES.map(async (url) => {
+        try {
+            const response = await fetch(url, { cache: 'no-cache' });
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}`);
+            }
+
+            const geojson = await response.json();
+
+            return L.geoJSON(geojson, {
+                style: { color: '#c0392b', weight: 4, opacity: 0.8 },
+                onEachFeature: (feature, layer) => {
+                    const p = feature.properties;
+                    if (p?.nama) {
+                        layer.bindPopup(`<strong>${p.nama}</strong>${p.deskripsi ? `<p>${p.deskripsi}</p>` : ''}`);
+                    }
+                },
+            }).addTo(map);
+        } catch (err) {
+            console.warn('Gagal muat jalur:', url, err);
+            return null;
+        }
+    }));
+
+    return layers.filter(Boolean);
 }
 
-function initPeta() {
+async function loadTitikWisataLayer(map, locale) {
+    const response = await fetch(dataFileForLocale(locale), { cache: 'no-cache' });
+    if (!response.ok) {
+        throw new Error(`Gagal memuat titik wisata: HTTP ${response.status}`);
+    }
+
+    const geojson = await response.json();
+
+    return L.geoJSON(geojson, {
+        pointToLayer: (feature, latlng) => L.marker(latlng, { icon: markerIcon(feature.properties.kategori) }),
+        onEachFeature: (feature, marker) => {
+            const p = feature.properties;
+            marker.bindPopup(`
+                <div class="popup-nama">${p.nama}</div>
+                <div class="popup-meta">${p.kategori_label} &middot; ${t('dusun')} ${p.dusun}</div>
+                <p>${p.deskripsi ?? ''}</p>
+                <a class="popup-link" href="detail.html?slug=${encodeURIComponent(p.slug)}&lang=${locale}">${t('lihat_detail')} &rarr;</a>
+                <br>
+                <a class="popup-link" href="${mapsDirectionToPointUrl(p.latitude, p.longitude)}" target="_blank" rel="noopener">🧭 ${t('petunjuk_arah')}</a>
+            `);
+        },
+    }).addTo(map);
+}
+
+function fitMapToLayers(map, layers) {
+    const bounds = L.latLngBounds([]);
+
+    layers.filter(Boolean).forEach((layer) => {
+        if (typeof layer.getBounds !== 'function') return;
+
+        const layerBounds = layer.getBounds();
+        if (layerBounds.isValid()) {
+            bounds.extend(layerBounds);
+        }
+    });
+
+    if (bounds.isValid()) {
+        map.fitBounds(bounds, { padding: [30, 30] });
+    }
+}
+
+async function initPeta() {
     const el = document.getElementById('peta-wisata');
     if (!el) return;
 
@@ -98,32 +148,17 @@ function initPeta() {
         attribution: '&copy; OpenStreetMap contributors',
     }).addTo(map);
 
-    initJalurLayer(map);
-
     const locale = getCurrentLocale();
+    const [jalurLayers, titikLayer] = await Promise.all([
+        loadJalurLayers(map),
+        loadTitikWisataLayer(map, locale).catch((err) => {
+            console.warn(err);
+            return null;
+        }),
+    ]);
 
-    fetch(dataFileForLocale(locale))
-        .then((res) => res.json())
-        .then((geojson) => {
-            const layer = L.geoJSON(geojson, {
-                pointToLayer: (feature, latlng) => L.marker(latlng, { icon: markerIcon(feature.properties.kategori) }),
-                onEachFeature: (feature, marker) => {
-                    const p = feature.properties;
-                    marker.bindPopup(`
-                        <div class="popup-nama">${p.nama}</div>
-                        <div class="popup-meta">${p.kategori_label} &middot; ${t('dusun')} ${p.dusun}</div>
-                        <p>${p.deskripsi ?? ''}</p>
-                        <a class="popup-link" href="detail.html?slug=${encodeURIComponent(p.slug)}&lang=${locale}">${t('lihat_detail')} &rarr;</a>
-                        <br>
-                        <a class="popup-link" href="${mapsDirectionToPointUrl(p.latitude, p.longitude)}" target="_blank" rel="noopener">🧭 ${t('petunjuk_arah')}</a>
-                    `);
-                },
-            }).addTo(map);
-
-            if (layer.getLayers().length > 0) {
-                map.fitBounds(layer.getBounds(), { padding: [30, 30] });
-            }
-        });
+    // Pastikan jalur hasil survei dan seluruh marker masuk dalam tampilan awal.
+    fitMapToLayers(map, [...jalurLayers, titikLayer]);
 }
 
 document.addEventListener('DOMContentLoaded', applyStaticTexts);
