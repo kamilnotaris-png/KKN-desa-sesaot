@@ -65,7 +65,7 @@ function markerIcon(properties = {}) {
         `font-size:${fontSize}px`,
         'line-height:1',
         `background:${background}`,
-        `${borderWidth}px solid ${borderColor}`,
+        `border:${borderWidth}px solid ${borderColor}`,
         'border-radius:999px',
         'box-shadow:0 3px 9px rgba(0,0,0,.32)',
         'box-sizing:border-box',
