@@ -51,13 +51,36 @@ const KATEGORI_ICON = {
     fasilitas_umum: '🏛️',
 };
 
-function markerIcon(kategori) {
+function markerIcon(properties = {}) {
+    const kategori = properties.kategori;
+    const nama = properties.nama ?? '';
+    const isKantorDesa = properties.slug === 'village-office' || /kantor\s+desa|village\s+office/i.test(nama);
+    const size = isKantorDesa ? 44 : 38;
+    const fontSize = isKantorDesa ? 32 : 28;
+    const borderWidth = isKantorDesa ? 3 : 2;
+    const borderColor = isKantorDesa ? '#14512d' : '#1a6b3c';
+    const background = isKantorDesa ? '#fffdf5' : '#ffffff';
+    const markerStyle = [
+        'width:100%',
+        'height:100%',
+        'display:flex',
+        'align-items:center',
+        'justify-content:center',
+        `font-size:${fontSize}px`,
+        'line-height:1',
+        `background:${background}`,
+        `border:${borderWidth}px solid ${borderColor}`,
+        'border-radius:999px',
+        'box-shadow:0 3px 9px rgba(0,0,0,.32)',
+        'box-sizing:border-box',
+    ].join(';');
+
     return L.divIcon({
-        className: 'titik-wisata-marker',
-        html: `<span>${KATEGORI_ICON[kategori] ?? '📍'}</span>`,
-        iconSize: [32, 32],
-        iconAnchor: [16, 32],
-        popupAnchor: [0, -32],
+        className: `titik-wisata-marker${isKantorDesa ? ' titik-wisata-marker--kantor' : ''}`,
+        html: `<span style="${markerStyle}" aria-hidden="true">${KATEGORI_ICON[kategori] ?? '📍'}</span>`,
+        iconSize: [size, size],
+        iconAnchor: [size / 2, size],
+        popupAnchor: [0, -(size - 4)],
     });
 }
 
@@ -106,7 +129,10 @@ async function loadTitikWisataLayer(map, locale) {
     const geojson = await response.json();
 
     return L.geoJSON(geojson, {
-        pointToLayer: (feature, latlng) => L.marker(latlng, { icon: markerIcon(feature.properties.kategori) }),
+        pointToLayer: (feature, latlng) => L.marker(latlng, {
+            icon: markerIcon(feature.properties),
+            title: feature.properties.nama ?? '',
+        }),
         onEachFeature: (feature, marker) => {
             const p = feature.properties;
             marker.bindPopup(`
