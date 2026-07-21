@@ -43,28 +43,55 @@ class PetaWisataController extends Controller
             ->limit(4)
             ->get();
 
+        $detailUrl = route('titik-wisata.show', $titikWisata);
+
         return view('peta.show', [
             'titikWisata' => $titikWisata,
             'lainnya' => $lainnya,
             'structuredData' => $this->encodeJsonLd([
                 '@context' => 'https://schema.org',
-                '@type' => 'TouristAttraction',
-                'name' => $titikWisata->nama,
-                'description' => $titikWisata->deskripsi ?: __('peta.meta_deskripsi_default'),
-                'url' => route('titik-wisata.show', $titikWisata),
-                'image' => $titikWisata->foto ? asset('storage/'.$titikWisata->foto) : asset('icons/icon-512.png'),
-                'geo' => [
-                    '@type' => 'GeoCoordinates',
-                    'latitude' => $titikWisata->latitude,
-                    'longitude' => $titikWisata->longitude,
+                '@graph' => [
+                    [
+                        '@type' => 'TouristAttraction',
+                        '@id' => $detailUrl.'#attraction',
+                        'name' => $titikWisata->nama,
+                        'description' => $titikWisata->deskripsi ?: __('peta.meta_deskripsi_default'),
+                        'url' => $detailUrl,
+                        'mainEntityOfPage' => $detailUrl,
+                        'image' => $titikWisata->foto
+                            ? asset('storage/'.$titikWisata->foto)
+                            : asset('icons/icon-512.png'),
+                        'geo' => [
+                            '@type' => 'GeoCoordinates',
+                            'latitude' => $titikWisata->latitude,
+                            'longitude' => $titikWisata->longitude,
+                        ],
+                        'address' => [
+                            '@type' => 'PostalAddress',
+                            'addressLocality' => 'Dusun '.$titikWisata->dusun.', Desa Sesaot',
+                            'addressRegion' => 'Nusa Tenggara Barat',
+                            'addressCountry' => 'ID',
+                        ],
+                        'isAccessibleForFree' => true,
+                    ],
+                    [
+                        '@type' => 'BreadcrumbList',
+                        'itemListElement' => [
+                            [
+                                '@type' => 'ListItem',
+                                'position' => 1,
+                                'name' => __('peta.judul_situs'),
+                                'item' => route('peta.index'),
+                            ],
+                            [
+                                '@type' => 'ListItem',
+                                'position' => 2,
+                                'name' => $titikWisata->nama,
+                                'item' => $detailUrl,
+                            ],
+                        ],
+                    ],
                 ],
-                'address' => [
-                    '@type' => 'PostalAddress',
-                    'addressLocality' => 'Dusun '.$titikWisata->dusun.', Desa Sesaot',
-                    'addressRegion' => 'Nusa Tenggara Barat',
-                    'addressCountry' => 'ID',
-                ],
-                'isAccessibleForFree' => true,
             ]),
         ]);
     }
@@ -72,9 +99,13 @@ class PetaWisataController extends Controller
     public function sitemap()
     {
         $titikWisata = TitikWisata::active()->ordered()->get();
+        $lastModified = $titikWisata->max('updated_at');
 
         return response()
-            ->view('sitemap', ['titikWisata' => $titikWisata])
+            ->view('sitemap', [
+                'titikWisata' => $titikWisata,
+                'lastModified' => $lastModified,
+            ])
             ->header('Content-Type', 'application/xml');
     }
 
