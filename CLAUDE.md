@@ -174,15 +174,27 @@ ditambahkan tanpa upgrade resource.
   cetak QR final. Taman Miring, Bukit Khesari, dan Bawak Goak Rivercamp
   untuk sementara berbagi satu koordinat yang sama (dikonfirmasi user
   satu kawasan) — wajib dipisah begitu ada survei GPS per titik.
-- **Air Terjun Tibu Sendalem dan Air Terjun Tembiras sengaja TIDAK
-  dimasukkan** ke `TitikWisataSeeder` — dikonfirmasi user (alamat Google
-  Maps + cross-check artikel) keduanya secara administratif berada di
-  **Desa Buwun Sejati**, bukan Desa Sesaot, meski sering disebut "Sesaot"
-  di artikel wisata karena berada di kawasan Hutan Sesaot yang sama.
-  Konsisten dengan pola sebelumnya (Air Terjun Segenter, Titian Batu
-  Kawangan, dll juga dikeluarkan karena alasan sama). Tibu Sendalem juga
-  belum resmi dibuka untuk umum (riwayat kecelakaan, lokasi sangat
-  terpencil) — jangan ditambahkan lagi tanpa konfirmasi ulang batas desa.
+- **Air Terjun Tibu Sendalem ditambahkan kembali (per 2026-07-26)** setelah
+  sempat dikeluarkan — meski administratif berada di **Desa Buwun Sejati**
+  (dikonfirmasi alamat Google Maps + artikel), user mengonfirmasi titik ini
+  **dikelola langsung oleh masyarakat Desa Sesaot** (skema PHBM/HKm dengan
+  KPHL Rinjani Barat). Ini konsisten dengan dokumen resmi program **"Desa
+  Wisata Hijau (DWH) Sesaot"** (kolaborasi Pemdes Sesaot + KPHL Rinjani
+  Barat + GIZ SREGIP + Kemenkop UKM + Pemprov NTB, lihat file presentasi
+  yang diunggah user) yang juga mempromosikan Sendalem, Air Terjun Segenter,
+  dan Mata Air Bunut Ngengkang sebagai "wisata Sesaot" — brand DWH ini
+  sengaja mencakup **seluruh Kawasan Hutan Sesaot** (5.950,18 Ha, sumber
+  air untuk Lombok Barat/Tengah/Kota Mataram), jauh lebih luas dari wilayah
+  administratif Desa Sesaot sendiri (1.308,50 Ha / 13,08 km²) — karena
+  kawasan hutan itu historisnya satu sebelum pemekaran jadi 3 desa (Sesaot,
+  Pakuan, Buwun Sejati). **Prinsip baru:** titik di luar batas administratif
+  Sesaot BOLEH dimasukkan kalau ada bukti dikelola/dipromosikan langsung
+  oleh masyarakat/Pemdes Sesaot (konsisten dokumen DWH) — bukan otomatis
+  dikeluarkan hanya karena beda desa administratif. **Air Terjun Tembiras**
+  masih belum dimasukkan (aman secara batas desa per pengecekan sebelumnya,
+  tinggal menunggu koordinat presisi). Catatan keselamatan tetap berlaku:
+  Sendalem lokasinya terpencil (riwayat kecelakaan, sempat ditutup
+  sementara) — deskripsi di seeder sudah mencantumkan saran pemandu lokal.
 - **Ikon PWA** (`public/icons/`, `docs/icons/`) dibuat programatis via
   PHP GD (placeholder), bukan desain resmi — ganti sebelum rilis publik.
 - **Akun admin dev** (kredensial dicatat terpisah, tidak di file ini) —

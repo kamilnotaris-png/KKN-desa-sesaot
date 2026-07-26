@@ -196,6 +196,35 @@ class TitikWisataSeeder extends Seeder
                 'longitude' => 116.2472420,
                 'urutan' => 7,
             ],
+            [
+                'nama' => [
+                    'id' => 'Air Terjun Tibu Sendalem',
+                    'en' => 'Tibu Sendalem Waterfall',
+                    'ar' => 'شلال تيبو سيندالم',
+                    'zh' => '蒂布森达伦瀑布',
+                    'ms' => 'Air Terjun Tibu Sendalem',
+                ],
+                'kategori' => 'air_terjun',
+                'dusun' => 'Kawasan Hutan Sesaot',
+                'deskripsi' => [
+                    'id' => 'Air terjun setinggi ±15m dengan kolam alami jernih kebiruan di tengah Hutan Sesaot, dikelola masyarakat Desa Sesaot (skema PHBM/HKm bersama KPHL Rinjani Barat, program Desa Wisata Hijau). Trekking ±1 jam melewati Air Terjun Tembiras terlebih dahulu. Lokasinya cukup terpencil - disarankan didampingi pemandu lokal.',
+                    'en' => 'A ~15m waterfall with a clear, blue-tinted natural pool deep in Hutan Sesaot, managed by the Desa Sesaot community (PHBM/HKm scheme with KPHL Rinjani Barat, part of the Desa Wisata Hijau program). About 1 hour of trekking, passing Air Terjun Tembiras first. The location is fairly remote - a local guide is recommended.',
+                    'ar' => 'شلال بارتفاع حوالي 15 مترًا مع بركة طبيعية صافية زرقاء اللون في عمق غابة سيساوت، يديرها مجتمع قرية سيساوت (برنامج PHBM/HKm بالتعاون مع KPHL رينجاني الغربية، ضمن برنامج القرية السياحية الخضراء). حوالي ساعة من المشي عبر شلال تيمبيراس أولاً. الموقع نائي نسبيًا - يُنصح بمرشد محلي.',
+                    'zh' => '瀑布高约15米，位于赛索特森林深处，拥有清澈的蓝色天然水池，由赛索特村社区管理（与KPHL林贾尼西部合作的PHBM/HKm计划，属于绿色旅游村项目的一部分）。徒步约1小时，途经腾比拉斯瀑布。地点较为偏远，建议聘请当地向导。',
+                    'ms' => 'Air terjun setinggi ±15m dengan kolam semula jadi jernih kebiruan di tengah Hutan Sesaot, diuruskan masyarakat Desa Sesaot (skema PHBM/HKm bersama KPHL Rinjani Barat, program Desa Wisata Hijau). Trekking ±1 jam melalui Air Terjun Tembiras dahulu. Lokasinya agak terpencil - disyorkan didampingi pemandu tempatan.',
+                ],
+                // Koordinat dari decode Plus Code G64V+GR9 (~5,3km dari Kantor
+                // Desa), dikonfirmasi user sebagai Tibu Sendalem. Administratif
+                // secara batas desa berada di Desa Buwun Sejati (bukan Sesaot),
+                // TAPI dikonfirmasi user dikelola langsung oleh masyarakat Desa
+                // Sesaot - konsisten dengan dokumen resmi program "Desa Wisata
+                // Hijau Sesaot" (Pemdes Sesaot + KPHL Rinjani Barat) yang juga
+                // mempromosikan titik ini sebagai wisata Sesaot. Lihat CLAUDE.md
+                // untuk konteks lengkap. Bukan hasil survei GPS lapangan langsung.
+                'latitude' => -8.4937125,
+                'longitude' => 116.2446094,
+                'urutan' => 8,
+            ],
         ];
 
         foreach ($titikWisata as $data) {
