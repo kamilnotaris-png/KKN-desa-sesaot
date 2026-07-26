@@ -170,6 +170,32 @@ class TitikWisataSeeder extends Seeder
                 'longitude' => 116.2433125,
                 'urutan' => 6,
             ],
+            [
+                'nama' => [
+                    'id' => 'Sate Bulayak Mak Aton',
+                    'en' => 'Sate Bulayak Mak Aton',
+                    'ar' => 'ساتيه بولاياك ماك أتون',
+                    'zh' => '马阿顿布拉亚克沙爹',
+                    'ms' => 'Sate Bulayak Mak Aton',
+                ],
+                'kategori' => 'kuliner',
+                'dusun' => 'Sesaot',
+                'deskripsi' => [
+                    'id' => 'Warung sate bulayak legendaris dengan resep sejak 1991, dinikmati langsung di gazebo tepi sungai. Buka Selasa-Minggu 08.00-18.00 (Senin tutup).',
+                    'en' => 'A legendary bulayak satay warung with a recipe dating back to 1991, enjoyed at riverside gazebos. Open Tuesday-Sunday 8AM-6PM (closed Monday).',
+                    'ar' => 'مطعم أسطوري لساتيه بولاياك بوصفة تعود إلى عام 1991، يُستمتع به في أكواخ على ضفة النهر. مفتوح من الثلاثاء إلى الأحد 8 صباحًا - 6 مساءً (مغلق يوم الاثنين).',
+                    'zh' => '传奇的布拉亚克沙爹小吃摊，配方可追溯至1991年，可在河边凉亭享用。周二至周日8:00-18:00营业（周一休息）。',
+                    'ms' => 'Warung sate bulayak legenda dengan resipi sejak 1991, dinikmati di berugaq tepi sungai. Buka Selasa-Ahad 8 pagi-6 petang (Isnin tutup).',
+                ],
+                // Koordinat mentah dari user (-8,5391070, 116,2472420), ~424m
+                // dari Kantor Desa. Diverifikasi via web search (Lombok Post,
+                // Instagram, Tripadvisor, kumparan.com) - nama resmi "Sate
+                // Bulayak Mak Aton" (bukan "Mak Atun"). Bukan hasil survei GPS
+                // lapangan langsung.
+                'latitude' => -8.5391070,
+                'longitude' => 116.2472420,
+                'urutan' => 7,
+            ],
         ];
 
         foreach ($titikWisata as $data) {
