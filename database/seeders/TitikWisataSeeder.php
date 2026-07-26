@@ -207,22 +207,26 @@ class TitikWisataSeeder extends Seeder
                 'kategori' => 'air_terjun',
                 'dusun' => 'Kawasan Hutan Sesaot',
                 'deskripsi' => [
-                    'id' => 'Air terjun setinggi ±15m dengan kolam alami jernih kebiruan di tengah Hutan Sesaot, dikelola masyarakat Desa Sesaot (skema PHBM/HKm bersama KPHL Rinjani Barat, program Desa Wisata Hijau). Trekking ±1 jam melewati Air Terjun Tembiras terlebih dahulu. Lokasinya cukup terpencil - disarankan didampingi pemandu lokal.',
-                    'en' => 'A ~15m waterfall with a clear, blue-tinted natural pool deep in Hutan Sesaot, managed by the Desa Sesaot community (PHBM/HKm scheme with KPHL Rinjani Barat, part of the Desa Wisata Hijau program). About 1 hour of trekking, passing Air Terjun Tembiras first. The location is fairly remote - a local guide is recommended.',
-                    'ar' => 'شلال بارتفاع حوالي 15 مترًا مع بركة طبيعية صافية زرقاء اللون في عمق غابة سيساوت، يديرها مجتمع قرية سيساوت (برنامج PHBM/HKm بالتعاون مع KPHL رينجاني الغربية، ضمن برنامج القرية السياحية الخضراء). حوالي ساعة من المشي عبر شلال تيمبيراس أولاً. الموقع نائي نسبيًا - يُنصح بمرشد محلي.',
-                    'zh' => '瀑布高约15米，位于赛索特森林深处，拥有清澈的蓝色天然水池，由赛索特村社区管理（与KPHL林贾尼西部合作的PHBM/HKm计划，属于绿色旅游村项目的一部分）。徒步约1小时，途经腾比拉斯瀑布。地点较为偏远，建议聘请当地向导。',
-                    'ms' => 'Air terjun setinggi ±15m dengan kolam semula jadi jernih kebiruan di tengah Hutan Sesaot, diuruskan masyarakat Desa Sesaot (skema PHBM/HKm bersama KPHL Rinjani Barat, program Desa Wisata Hijau). Trekking ±1 jam melalui Air Terjun Tembiras dahulu. Lokasinya agak terpencil - disyorkan didampingi pemandu tempatan.',
+                    'id' => 'Air terjun setinggi ±15m dengan kolam alami jernih kebiruan di tengah Hutan Sesaot, dikelola masyarakat Desa Sesaot (skema PHBM/HKm bersama KPHL Rinjani Barat, program Desa Wisata Hijau). Trekking ±1 jam melewati Air Terjun Tembiras terlebih dahulu. Akses jalur tidak bisa dilalui mobil - wajib pakai motor trail atau mountain bike. Lokasinya cukup terpencil - disarankan didampingi pemandu lokal.',
+                    'en' => 'A ~15m waterfall with a clear, blue-tinted natural pool deep in Hutan Sesaot, managed by the Desa Sesaot community (PHBM/HKm scheme with KPHL Rinjani Barat, part of the Desa Wisata Hijau program). About 1 hour of trekking, passing Air Terjun Tembiras first. The access trail is not passable by car - a trail motorbike or mountain bike is required. The location is fairly remote - a local guide is recommended.',
+                    'ar' => 'شلال بارتفاع حوالي 15 مترًا مع بركة طبيعية صافية زرقاء اللون في عمق غابة سيساوت، يديرها مجتمع قرية سيساوت (برنامج PHBM/HKm بالتعاون مع KPHL رينجاني الغربية، ضمن برنامج القرية السياحية الخضراء). حوالي ساعة من المشي عبر شلال تيمبيراس أولاً. لا يمكن الوصول بالسيارة - يلزم دراجة نارية للطرق الوعرة أو دراجة جبلية. الموقع نائي نسبيًا - يُنصح بمرشد محلي.',
+                    'zh' => '瀑布高约15米，位于赛索特森林深处，拥有清澈的蓝色天然水池，由赛索特村社区管理（与KPHL林贾尼西部合作的PHBM/HKm计划，属于绿色旅游村项目的一部分）。徒步约1小时，途经腾比拉斯瀑布。通行道路汽车无法进入，需使用越野摩托车或山地自行车。地点较为偏远，建议聘请当地向导。',
+                    'ms' => 'Air terjun setinggi ±15m dengan kolam semula jadi jernih kebiruan di tengah Hutan Sesaot, diuruskan masyarakat Desa Sesaot (skema PHBM/HKm bersama KPHL Rinjani Barat, program Desa Wisata Hijau). Trekking ±1 jam melalui Air Terjun Tembiras dahulu. Laluan akses tidak boleh dilalui kereta - wajib guna motosikal trail atau basikal gunung. Lokasinya agak terpencil - disyorkan didampingi pemandu tempatan.',
                 ],
-                // Koordinat dari decode Plus Code G64V+GR9 (~5,3km dari Kantor
-                // Desa), dikonfirmasi user sebagai Tibu Sendalem. Administratif
-                // secara batas desa berada di Desa Buwun Sejati (bukan Sesaot),
-                // TAPI dikonfirmasi user dikelola langsung oleh masyarakat Desa
-                // Sesaot - konsisten dengan dokumen resmi program "Desa Wisata
-                // Hijau Sesaot" (Pemdes Sesaot + KPHL Rinjani Barat) yang juga
-                // mempromosikan titik ini sebagai wisata Sesaot. Lihat CLAUDE.md
-                // untuk konteks lengkap. Bukan hasil survei GPS lapangan langsung.
-                'latitude' => -8.4937125,
-                'longitude' => 116.2446094,
+                // Koordinat hasil survei GPS lapangan langsung (OsmAnd, 26 Juli
+                // 2026) - centroid 25 titik GPS stasioner di akhir rekaman
+                // trekking (~1 jam 24 menit dari titik awal dekat Kantor Desa),
+                // menggantikan hasil decode Plus Code G64V+GR9 sebelumnya
+                // (selisih cuma ~37,5m, jadi decode Plus Code sebelumnya
+                // terkonfirmasi akurat). Lihat survei-gps/README.md untuk detail
+                // rekaman & lapisan jalur trekking di peta. Administratif secara
+                // batas desa berada di Desa Buwun Sejati (bukan Sesaot), TAPI
+                // dikonfirmasi user dikelola langsung oleh masyarakat Desa Sesaot
+                // - konsisten dengan dokumen resmi program "Desa Wisata Hijau
+                // Sesaot" (Pemdes Sesaot + KPHL Rinjani Barat). Lihat CLAUDE.md
+                // untuk konteks lengkap.
+                'latitude' => -8.4939519,
+                'longitude' => 116.2444437,
                 'urutan' => 8,
             ],
         ];

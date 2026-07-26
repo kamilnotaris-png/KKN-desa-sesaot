@@ -91,6 +91,7 @@ function markerIcon(properties = {}) {
 const JALUR_FILES = [
     'jalur/jalan-aspal-desa.geojson',
     'jalur/jalur-sate-bulayak-mak-aton.geojson',
+    'jalur/jalur-tracking-tibu-sendalem.geojson',
 ];
 
 async function loadJalurLayers(map) {
