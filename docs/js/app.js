@@ -90,6 +90,7 @@ function markerIcon(properties = {}) {
 // begitu ada hasil survei jalur berikutnya (lihat survei-gps/README.md).
 const JALUR_FILES = [
     'jalur/jalan-aspal-desa.geojson',
+    'jalur/jalur-sate-bulayak-mak-aton.geojson',
 ];
 
 async function loadJalurLayers(map) {

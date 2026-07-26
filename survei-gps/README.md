@@ -15,6 +15,7 @@ Jalur di Peta Aplikasi (GeoJSON overlay)" di bawah.
 | File | Tanggal | Keterangan | Status |
 |---|---|---|---|
 | `2026-07-20_jalan-aspal-desa-pintu-masuk-keluar.gpx` | 2026-07-20 | Jalan aspal utama Desa Sesaot dari pintu masuk desa `(-8.5575661, 116.2385974)` sampai pintu keluar desa `(-8.5394807, 116.2558324)`, melewati Kantor Desa Sesaot di tengah jalur (~-8.5416, 116.2442 — cocok dengan koordinat Kantor Desa hasil decode Plus Code F65V+9PJ, selisih ±15m). Rekaman terdiri dari 2 segmen karena ada jeda ±26 menit di Kantor Desa. | Sudah digambar & diupload ke OpenStreetMap (jalur + titik "Pintu Masuk Desa Sesaot", 20 Juli 2026) — tag masih perlu dirapikan (ada garis duplikat, tipe titik gerbang belum lengkap). Sudah dikonversi ke GeoJSON dan tampil di peta aplikasi (lihat di bawah). |
+| `2026-07-26_jalan-setapak-sate-bulayak-mak-aton.gpx` | 2026-07-26 | Jalan setapak di kawasan Sate Bulayak Mak Aton, dari area parkir menuju gazebo tepi sungai (titik awal rekaman ~4m dari koordinat Sate Bulayak Mak Aton di seeder — cocok). 2 segmen (jeda ±24 menit, kemungkinan istirahat makan). | Sudah dikonversi ke GeoJSON dan tampil di peta aplikasi (lihat di bawah). Belum diupload ke OpenStreetMap. |
 
 ## Lapisan Jalur di Peta Aplikasi (GeoJSON overlay)
 
