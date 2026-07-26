@@ -1,6 +1,6 @@
 {
     "type": "FeatureCollection",
-    "generated_at": "2026-07-20T15:14:20+00:00",
+    "generated_at": "2026-07-26T23:11:29+00:00",
     "features": [
         {
             "type": "Feature",
@@ -168,6 +168,54 @@
                 "latitude": -8.5415625,
                 "longitude": 116.2433125,
                 "detail_url": "https://wisatasesaot.my.id/peta/bukit-khesari"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.247242,
+                    -8.539107
+                ]
+            },
+            "properties": {
+                "nama": "Sate Bulayak Mak Aton",
+                "slug": "sate-bulayak-mak-aton",
+                "kategori": "kuliner",
+                "kategori_label": "Kuliner",
+                "dusun": "Sesaot",
+                "deskripsi": "Warung sate bulayak legenda dengan resipi sejak 1991, dinikmati di berugaq tepi sungai. Buka Selasa-Ahad 8 pagi-6 petang (Isnin tutup).",
+                "cerita_lokal": null,
+                "foto": null,
+                "video_embed_url": null,
+                "latitude": -8.539107,
+                "longitude": 116.247242,
+                "detail_url": "https://wisatasesaot.my.id/peta/sate-bulayak-mak-aton"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.2444437,
+                    -8.4939519
+                ]
+            },
+            "properties": {
+                "nama": "Air Terjun Tibu Sendalem",
+                "slug": "air-terjun-tibu-sendalem",
+                "kategori": "air_terjun",
+                "kategori_label": "Air Terjun",
+                "dusun": "Kawasan Hutan Sesaot",
+                "deskripsi": "Air terjun setinggi ±15m dengan kolam semula jadi jernih kebiruan di tengah Hutan Sesaot, diuruskan masyarakat Desa Sesaot (skema PHBM/HKm bersama KPHL Rinjani Barat, program Desa Wisata Hijau). Trekking ±1 jam melalui Air Terjun Tembiras dahulu. Laluan akses tidak boleh dilalui kereta - wajib guna motosikal trail atau basikal gunung. Lokasinya agak terpencil - disyorkan didampingi pemandu tempatan.",
+                "cerita_lokal": null,
+                "foto": null,
+                "video_embed_url": null,
+                "latitude": -8.4939519,
+                "longitude": 116.2444437,
+                "detail_url": "https://wisatasesaot.my.id/peta/air-terjun-tibu-sendalem"
             }
         }
     ]
