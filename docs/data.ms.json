@@ -1,6 +1,6 @@
 {
     "type": "FeatureCollection",
-    "generated_at": "2026-07-26T23:11:29+00:00",
+    "generated_at": "2026-07-27T00:09:36+00:00",
     "features": [
         {
             "type": "Feature",
@@ -210,8 +210,8 @@
                 "kategori_label": "Air Terjun",
                 "dusun": "Kawasan Hutan Sesaot",
                 "deskripsi": "Air terjun setinggi ±15m dengan kolam semula jadi jernih kebiruan di tengah Hutan Sesaot, diuruskan masyarakat Desa Sesaot (skema PHBM/HKm bersama KPHL Rinjani Barat, program Desa Wisata Hijau). Trekking ±1 jam melalui Air Terjun Tembiras dahulu. Laluan akses tidak boleh dilalui kereta - wajib guna motosikal trail atau basikal gunung. Lokasinya agak terpencil - disyorkan didampingi pemandu tempatan.",
-                "cerita_lokal": null,
-                "foto": null,
+                "cerita_lokal": "",
+                "foto": "https://wisatasesaot.my.id/storage/titik-wisata/01KYGEFAYGW2TNW5539T8J983Z.jpeg",
                 "video_embed_url": null,
                 "latitude": -8.4939519,
                 "longitude": 116.2444437,
