@@ -1,6 +1,6 @@
 {
     "type": "FeatureCollection",
-    "generated_at": "2026-07-26T23:11:26+00:00",
+    "generated_at": "2026-07-27T00:09:33+00:00",
     "features": [
         {
             "type": "Feature",
@@ -210,8 +210,8 @@
                 "kategori_label": "瀑布",
                 "dusun": "Kawasan Hutan Sesaot",
                 "deskripsi": "瀑布高约15米，位于赛索特森林深处，拥有清澈的蓝色天然水池，由赛索特村社区管理（与KPHL林贾尼西部合作的PHBM/HKm计划，属于绿色旅游村项目的一部分）。徒步约1小时，途经腾比拉斯瀑布。通行道路汽车无法进入，需使用越野摩托车或山地自行车。地点较为偏远，建议聘请当地向导。",
-                "cerita_lokal": null,
-                "foto": null,
+                "cerita_lokal": "",
+                "foto": "https://wisatasesaot.my.id/storage/titik-wisata/01KYGEFAYGW2TNW5539T8J983Z.jpeg",
                 "video_embed_url": null,
                 "latitude": -8.4939519,
                 "longitude": 116.2444437,
