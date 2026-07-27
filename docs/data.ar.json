@@ -1,6 +1,6 @@
 {
     "type": "FeatureCollection",
-    "generated_at": "2026-07-26T23:11:23+00:00",
+    "generated_at": "2026-07-27T00:09:31+00:00",
     "features": [
         {
             "type": "Feature",
@@ -210,8 +210,8 @@
                 "kategori_label": "شلال",
                 "dusun": "Kawasan Hutan Sesaot",
                 "deskripsi": "شلال بارتفاع حوالي 15 مترًا مع بركة طبيعية صافية زرقاء اللون في عمق غابة سيساوت، يديرها مجتمع قرية سيساوت (برنامج PHBM/HKm بالتعاون مع KPHL رينجاني الغربية، ضمن برنامج القرية السياحية الخضراء). حوالي ساعة من المشي عبر شلال تيمبيراس أولاً. لا يمكن الوصول بالسيارة - يلزم دراجة نارية للطرق الوعرة أو دراجة جبلية. الموقع نائي نسبيًا - يُنصح بمرشد محلي.",
-                "cerita_lokal": null,
-                "foto": null,
+                "cerita_lokal": "",
+                "foto": "https://wisatasesaot.my.id/storage/titik-wisata/01KYGEFAYGW2TNW5539T8J983Z.jpeg",
                 "video_embed_url": null,
                 "latitude": -8.4939519,
                 "longitude": 116.2444437,
