@@ -1,6 +1,6 @@
 {
     "type": "FeatureCollection",
-    "generated_at": "2026-07-26T23:11:21+00:00",
+    "generated_at": "2026-07-27T00:09:28+00:00",
     "features": [
         {
             "type": "Feature",
@@ -210,8 +210,8 @@
                 "kategori_label": "Waterfall",
                 "dusun": "Kawasan Hutan Sesaot",
                 "deskripsi": "A ~15m waterfall with a clear, blue-tinted natural pool deep in Hutan Sesaot, managed by the Desa Sesaot community (PHBM/HKm scheme with KPHL Rinjani Barat, part of the Desa Wisata Hijau program). About 1 hour of trekking, passing Air Terjun Tembiras first. The access trail is not passable by car - a trail motorbike or mountain bike is required. The location is fairly remote - a local guide is recommended.",
-                "cerita_lokal": null,
-                "foto": null,
+                "cerita_lokal": "",
+                "foto": "https://wisatasesaot.my.id/storage/titik-wisata/01KYGEFAYGW2TNW5539T8J983Z.jpeg",
                 "video_embed_url": null,
                 "latitude": -8.4939519,
                 "longitude": 116.2444437,
