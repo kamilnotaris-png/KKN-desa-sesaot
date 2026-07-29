@@ -89,6 +89,7 @@ const JALUR_FILES = [
     '/jalur/jalur-sate-bulayak-mak-aton.geojson',
     '/jalur/jalur-tracking-tibu-sendalem.geojson',
     '/jalur/jalur-purekmas-bawak-goak.geojson',
+    '/jalur/jalur-undak-telu.geojson',
 ];
 
 async function loadJalurLayers(map) {

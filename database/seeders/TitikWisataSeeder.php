@@ -229,6 +229,78 @@ class TitikWisataSeeder extends Seeder
                 'longitude' => 116.2444437,
                 'urutan' => 8,
             ],
+            [
+                'nama' => [
+                    'id' => 'Tibu Jam',
+                    'en' => 'Tibu Jam',
+                    'ar' => 'تيبو جام',
+                    'zh' => '蒂布詹',
+                    'ms' => 'Tibu Jam',
+                ],
+                'kategori' => 'pemandian',
+                'dusun' => 'Sesaot',
+                'deskripsi' => [
+                    'id' => 'Kolam alami seperti mata air di kawasan sebelah timur Desa Sesaot.',
+                    'en' => 'A natural pool resembling a spring, in the eastern part of Desa Sesaot.',
+                    'ar' => 'بركة طبيعية تشبه الينبوع، في الجزء الشرقي من قرية سيساوت.',
+                    'zh' => '位于赛索特村东部、状似泉水的天然水池。',
+                    'ms' => 'Kolam semula jadi seperti mata air di kawasan sebelah timur Desa Sesaot.',
+                ],
+                // Koordinat hasil survei GPS lapangan langsung (OsmAnd, 29 Juli
+                // 2026) - centroid titik dengan kecepatan terendah (berhenti
+                // mengamati lokasi). Lihat survei-gps/README.md.
+                'latitude' => -8.5368413,
+                'longitude' => 116.2526106,
+                'urutan' => 9,
+            ],
+            [
+                'nama' => [
+                    'id' => 'Tibu Pancor',
+                    'en' => 'Tibu Pancor',
+                    'ar' => 'تيبو بانكور',
+                    'zh' => '蒂布潘乔尔',
+                    'ms' => 'Tibu Pancor',
+                ],
+                'kategori' => 'pemandian',
+                'dusun' => 'Sesaot',
+                'deskripsi' => [
+                    'id' => 'Kolam alami seperti mata air di kawasan sebelah timur Desa Sesaot, tidak jauh dari Tibu Jam.',
+                    'en' => 'A natural pool resembling a spring, in the eastern part of Desa Sesaot, not far from Tibu Jam.',
+                    'ar' => 'بركة طبيعية تشبه الينبوع، في الجزء الشرقي من قرية سيساوت، على مقربة من تيبو جام.',
+                    'zh' => '位于赛索特村东部、状似泉水的天然水池，距蒂布詹不远。',
+                    'ms' => 'Kolam semula jadi seperti mata air di kawasan sebelah timur Desa Sesaot, tidak jauh dari Tibu Jam.',
+                ],
+                // Koordinat hasil survei GPS lapangan langsung (OsmAnd, 29 Juli
+                // 2026) - centroid titik dengan kecepatan terendah. Lihat
+                // survei-gps/README.md.
+                'latitude' => -8.5374554,
+                'longitude' => 116.2517625,
+                'urutan' => 10,
+            ],
+            [
+                'nama' => [
+                    'id' => 'Undak Telu',
+                    'en' => 'Undak Telu',
+                    'ar' => 'أونداك تيلو',
+                    'zh' => '翁达克特卢',
+                    'ms' => 'Undak Telu',
+                ],
+                'kategori' => 'air_terjun',
+                'dusun' => 'Sesaot',
+                'deskripsi' => [
+                    'id' => 'Tangga air (undak-undak aiq) bertingkat di aliran sungai kawasan sebelah timur Desa Sesaot, dekat Tibu Jam dan Tibu Pancor.',
+                    'en' => 'A tiered water terrace (undak-undak aiq) along a river in the eastern part of Desa Sesaot, near Tibu Jam and Tibu Pancor.',
+                    'ar' => 'مدرجات مائية متعددة المستويات على طول نهر في الجزء الشرقي من قرية سيساوت، بالقرب من تيبو جام وتيبو بانكور.',
+                    'zh' => '位于赛索特村东部河流沿岸的分层水阶梯，靠近蒂布詹和蒂布潘乔尔。',
+                    'ms' => 'Tangga air (undak-undak aiq) berperingkat di aliran sungai kawasan sebelah timur Desa Sesaot, dekat Tibu Jam dan Tibu Pancor.',
+                ],
+                // Koordinat hasil survei GPS lapangan langsung (OsmAnd, 29 Juli
+                // 2026) - centroid 5 titik terakhir rekaman (kecepatan rendah,
+                // menandai titik akhir/lokasi tujuan). Lihat survei-gps/README.md.
+                'latitude' => -8.5382808,
+                'longitude' => 116.2501052,
+                'urutan' => 11,
+            ],
         ];
 
         foreach ($titikWisata as $data) {
