@@ -1,6 +1,6 @@
 {
     "type": "FeatureCollection",
-    "generated_at": "2026-07-27T00:20:16+00:00",
+    "generated_at": "2026-07-29T03:39:00+00:00",
     "features": [
         {
             "type": "Feature",
@@ -216,6 +216,78 @@
                 "latitude": -8.4939519,
                 "longitude": 116.2444437,
                 "detail_url": "https://wisatasesaot.my.id/peta/air-terjun-tibu-sendalem"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.2526106,
+                    -8.5368413
+                ]
+            },
+            "properties": {
+                "nama": "تيبو جام",
+                "slug": "tibu-jam",
+                "kategori": "pemandian",
+                "kategori_label": "مكان استحمام",
+                "dusun": "Sesaot",
+                "deskripsi": "بركة طبيعية تشبه الينبوع، في الجزء الشرقي من قرية سيساوت.",
+                "cerita_lokal": null,
+                "foto": null,
+                "video_embed_url": null,
+                "latitude": -8.5368413,
+                "longitude": 116.2526106,
+                "detail_url": "https://wisatasesaot.my.id/peta/tibu-jam"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.2517625,
+                    -8.5374554
+                ]
+            },
+            "properties": {
+                "nama": "تيبو بانكور",
+                "slug": "tibu-pancor",
+                "kategori": "pemandian",
+                "kategori_label": "مكان استحمام",
+                "dusun": "Sesaot",
+                "deskripsi": "بركة طبيعية تشبه الينبوع، في الجزء الشرقي من قرية سيساوت، على مقربة من تيبو جام.",
+                "cerita_lokal": null,
+                "foto": null,
+                "video_embed_url": null,
+                "latitude": -8.5374554,
+                "longitude": 116.2517625,
+                "detail_url": "https://wisatasesaot.my.id/peta/tibu-pancor"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.2501052,
+                    -8.5382808
+                ]
+            },
+            "properties": {
+                "nama": "أونداك تيلو",
+                "slug": "undak-telu",
+                "kategori": "air_terjun",
+                "kategori_label": "شلال",
+                "dusun": "Sesaot",
+                "deskripsi": "مدرجات مائية متعددة المستويات على طول نهر في الجزء الشرقي من قرية سيساوت، بالقرب من تيبو جام وتيبو بانكور.",
+                "cerita_lokal": null,
+                "foto": null,
+                "video_embed_url": null,
+                "latitude": -8.5382808,
+                "longitude": 116.2501052,
+                "detail_url": "https://wisatasesaot.my.id/peta/undak-telu"
             }
         }
     ]
