@@ -1,6 +1,6 @@
 {
     "type": "FeatureCollection",
-    "generated_at": "2026-07-27T00:20:21+00:00",
+    "generated_at": "2026-07-29T03:39:05+00:00",
     "features": [
         {
             "type": "Feature",
@@ -216,6 +216,78 @@
                 "latitude": -8.4939519,
                 "longitude": 116.2444437,
                 "detail_url": "https://wisatasesaot.my.id/peta/air-terjun-tibu-sendalem"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.2526106,
+                    -8.5368413
+                ]
+            },
+            "properties": {
+                "nama": "Tibu Jam",
+                "slug": "tibu-jam",
+                "kategori": "pemandian",
+                "kategori_label": "Tempat Mandi",
+                "dusun": "Sesaot",
+                "deskripsi": "Kolam semula jadi seperti mata air di kawasan sebelah timur Desa Sesaot.",
+                "cerita_lokal": null,
+                "foto": null,
+                "video_embed_url": null,
+                "latitude": -8.5368413,
+                "longitude": 116.2526106,
+                "detail_url": "https://wisatasesaot.my.id/peta/tibu-jam"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.2517625,
+                    -8.5374554
+                ]
+            },
+            "properties": {
+                "nama": "Tibu Pancor",
+                "slug": "tibu-pancor",
+                "kategori": "pemandian",
+                "kategori_label": "Tempat Mandi",
+                "dusun": "Sesaot",
+                "deskripsi": "Kolam semula jadi seperti mata air di kawasan sebelah timur Desa Sesaot, tidak jauh dari Tibu Jam.",
+                "cerita_lokal": null,
+                "foto": null,
+                "video_embed_url": null,
+                "latitude": -8.5374554,
+                "longitude": 116.2517625,
+                "detail_url": "https://wisatasesaot.my.id/peta/tibu-pancor"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.2501052,
+                    -8.5382808
+                ]
+            },
+            "properties": {
+                "nama": "Undak Telu",
+                "slug": "undak-telu",
+                "kategori": "air_terjun",
+                "kategori_label": "Air Terjun",
+                "dusun": "Sesaot",
+                "deskripsi": "Tangga air (undak-undak aiq) berperingkat di aliran sungai kawasan sebelah timur Desa Sesaot, dekat Tibu Jam dan Tibu Pancor.",
+                "cerita_lokal": null,
+                "foto": null,
+                "video_embed_url": null,
+                "latitude": -8.5382808,
+                "longitude": 116.2501052,
+                "detail_url": "https://wisatasesaot.my.id/peta/undak-telu"
             }
         }
     ]
