@@ -1,6 +1,6 @@
 {
     "type": "FeatureCollection",
-    "generated_at": "2026-07-27T00:20:18+00:00",
+    "generated_at": "2026-07-29T03:39:03+00:00",
     "features": [
         {
             "type": "Feature",
@@ -216,6 +216,78 @@
                 "latitude": -8.4939519,
                 "longitude": 116.2444437,
                 "detail_url": "https://wisatasesaot.my.id/peta/air-terjun-tibu-sendalem"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.2526106,
+                    -8.5368413
+                ]
+            },
+            "properties": {
+                "nama": "蒂布詹",
+                "slug": "tibu-jam",
+                "kategori": "pemandian",
+                "kategori_label": "浴场",
+                "dusun": "Sesaot",
+                "deskripsi": "位于赛索特村东部、状似泉水的天然水池。",
+                "cerita_lokal": null,
+                "foto": null,
+                "video_embed_url": null,
+                "latitude": -8.5368413,
+                "longitude": 116.2526106,
+                "detail_url": "https://wisatasesaot.my.id/peta/tibu-jam"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.2517625,
+                    -8.5374554
+                ]
+            },
+            "properties": {
+                "nama": "蒂布潘乔尔",
+                "slug": "tibu-pancor",
+                "kategori": "pemandian",
+                "kategori_label": "浴场",
+                "dusun": "Sesaot",
+                "deskripsi": "位于赛索特村东部、状似泉水的天然水池，距蒂布詹不远。",
+                "cerita_lokal": null,
+                "foto": null,
+                "video_embed_url": null,
+                "latitude": -8.5374554,
+                "longitude": 116.2517625,
+                "detail_url": "https://wisatasesaot.my.id/peta/tibu-pancor"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.2501052,
+                    -8.5382808
+                ]
+            },
+            "properties": {
+                "nama": "翁达克特卢",
+                "slug": "undak-telu",
+                "kategori": "air_terjun",
+                "kategori_label": "瀑布",
+                "dusun": "Sesaot",
+                "deskripsi": "位于赛索特村东部河流沿岸的分层水阶梯，靠近蒂布詹和蒂布潘乔尔。",
+                "cerita_lokal": null,
+                "foto": null,
+                "video_embed_url": null,
+                "latitude": -8.5382808,
+                "longitude": 116.2501052,
+                "detail_url": "https://wisatasesaot.my.id/peta/undak-telu"
             }
         }
     ]
