@@ -1,6 +1,6 @@
 {
     "type": "FeatureCollection",
-    "generated_at": "2026-07-29T03:39:03+00:00",
+    "generated_at": "2026-08-02T08:18:29+00:00",
     "features": [
         {
             "type": "Feature",
@@ -288,6 +288,30 @@
                 "latitude": -8.5382808,
                 "longitude": 116.2501052,
                 "detail_url": "https://wisatasesaot.my.id/peta/undak-telu"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.254687,
+                    -8.5449264
+                ]
+            },
+            "properties": {
+                "nama": "潘乔尔利马",
+                "slug": "pancor-lima",
+                "kategori": "pemandian",
+                "kategori_label": "浴场",
+                "dusun": "Temas Lestari",
+                "deskripsi": "位于特马斯莱斯塔里社区的天然泉水/水池。",
+                "cerita_lokal": null,
+                "foto": null,
+                "video_embed_url": null,
+                "latitude": -8.5449264,
+                "longitude": 116.254687,
+                "detail_url": "https://wisatasesaot.my.id/peta/pancor-lima"
             }
         }
     ]
