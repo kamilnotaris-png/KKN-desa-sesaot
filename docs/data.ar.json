@@ -1,6 +1,6 @@
 {
     "type": "FeatureCollection",
-    "generated_at": "2026-07-29T03:39:00+00:00",
+    "generated_at": "2026-08-02T08:18:26+00:00",
     "features": [
         {
             "type": "Feature",
@@ -288,6 +288,30 @@
                 "latitude": -8.5382808,
                 "longitude": 116.2501052,
                 "detail_url": "https://wisatasesaot.my.id/peta/undak-telu"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.254687,
+                    -8.5449264
+                ]
+            },
+            "properties": {
+                "nama": "بانكور ليما",
+                "slug": "pancor-lima",
+                "kategori": "pemandian",
+                "kategori_label": "مكان استحمام",
+                "dusun": "Temas Lestari",
+                "deskripsi": "ينبوع/بركة طبيعية في دوسون تيماس ليستاري.",
+                "cerita_lokal": null,
+                "foto": null,
+                "video_embed_url": null,
+                "latitude": -8.5449264,
+                "longitude": 116.254687,
+                "detail_url": "https://wisatasesaot.my.id/peta/pancor-lima"
             }
         }
     ]
