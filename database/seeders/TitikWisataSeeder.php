@@ -301,6 +301,31 @@ class TitikWisataSeeder extends Seeder
                 'longitude' => 116.2501052,
                 'urutan' => 11,
             ],
+            [
+                'nama' => [
+                    'id' => 'Pancor Lima',
+                    'en' => 'Pancor Lima',
+                    'ar' => 'بانكور ليما',
+                    'zh' => '潘乔尔利马',
+                    'ms' => 'Pancor Lima',
+                ],
+                'kategori' => 'pemandian',
+                'dusun' => 'Temas Lestari',
+                'deskripsi' => [
+                    'id' => 'Mata air/kolam alami di Dusun Temas Lestari.',
+                    'en' => 'A natural spring/pool in Dusun Temas Lestari.',
+                    'ar' => 'ينبوع/بركة طبيعية في دوسون تيماس ليستاري.',
+                    'zh' => '位于特马斯莱斯塔里社区的天然泉水/水池。',
+                    'ms' => 'Mata air/kolam semula jadi di Dusun Temas Lestari.',
+                ],
+                // Koordinat hasil survei GPS lapangan langsung (OsmAnd, 2
+                // Agustus 2026) - centroid 2 titik terakhir rekaman (kecepatan
+                // terendah, menandai titik akhir/lokasi tujuan). Dikonfirmasi
+                // user. Lihat survei-gps/README.md.
+                'latitude' => -8.5449264,
+                'longitude' => 116.2546870,
+                'urutan' => 12,
+            ],
         ];
 
         foreach ($titikWisata as $data) {
