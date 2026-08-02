@@ -1,6 +1,6 @@
 {
     "type": "FeatureCollection",
-    "generated_at": "2026-07-29T03:38:58+00:00",
+    "generated_at": "2026-08-02T08:18:24+00:00",
     "features": [
         {
             "type": "Feature",
@@ -288,6 +288,30 @@
                 "latitude": -8.5382808,
                 "longitude": 116.2501052,
                 "detail_url": "https://wisatasesaot.my.id/peta/undak-telu"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.254687,
+                    -8.5449264
+                ]
+            },
+            "properties": {
+                "nama": "Pancor Lima",
+                "slug": "pancor-lima",
+                "kategori": "pemandian",
+                "kategori_label": "Bathing Spot",
+                "dusun": "Temas Lestari",
+                "deskripsi": "A natural spring/pool in Dusun Temas Lestari.",
+                "cerita_lokal": null,
+                "foto": null,
+                "video_embed_url": null,
+                "latitude": -8.5449264,
+                "longitude": 116.254687,
+                "detail_url": "https://wisatasesaot.my.id/peta/pancor-lima"
             }
         }
     ]
